@@ -1,26 +1,26 @@
 # MEDIFIN — Inside the Mind of a Counselor
 
-> **MEDIFIN** is a financial counseling simulation game where players act as "financial doctors", diagnose clients' financial problems, investigate their underlying causes, and recommend appropriate treatments through financial analysis and decision-making.
+> **MEDIFIN** là game mô phỏng tư vấn tài chính, trong đó người chơi đóng vai một “bác sĩ tài chính”, điều tra tình hình khách hàng, chẩn đoán các “căn bệnh” tài chính và đề xuất phương án xử lý phù hợp.
 
 ---
 
 ## 1. Team Members and Roles
 
-| Team Member | Student ID | Role | Main Output |
+| Họ tên | Mã sinh viên | Vai trò chính | Output |
 |---|---|---|---|
-| **Nguyễn Phương Khuê** | 2413380023 | Coordinator & Scenario Designer | Coordinates project progress, reviews outputs, designs financial scenarios and develops sample treatment protocols. |
-| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer | Develops the playable interface and scenario integration, while collaborating on game logic implementation, testing and debugging. |
-| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead | Defines financial metrics for each financial disease, develops sample financial datasets and prepares answer keys. |
-| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer | Designs screen flows and wireframes, and develops dialogue scripts and storylines for each scenario. |
-| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer | Develops the core game engine, including diagnosis logic, scoring, treatment outcomes and player progression. |
+| **Nguyễn Phương Khuê** | 2413380023 | Coordinator & Scenario Designer | Kiểm soát tiến độ, kiểm tra output, thiết kế các tình huống tài chính và xây dựng các phương án xử lý mẫu. |
+| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer | Phát triển giao diện chơi và tích hợp các scenario, đồng thời hỗ trợ triển khai game logic, testing và debugging. |
+| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead | Xây dựng các chỉ số tài chính cho từng “căn bệnh”, dữ liệu báo cáo tài chính mẫu và answer keys. |
+| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer | Thiết kế screen flow, wireframe, kịch bản tình huống và hội thoại cho từng scenario. |
+| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer | Phát triển core game engine, bao gồm diagnosis logic, scoring system, treatment outcomes và player progression. |
 
 ---
 
 ## 2. Product Overview
 
-**MEDIFIN – Financial Clinic** is a simulation game where players act as financial counselors — or "financial doctors" — who diagnose and treat clients' financial problems through investigation, financial analysis and decision-making.
+**MEDIFIN – Financial Clinic** là game mô phỏng trong đó người chơi đóng vai một **Financial Counselor** – tương tự một “bác sĩ tài chính” – có nhiệm vụ chẩn đoán và xử lý các vấn đề tài chính của khách hàng thông qua quá trình điều tra, phân tích số liệu và ra quyết định.
 
-Instead of being directly told what the financial problem is, players receive only the client's **symptoms** and must discover the underlying **financial disease** themselves.
+Game không nói trực tiếp cho người chơi biết khách hàng đang gặp vấn đề gì. Thay vào đó, người chơi chỉ được tiếp nhận các **“triệu chứng”** và phải tự tìm ra **“căn bệnh tài chính”** thực sự.
 
 > **Client Symptoms → Investigation → Financial Evidence → Diagnosis → Treatment**
 
@@ -28,19 +28,19 @@ Instead of being directly told what the financial problem is, players receive on
 
 ## 3. Problem Candidates
 
-During the initial problem exploration, the team considered three potential directions.
+Trong giai đoạn xác định vấn đề ban đầu, nhóm đã xem xét ba hướng phát triển sản phẩm.
 
-| Candidate | Target User | Task / Decision | Main Difficulty | Evaluation |
+| Candidate | Target User | Task / Decision | Khó khăn chính | Đánh giá |
 |---|---|---|---|---|
-| **Candidate 1: Financial Clinic** – Financial Diagnosis & Counseling Simulation | Finance and Banking students interested in financial counseling careers; entry-level counselors, advisors or RMs | Collect evidence, distinguish symptoms from root causes, diagnose financial problems and recommend solutions while considering client behavior and constraints | Classroom exercises usually provide clear problems and clean data, while real clients may provide incomplete or conflicting information and make emotional decisions | **SELECTED** – Addresses a practical skill gap, supports diverse scenarios and allows deeper cause-and-effect simulation beyond a simple investment game |
-| **Candidate 2: SME Cash-Flow & Working Capital Diagnostic Tool** | SME owners and corporate credit analysts | Analyze cash flow, inventory turnover, DSO and other metrics to develop a working-capital restructuring plan | Businesses may confuse accounting profit with actual cash flow, causing liquidity problems despite revenue growth | **FEASIBLE BUT NARROW** – Strong quantitative component, but focuses mainly on short-term corporate finance and provides less human interaction |
-| **Candidate 3: Personal Wealth & Debt Restructuring Simulator** | Individuals/families facing financial difficulties and personal financial planners | Assess personal assets and liabilities, develop debt repayment plans and allocate household cash flow | Borrowers may hide debt, make emotional decisions or fail to follow spending-reduction plans | **NOT SELECTED** – Similar personal-finance products already exist and the concept may not fully utilize students' quantitative financial knowledge |
+| **Candidate 1: Financial Clinic – Financial Diagnosis & Counseling Simulation** | Sinh viên Tài chính – Ngân hàng có định hướng làm Financial Counselor; chuyên viên tư vấn/RM/Advisor mới vào nghề | Thu thập chứng cứ, phân biệt triệu chứng và nguyên nhân, chẩn đoán “bệnh lý” tài chính và đề xuất giải pháp có tính đến hành vi và ràng buộc của khách hàng | Bài tập trên lớp thường cung cấp dữ liệu và vấn đề rõ ràng. Trong thực tế, khách hàng có thể cung cấp thông tin thiếu, mâu thuẫn hoặc ra quyết định dựa trên cảm xúc | **ĐƯỢC CHỌN** – Giải quyết khoảng trống giữa lý thuyết và thực hành, hỗ trợ nhiều scenario và tạo khác biệt với game mô phỏng đầu tư |
+| **Candidate 2: SME Cash-Flow & Working Capital Diagnostic Tool** | Chủ doanh nghiệp SME, chuyên viên phân tích tín dụng doanh nghiệp | Phân tích dòng tiền, vòng quay tồn kho, DSO và lập kế hoạch tái cấu trúc vốn lưu động | Doanh nghiệp thường nhầm giữa lợi nhuận kế toán và dòng tiền thực, dẫn đến thiếu thanh khoản dù doanh thu tăng | **KHẢ THI NHƯNG HẸP** – Có chiều sâu định lượng nhưng chủ yếu tập trung vào tài chính doanh nghiệp ngắn hạn và ít yếu tố tương tác con người |
+| **Candidate 3: Personal Wealth & Debt Restructuring Simulator** | Cá nhân/gia đình gặp khó khăn tài chính và chuyên viên lập kế hoạch tài chính cá nhân | Đánh giá tài sản, nợ, xây dựng kế hoạch trả nợ và phân bổ dòng tiền | Người vay có thể giấu nợ, ra quyết định theo cảm xúc và thiếu kỷ luật trong việc cắt giảm chi tiêu | **KHÔNG ĐƯỢC CHỌN** – Đã có nhiều sản phẩm quản lý tài chính cá nhân tương tự và chưa khai thác hết kiến thức tài chính của sinh viên |
 
 ### Selected Direction
 
 > **Candidate 1: Financial Clinic – Financial Diagnosis & Counseling Simulation**
 
-The selected direction allows MEDIFIN to focus on the **reasoning process of a financial counselor** rather than simply teaching calculations or asking players to select investments.
+MEDIFIN tập trung vào **quá trình tư duy và ra quyết định của một Financial Counselor**, thay vì chỉ yêu cầu người chơi tính toán chỉ số hoặc lựa chọn một khoản đầu tư.
 
 ---
 
@@ -48,95 +48,96 @@ The selected direction allows MEDIFIN to focus on the **reasoning process of a f
 
 ### Primary Target User
 
-The primary target users are:
+Đối tượng người dùng chính là:
 
-> **Year 2–4 Finance and Banking students at FTU who are preparing for financial counseling or advisory careers.**
+> **Sinh viên Tài chính – Ngân hàng năm 2–4 tại FTU, có định hướng làm việc trong lĩnh vực tư vấn tài chính hoặc Financial Advisory.**
 
-The expected player already has basic financial knowledge but has limited experience dealing with realistic and ambiguous client situations.
+Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản nhưng chưa có nhiều kinh nghiệm xử lý các tình huống khách hàng thực tế.
 
-Therefore, the game does not mainly teach:
+Vì vậy, game không tập trung dạy:
 
-> *"What is Current Ratio?"*
+> *“Current Ratio là gì?”*
 
-Instead, it trains students to think:
+Mà rèn luyện cách suy nghĩ:
 
-> *"When should I examine Current Ratio? What does it tell me about this client's situation? How should that information affect my recommendation?"*
+> *“Khi nào tôi cần xem Current Ratio? Chỉ số này cho tôi biết điều gì về tình hình khách hàng? Và thông tin đó ảnh hưởng như thế nào đến lời khuyên của tôi?”*
 
 ---
 
 ## 5. User Task or Decision
 
-The player's main task is:
+Nhiệm vụ chính của người chơi là:
 
-> **Investigate a client's financial situation, identify the underlying financial problem, and recommend an appropriate treatment.**
+> **Điều tra tình hình tài chính của khách hàng, xác định vấn đề tài chính cốt lõi và đề xuất phương án xử lý phù hợp.**
 
-The diagnosis is **not given directly** to the player.
+Người chơi **không được cung cấp sẵn chẩn đoán**.
 
-Instead, the player follows the process:
+Thay vào đó:
 
-> **Client presents symptoms → Player investigates → Player analyzes evidence → Player diagnoses → Player recommends treatment**
+> **Khách hàng đưa ra triệu chứng → Người chơi điều tra → Phân tích bằng chứng → Chẩn đoán → Đề xuất phương án xử lý**
 
-The player therefore needs to make decisions about:
+Trong quá trình này, người chơi phải quyết định:
 
-- What information should be investigated.
-- Which financial evidence is relevant.
-- What the underlying financial problem is.
-- Which treatment is most appropriate.
-- How the recommendation should be communicated to the client.
+- Cần hỏi khách hàng những gì.
+- Cần xem những thông tin và tài liệu tài chính nào.
+- Bằng chứng nào thực sự liên quan.
+- Nguyên nhân gốc rễ của vấn đề là gì.
+- Phương án xử lý nào phù hợp.
+- Nên giao tiếp và tư vấn với khách hàng như thế nào.
 
 ---
 
 ## 6. Draft Problem Statement
 
-Finance and Banking students understand financial theories and analytical tools but often struggle to apply them in realistic counseling situations because classroom exercises usually provide clean data and clearly defined problems.
+Sinh viên ngành Tài chính – Ngân hàng nắm được các lý thuyết và công cụ phân tích tài chính nhưng thường gặp khó khăn khi áp dụng vào tư vấn thực tế, do các bài tập trên lớp thường dựa trên dữ liệu tương đối đầy đủ và vấn đề đã được xác định rõ ràng.
 
-In real financial counseling, however, clients may present vague symptoms, incomplete information, conflicting objectives and emotional biases.
+Trong thực tế, khách hàng có thể đưa ra các triệu chứng mơ hồ, thông tin không đầy đủ, mục tiêu mâu thuẫn và quyết định chịu ảnh hưởng bởi cảm xúc.
 
-> **Therefore, Finance and Banking students lack a safe and realistic environment to practice investigating ambiguous financial situations, diagnosing underlying problems, and making appropriate client-oriented financial decisions before entering the workplace.**
+> **Do đó, sinh viên Tài chính – Ngân hàng thiếu một môi trường an toàn và thực tế để rèn luyện khả năng điều tra các tình huống tài chính chưa rõ ràng, chẩn đoán nguyên nhân gốc rễ và đưa ra quyết định tư vấn phù hợp trước khi bước vào môi trường làm việc thực tế.**
 
 ---
 
 ## 7. Visible Contribution — Week 1
 
-| Team Member | Week 1 Contribution | Visible Output |
+| Thành viên | Đóng góp Week 1 | Output nhìn thấy được |
 |---|---|---|
-| **Nguyễn Phương Khuê** | Organized the repository and integrated Week 1 work into a reviewable README | README structure and evidence links |
-| **Lâm Diệu Anh** | Analyzed and defined the target users and explored initial product directions | Target-user definition and problem candidate |
-| **Trương Vĩnh Thịnh** | Researched, analyzed and proposed problem candidates and the core user task | Problem candidates and user task |
-| **Bùi Lê Trà Giang** | Defined MEDIFIN's financial reasoning and clarified the core difficulty and finance relevance | Difficulty description and problem statement |
-| **Lê Bảo Ngọc** | Identified unresolved Week 1 issues and consolidated Checkpoint 1 feedback | Open questions and Checkpoint 1 summary |
+| **Nguyễn Phương Khuê** | Tổ chức repository và tích hợp các phần Week 1 thành README có thể review | Cấu trúc README, liên kết evidence |
+| **Lâm Diệu Anh** | Phân tích, định hình đối tượng người dùng và khảo sát định hướng sản phẩm | Target-user definition, problem candidate |
+| **Trương Vĩnh Thịnh** | Tìm kiếm, phân tích và đề xuất Problem Candidates; xác định nhiệm vụ chính của người chơi | Problem candidates và user task |
+| **Bùi Lê Trà Giang** | Xác định financial reasoning của MEDIFIN; làm rõ difficulty và finance relevance | Mô tả difficulty, problem statement |
+| **Lê Bảo Ngọc** | Xác định những vấn đề còn tồn đọng của Week 1 và tổng hợp các góp ý | Open questions, tổng hợp Checkpoint 1 |
 
 ---
 
 ## 8. Open Questions
 
-The team still needs to validate and decide:
+Những vấn đề nhóm vẫn cần tiếp tục kiểm chứng và thống nhất:
 
-1. Should the game include both **individual and corporate clients**, or should the target scenarios be narrowed?
-2. How many **decision points** should each case contain to provide sufficient depth without becoming too long?
-3. Should the **investigation process** be limited by time or investigation points?
-4. How complex should the **financial datasets** be to remain realistic but still suitable for students?
-5. Which dimensions should be included in the **player scoring system** — Investigation, Diagnosis, Treatment and/or Communication?
-6. Should each treatment have one **best answer**, or should multiple reasonable solutions be accepted with different trade-offs?
-7. What evidence should be collected to validate whether students actually experience the problem assumed by the team?
+1. Game nên bao gồm cả **individual và corporate clients**, hay cần thu hẹp target scenarios?
+2. Một case nên có bao nhiêu **decision points** để đủ chiều sâu nhưng không quá dài?
+3. Investigation có nên bị giới hạn bằng **time / investigation points** hay không?
+4. Financial datasets nên phức tạp đến mức nào để vừa thực tế vừa phù hợp với sinh viên?
+5. Hệ thống scoring nên đánh giá những yếu tố nào: **Investigation, Diagnosis, Treatment, Communication**?
+6. Treatment có nên có một **“best answer”**, hay cho phép nhiều phương án hợp lý với các trade-off khác nhau?
+7. Cần thu thập evidence nào để xác nhận sinh viên thực sự gặp vấn đề mà nhóm đang giả định?
 
 ---
 
 ## 9. Checkpoint 1 Feedback and Revision
 
-| Item | Record |
+| Item | Nội dung |
 |---|---|
-| **Feedback Received** | The Financial Counselor concept may overlap with Group 1's Shark Tank-style investment simulation. The scenarios need to be more distinctive and cover a wider range of client situations. The responsibilities of the two developer roles also initially overlapped. |
-| **Decision** | **Change / Refine** — Keep the Financial Counselor concept but clarify the core task and gameplay. |
-| **Revision Made** | Shift the focus from investment selection to **financial diagnosis and treatment**; introduce the **Financial Clinic** metaphor; separate technical responsibilities into **Game Engine & Logic Developer** and **Frontend & Integration Developer**. |
-| **Reason** | Differentiate MEDIFIN from investment simulations and ensure that each team member has a distinct and reviewable output. |
-| **Remaining Questions** | Determine the final scenario set and further validate the target-user problem. |
+| **Feedback Received** | Chủ đề Financial Counselor có nguy cơ giống Group 1's Shark Tank investment simulation; scenario cần độc đáo hơn và thể hiện được nhiều hoàn cảnh khách hàng. Responsibilities của hai developer ban đầu cũng bị overlap. |
+| **Decision** | **Change / Refine** – Giữ concept Financial Counselor nhưng làm rõ core task và gameplay. |
+| **Revision Made** | Chuyển trọng tâm từ investment selection sang **financial diagnosis and treatment**; sử dụng phép ẩn dụ **Financial Clinic**; tách technical roles thành **Game Engine & Logic Developer** và **Frontend & Integration Developer**. |
+| **Reason** | Tạo sự khác biệt với investment simulation và đảm bảo mỗi thành viên có output riêng, có thể kiểm tra được. |
+| **Remaining Questions** | Cần xác định bộ scenario cuối cùng và tiếp tục kiểm chứng vấn đề của target user. |
 
 ---
 
 ## 10. Week 2 — Product Development
 
-Based on the selected problem direction, Week 2 develops MEDIFIN into a more concrete and testable product structure.
+Dựa trên problem direction đã lựa chọn, Week 2 tập trung chuyển MEDIFIN từ một ý tưởng thành một sản phẩm có cấu trúc cụ thể và có thể kiểm chứng.
 
 ### Week 2 Deliverables
 
@@ -145,13 +146,15 @@ Based on the selected problem direction, Week 2 develops MEDIFIN into a more con
 
 ### Core Product Direction
 
+Core loop dự kiến của MEDIFIN:
+
 > **OBSERVE → INVESTIGATE → DIAGNOSE → TREAT → CONSEQUENCE → LEARN**
 
-The goal is not simply to reward players with points or badges, but to help them **practice thinking and making decisions like financial counselors**.
+Mục tiêu của game không chỉ là tạo điểm số, badge hay leaderboard, mà quan trọng hơn là giúp sinh viên **thực hành cách suy nghĩ, điều tra và ra quyết định như một Financial Counselor thực tế**.
 
 ---
 
-## Project Status
+## 11. Project Status
 
 **Current Stage:** Week 2 – Product Definition & MVP Planning
 
@@ -159,4 +162,4 @@ The goal is not simply to reward players with points or badges, but to help them
 
 **Product Pattern:** Scenario-Based Decision Simulation
 
-**Initial MVP:** One complete playable financial counseling case
+**Initial MVP:** 1 case tư vấn tài chính hoàn chỉnh có thể chơi từ đầu đến cuối
