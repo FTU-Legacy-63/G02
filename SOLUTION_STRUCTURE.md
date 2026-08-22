@@ -149,16 +149,6 @@ Người chơi lựa chọn giải pháp phù hợp với tình hình khách hà
 
 Game mô phỏng hậu quả của quyết định.
 
-**Ví dụ:**
-
-> **Six Months Later...**
-
-- Cash ↑
-- DSO ↓
-- Debt ↓
-
-Tuy nhiên, một số khách hàng có thể rời đi vì chính sách tín dụng bị thắt chặt.
-
 ### Learn
 
 Game giải thích:
