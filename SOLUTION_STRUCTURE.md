@@ -269,7 +269,7 @@ Player nhận **Counselor Case Report** gồm:
 
 Phiên bản cuối dự kiến:
 
-> **5–6 complete financial counseling cases**
+> **3–4 complete financial counseling cases**
 
 Các case đại diện cho những hoàn cảnh khác nhau, chẳng hạn:
 
@@ -286,7 +286,7 @@ Mỗi case vẫn sử dụng chung core loop nhưng có **financial problem, cli
 
 Nếu thời gian hoặc khả năng development không đủ:
 
-> **3 polished and complete cases**
+> **2 polished and complete cases**
 
 Nhóm sẽ giảm **số lượng case**, không cắt bỏ core loop.
 
