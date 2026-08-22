@@ -141,8 +141,8 @@ Dựa trên problem direction đã lựa chọn, Week 2 tập trung chuyển MED
 
 ### Week 2 Deliverables
 
-- [Project Proposal](docs/PROJECT_PROPOSAL.md)
-- [Solution Structure](docs/SOLUTION_STRUCTURE.md)
+- [Project Proposal](PROJECT_PROPOSAL.md)
+- [Solution Structure](SOLUTION_STRUCTURE.md)
 
 ### Core Product Direction
 
