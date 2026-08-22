@@ -84,17 +84,6 @@ Sau khi chơi game, sinh viên có thể cải thiện khả năng:
 
 > **Một game mô phỏng giúp sinh viên thực hành chẩn đoán và xử lý các vấn đề tài chính thực tế.**
 
-### Key Differentiation
-
-Game không phải một trò chơi mô phỏng lựa chọn khoản đầu tư.
-
-Câu hỏi trọng tâm không phải:
-
-> “Tôi có nên đầu tư vào công ty này không?”
-
-Mà là:
-
-> **“Khách hàng này thực sự đang gặp vấn đề gì và tôi nên tư vấn cho họ như thế nào?”**
 
 ### Game Theme – Financial Clinic
 
@@ -113,31 +102,12 @@ Người chơi đóng vai một **Financial Counselor**, tương tự như một
 | Điều trị | Giải pháp / khuyến nghị tài chính |
 | Tái khám | Kết quả tài chính trong tương lai |
 
-Game không nên nói thẳng với người chơi:
 
-> “Công ty này đang gặp vấn đề về quản trị vốn lưu động.”
-
-Thay vào đó, khách hàng có thể nói:
-
-> “Doanh thu của công ty tôi vẫn tăng, nhưng không hiểu tại sao chúng tôi lúc nào cũng thiếu tiền để thanh toán cho nhà cung cấp.”
-
-Đây mới chỉ là **triệu chứng**.
-
-Nhiệm vụ của người chơi là tìm ra **“căn bệnh” tài chính thực sự** phía sau triệu chứng đó.
 
 ---
 
 ## 5. Main Output
 
-Main Output không chỉ là:
-
-- Điểm số.
-- Huy hiệu.
-- Dashboard.
-- Đúng / sai.
-- Bảng xếp hạng.
-
-Những yếu tố trên chỉ là **supporting outputs**.
 
 ### Proposed Main Output
 
@@ -208,7 +178,6 @@ Sau khi core game loop được xây dựng, các case tiếp theo có thể s�
 - Treatment.
 - Consequence.
 
-Để kiểm chứng tính khả thi, nhóm sẽ ưu tiên xây dựng **một case hoàn chỉnh trước**, thay vì phát triển nhiều case cùng lúc.
 
 ### Open Questions
 
