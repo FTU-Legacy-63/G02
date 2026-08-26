@@ -165,8 +165,6 @@ Tình hình khách hàng thay đổi và có thể tạo ra quyết định ti�
 
 ## 4. MVP Flow
 
-## 4. MVP Flow
-
 ### Proposed MVP Case
 
 **“The Profitable Company That Is Running Out of Cash”**
