@@ -52,15 +52,8 @@ MEDIFIN tập trung vào **quá trình tư duy và ra quyết định của mộ
 
 > **Sinh viên năm 3–4 ngành Tài chính – Ngân hàng, đã học các môn nền tảng về kế toán và phân tích tài chính, đang chuẩn bị thực tập hoặc làm việc trong các vị trí Financial Advisor, Relationship Manager, Credit Analyst hoặc Financial Counselor.**
 
-Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản nhưng chưa có nhiều kinh nghiệm xử lý các tình huống khách hàng thực tế.
+Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản: Financial Statements, Accounting fundamentals, Financial ratios, Working capital, Debt & financing, Basic financial analysis nhưng chưa có nhiều kinh nghiệm xử lý các tình huống khách hàng thực tế.
 
-Vì vậy, game không tập trung dạy:
-
-> *“Current Ratio là gì?”*
-
-Mà rèn luyện cách suy nghĩ:
-
-> *“Khi nào tôi cần xem Current Ratio? Chỉ số này cho tôi biết điều gì về tình hình khách hàng? Và thông tin đó ảnh hưởng như thế nào đến lời khuyên của tôi?”*
 
 ---
 
