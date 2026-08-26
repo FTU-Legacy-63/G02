@@ -50,7 +50,7 @@ MEDIFIN tập trung vào **quá trình tư duy và ra quyết định của mộ
 
 Đối tượng người dùng chính là:
 
-> **Sinh viên Tài chính – Ngân hàng năm 2–4 tại FTU, có định hướng làm việc trong lĩnh vực tư vấn tài chính hoặc Financial Advisory.**
+> **Sinh viên năm 3–4 ngành Tài chính – Ngân hàng, đã học các môn nền tảng về kế toán và phân tích tài chính, đang chuẩn bị thực tập hoặc làm việc trong các vị trí Financial Advisor, Relationship Manager, Credit Analyst hoặc Financial Counselor.**
 
 Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản nhưng chưa có nhiều kinh nghiệm xử lý các tình huống khách hàng thực tế.
 
