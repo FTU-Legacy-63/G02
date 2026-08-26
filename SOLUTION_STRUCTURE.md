@@ -165,53 +165,133 @@ Tình hình khách hàng thay đổi và có thể tạo ra quyết định ti�
 
 ## 4. MVP Flow
 
-**MVP = One Complete Playable Financial Counseling Case**
-
-MVP tập trung vào **1 khách hàng doanh nghiệp SME** để chứng minh toàn bộ core game loop của MEDIFIN hoạt động từ đầu đến cuối.
+## 4. MVP Flow
 
 ### Proposed MVP Case
 
 **“The Profitable Company That Is Running Out of Cash”**
 
-Một SME có doanh thu và lợi nhuận tăng nhưng liên tục thiếu tiền mặt. Chủ doanh nghiệp cho rằng cần vay thêm, trong khi nguyên nhân thực sự có thể nằm ở quản trị vốn lưu động.
+### 1. Client Introduction
 
-### MVP Gameplay
+Một SME đến gặp Financial Counselor với **goal được nói ra trực tiếp** và một chi tiết nhỏ chưa được giải thích rõ nhằm gợi mở cho player tự điều tra:
 
-**1. Client Introduction**  
-Người chơi tiếp nhận triệu chứng và nhận định ban đầu của khách hàng.
+> “Doanh thu và lợi nhuận của công ty đều tăng nhưng chúng tôi liên tục thiếu tiền. Tôi nghĩ công ty cần vay thêm. Kế toán cũ mới nghỉ nên sổ sách hơi rối, nhưng chắc không sao.”
 
-**2. Investigation**  
-Lựa chọn câu hỏi và tài liệu cần kiểm tra như Financial Statements, AR Aging, Inventory, Debt và Supplier Terms.
+---
 
-**3. Evidence Analysis**  
-Phân tích các dấu hiệu như Revenue ↑, Profit ↑, AR ↑, DSO ↑, Inventory ↑ và Operating Cash Flow ↓.
+### 2. Investigation
 
-**4. Diagnosis**  
-Xác định nguyên nhân cốt lõi, phân biệt giữa triệu chứng và “căn bệnh” tài chính thực sự.
+Player được lựa chọn **tối đa 4 trong 6 nguồn thông tin**, tạo giới hạn điều tra và buộc phải chọn lọc:
 
-**5. Treatment**  
-Lựa chọn giải pháp phù hợp và cân nhắc trade-off giữa các phương án như vay thêm, thu hồi công nợ, giảm tồn kho hoặc kết hợp nhiều biện pháp.
+- Cash Flow Statement
+- AR Aging
+- Inventory
+- Debt
+- Supplier Payment Terms
+- Client Interview
 
-**6. Client Communication**  
-Xử lý phản ứng và các ràng buộc thực tế của khách hàng đối với phương án tư vấn.
+Mỗi nguồn có thể cung cấp một trong ba loại thông tin:
 
-**7. Consequence – Six Months Later**  
-Game mô phỏng sự thay đổi của các financial metrics dựa trên decision path của người chơi.
+- **Critical:** Cần thiết để chẩn đoán đúng.
+- **Useful:** Bổ trợ cho quá trình phân tích nhưng không bắt buộc.
+- **Red Herring:** Nghe hợp lý nhưng không liên quan trực tiếp đến root cause, ví dụ biến động giá vật liệu hoặc tình hình thị trường.
 
-**8. Counselor Case Report**  
-Cuối case mới hiển thị kết quả gồm:
-- Investigation Quality
-- Diagnosis Accuracy
-- Treatment Quality
-- Client Communication
-- Financial Consequences
-- What You Did Well / What You Missed
+---
 
-### Core MVP Loop
+### 3. Evidence
 
-> **Observe → Investigate → Analyze → Diagnose → Treat → Communicate → Consequence → Learn**
+Tùy vào lựa chọn Investigation, player có thể phát hiện:
 
-MVP không nhằm mô phỏng toàn bộ Financial Counseling mà chứng minh rằng core diagnosis–treatment–consequence loop của MEDIFIN có thể hoạt động hoàn chỉnh trước khi mở rộng sang các scenario khác.
+- Revenue ↑
+- Profit ↑
+- Customer AR ↑↑
+- Một khoản Other Receivable bất thường nhưng không phải root cause
+- DSO ↑
+- Inventory ↑
+- Operating Cash Flow ↓
+
+Chi tiết bất thường đóng vai trò **nhiễu**, yêu cầu player phân biệt giữa thông tin đáng chú ý và nguyên nhân thực sự của vấn đề.
+
+---
+
+### 4. Diagnosis
+
+Player phải:
+
+1. Chọn **Diagnosis**.
+2. Chọn **1–2 Evidence** để chứng minh cho diagnosis đó.
+
+Các diagnosis gồm:
+
+- Low Profitability
+- Insufficient Sales
+- Excessive Debt
+- **Working-Capital Mismanagement**
+- Insufficient Financing
+
+> **Scoring Rule:** Diagnosis đúng nhưng không có evidence phù hợp chỉ nhận một phần điểm. Player phải chứng minh reasoning thay vì chỉ đoán đúng đáp án.
+
+---
+
+### 5. Treatment
+
+Player lựa chọn giải pháp:
+
+- Borrow More
+- Stop All Credit Sales
+- Improve AR Collection
+- Improve Inventory
+- **Combined Working-Capital Treatment**
+
+Nếu chọn **Improve AR Collection** hoặc **Combined Treatment**, player phải lựa chọn thêm một treatment parameter, ví dụ:
+
+- 2% Early Payment Discount
+- 5% Early Payment Discount
+- Targeted Discount by Customer Group
+
+Điều này giúp Treatment trở thành một quyết định tài chính cụ thể thay vì chỉ lựa chọn hướng xử lý chung.
+
+---
+
+### 6. Communication
+
+Player lựa chọn cách trình bày recommendation với khách hàng:
+
+- **Data-First:** Đi thẳng vào số liệu và vấn đề.
+- **Empathy-First:** Thấu hiểu mối quan tâm của khách hàng trước khi giải thích bằng số liệu.
+- **Avoidance:** Né tránh các vấn đề nhạy cảm.
+
+Communication ảnh hưởng đến **Trust / Client Experience**, tách biệt với Financial Outcome.
+
+---
+
+### 7. Consequence — Six Months Later
+
+Game mô phỏng tình hình doanh nghiệp sau 6 tháng.
+
+Financial metrics mới phụ thuộc vào tổ hợp:
+
+**Diagnosis + Treatment + Treatment Parameter**
+
+Do đó, một diagnosis sai vẫn có thể làm giảm chất lượng outcome ngay cả khi treatment được lựa chọn có vẻ hợp lý.
+
+---
+
+### 8. Counselor Case Report
+
+Cuối case, player nhận báo cáo đánh giá gồm:
+
+- **Investigation Quality:** Critical Evidence được khai thác và số lượt bị lãng phí vào Red Herring.
+- **Diagnosis Accuracy**
+- **Treatment Quality**
+- **Communication / Client Experience**
+- **Financial Consequences**
+- **What You Did Well**
+- **What You Missed**
+
+### Core Game Loop
+
+> **Observe → Investigate → Analyze Evidence → Diagnose → Treat → Communicate → Consequence → Learn**
 
 ## 5. Target / Fallback / Out of Scope
 
