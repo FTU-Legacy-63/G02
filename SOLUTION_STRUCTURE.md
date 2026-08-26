@@ -165,97 +165,53 @@ Tình hình khách hàng thay đổi và có thể tạo ra quyết định ti�
 
 ## 4. MVP Flow
 
-> **MVP = One Complete Playable Financial Counseling Case**
+**MVP = One Complete Playable Financial Counseling Case**
 
-Không cần làm nhiều case ngay.
-
-MVP chỉ cần chứng minh rằng **core game loop hoạt động hoàn chỉnh từ đầu đến cuối**.
+MVP tập trung vào **1 khách hàng doanh nghiệp SME** để chứng minh toàn bộ core game loop của MEDIFIN hoạt động từ đầu đến cuối.
 
 ### Proposed MVP Case
 
-> **“The Profitable Company That Is Running Out of Cash”**
+**“The Profitable Company That Is Running Out of Cash”**
 
-### MVP Flow
+Một SME có doanh thu và lợi nhuận tăng nhưng liên tục thiếu tiền mặt. Chủ doanh nghiệp cho rằng cần vay thêm, trong khi nguyên nhân thực sự có thể nằm ở quản trị vốn lưu động.
 
-#### 1. Client Introduction
+### MVP Gameplay
 
-Một SME đến gặp Financial Counselor:
+**1. Client Introduction**  
+Người chơi tiếp nhận triệu chứng và nhận định ban đầu của khách hàng.
 
-> “Doanh thu và lợi nhuận của công ty đều tăng nhưng chúng tôi liên tục thiếu tiền. Tôi nghĩ công ty cần vay thêm.”
+**2. Investigation**  
+Lựa chọn câu hỏi và tài liệu cần kiểm tra như Financial Statements, AR Aging, Inventory, Debt và Supplier Terms.
 
-↓
+**3. Evidence Analysis**  
+Phân tích các dấu hiệu như Revenue ↑, Profit ↑, AR ↑, DSO ↑, Inventory ↑ và Operating Cash Flow ↓.
 
-#### 2. Investigation
+**4. Diagnosis**  
+Xác định nguyên nhân cốt lõi, phân biệt giữa triệu chứng và “căn bệnh” tài chính thực sự.
 
-Player lựa chọn:
+**5. Treatment**  
+Lựa chọn giải pháp phù hợp và cân nhắc trade-off giữa các phương án như vay thêm, thu hồi công nợ, giảm tồn kho hoặc kết hợp nhiều biện pháp.
 
-- Cash Flow Statement.
-- AR Aging.
-- Inventory.
-- Debt.
-- Supplier Payment Terms.
-- Các câu hỏi dành cho khách hàng.
+**6. Client Communication**  
+Xử lý phản ứng và các ràng buộc thực tế của khách hàng đối với phương án tư vấn.
 
-↓
+**7. Consequence – Six Months Later**  
+Game mô phỏng sự thay đổi của các financial metrics dựa trên decision path của người chơi.
 
-#### 3. Evidence
+**8. Counselor Case Report**  
+Cuối case mới hiển thị kết quả gồm:
+- Investigation Quality
+- Diagnosis Accuracy
+- Treatment Quality
+- Client Communication
+- Financial Consequences
+- What You Did Well / What You Missed
 
-Player có thể phát hiện:
+### Core MVP Loop
 
-- Revenue ↑
-- Profit ↑
-- AR ↑↑
-- DSO ↑
-- Inventory ↑
-- Operating Cash Flow ↓
+> **Observe → Investigate → Analyze → Diagnose → Treat → Communicate → Consequence → Learn**
 
-↓
-
-#### 4. Diagnosis
-
-Player lựa chọn nguyên nhân:
-
-- Low Profitability.
-- Insufficient Sales.
-- Excessive Debt.
-- **Working-Capital Mismanagement.**
-- Insufficient Financing.
-
-↓
-
-#### 5. Treatment
-
-Player lựa chọn giải pháp:
-
-- Borrow More.
-- Stop All Credit Sales.
-- Improve AR Collection.
-- Improve Inventory.
-- **Combined Working-Capital Treatment.**
-
-↓
-
-#### 6. Consequence
-
-> **Six Months Later...**
-
-Game mô phỏng các financial metrics mới dựa trên quyết định của người chơi.
-
-↓
-
-#### 7. Feedback
-
-Player nhận **Counselor Case Report** gồm:
-
-- Investigation Quality.
-- Diagnosis Accuracy.
-- Treatment Quality.
-- Communication.
-- Financial Consequences.
-- What You Did Well.
-- What You Missed.
-
----
+MVP không nhằm mô phỏng toàn bộ Financial Counseling mà chứng minh rằng core diagnosis–treatment–consequence loop của MEDIFIN có thể hoạt động hoàn chỉnh trước khi mở rộng sang các scenario khác.
 
 ## 5. Target / Fallback / Out of Scope
 
