@@ -1,4 +1,52 @@
 # INPUT_DICTIONARY.md
+# Mô tả chung về Financial Diagnostic Simulation
+## Game Chẩn đoán & Tái cấu trúc Tài chính
+
+### Tổng quan
+
+Game đưa người chơi (Player) nhập vai một **Chuyên gia tư vấn tài chính / Tái cấu trúc doanh nghiệp** qua các giai đoạn tương tác logic trong từng Case Study (ví dụ: Case #01 — Toys "R" Us).
+
+---
+
+## Cấu trúc Phase
+
+| Phase | Tên | Mô tả |
+|---|---|---|
+| **Phase 1** | Examination & Vitals (Sinh hiệu & Khám tổng quát) | Người chơi tiếp nhận thông tin ban đầu về công ty: ngành, quy mô, lời khai của CEO, và các chỉ số "sinh hiệu" bề mặt (net loss, CapEx gap, free cash flow). |
+| **Phase 2** | Deep Diagnostics (Xét nghiệm chuyên sâu & Chẩn đoán Bệnh) | Người chơi yêu cầu và phân tích các dữ liệu tài chính chuyên sâu: Income Statement, Same-Store Sales, Capital Structure, Pre-LBO Cash Flow. Từ đó đưa ra chẩn đoán phân biệt (Differential Diagnosis). |
+| **Phase 3** | Treatment & Execution (Phác đồ điều trị & Hệ quả) | Người chơi lựa chọn phác đồ điều trị, xem xét các yếu tố thời điểm thực thi (timing), xác suất thành công, và hậu quả đối với các bên liên quan (stakeholders). |
+
+---
+
+## Quá trình tiến hóa tư duy tài chính
+
+Các Phase không phải là các màn chơi độc lập, mà thể hiện quá trình tiến hóa tư duy tài chính từ:
+Triệu chứng bề ngoài (Symptoms)
+↓
+Bản chất Dòng tiền (Cash Flow Reality)
+↓
+Đánh đổi Chiến lược (Strategic Trade-offs)
+
+| Giai đoạn tư duy | Câu hỏi trung tâm | Biểu hiện trong game |
+|---|---|---|
+| **Triệu chứng bề ngoài** | "Bệnh nhân có vấn đề gì?" | Net loss kéo dài, CapEx bị cắt, nợ giao dịch dưới mệnh giá |
+| **Bản chất Dòng tiền** | "Tại sao lại thiếu tiền mặt?" | EBIT tăng nhưng lãi vay ăn hết lợi nhuận; DSO cao nhưng vận hành vẫn ổn |
+| **Đánh đổi Chiến lược** | "Chữa thế nào và cái giá phải trả là gì?" | Chapter 11 đúng lý thuyết nhưng sai thời điểm → mất niềm tin nhà cung cấp |
+
+---
+
+## Độ phức tạp tăng dần
+
+Khi đi sâu vào case, các cạm bẫy tâm lý và yếu tố nhiễu (confounders) ngày càng phức tạp:
+
+| Cấp độ | Thách thức | Ví dụ trong Case #01 |
+|---|---|---|
+| **Level 1 — Quan sát** | Phân biệt triệu chứng thật và nhiễu | Net loss kéo dài có thể do vận hành kém HOẶC do nợ đè |
+| **Level 2 — Chẩn đoán** | Phân biệt bệnh có cùng triệu chứng | Bệnh vận hành (Operational) vs Bệnh cấu trúc vốn (Capital Structure) — triệu chứng bề ngoài giống hệt nhau |
+| **Level 3 — Điều trị** | Đánh đổi giữa lý thuyết và thực thi | Chapter 11 là công cụ đúng để xóa nợ, nhưng nếu nộp trước mùa lễ hội sẽ kích hoạt phản ứng dây chuyền từ nhà cung cấp |
+
+---
+
 ### Case #01 — Toys "R" Us (Capital Structure Disease)
 
 Mục đích: liệt kê **mọi trường dữ liệu** được nạp vào game cho case này, để bất kỳ ai trong team cũng hiểu field đó nghĩa là gì, đơn vị gì, định dạng gì, lấy từ đâu, và nó ảnh hưởng tới output/quyết định nào trong game.
