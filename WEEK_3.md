@@ -184,12 +184,66 @@ Problem evidence không dùng để tính toán trong game. Nó dùng để ch�
 
 ## 5. Data Structure
 
-```text
-data/
-  client-profiles.json
-  financial-statements.json
-  financial-metrics.json
-  diagnosis-options.json
-  treatment-options.json
-  consequences.json
-  dialogs.json
+
+---
+
+## 7. Input Validation
+
+| Validation Rule | Expected Result |
+|---|---|
+| total_current_assets = cash + AR + inventory + other | 142 = 1.2 + 116 + 24 + 0.8 |
+| total_assets = total_liabilities + total_equity | 170 = 100 + 90 |
+| net_income = revenue - COGS - expenses - tax | 6.0 = 185 - 148 - 27 - 1.5 |
+| gross_margin = (revenue - COGS) / revenue | 20% = (185 - 148) / 185 |
+| dso = (AR / revenue) × 365 | 229 = (116/185) × 365 |
+| quick_ratio = cash / current_liabilities | 0.015 = 1.2 / 80 |
+| debt_to_equity = total_debt / equity | 0.89 = 80 / 90 |
+| interest_coverage = EBIT / interest_expense | 16 = 8 / 0.5 |
+| black_debt_interest_annual = black_debt × 5% × 12 | 4.8 = 8 × 0.05 × 12 |
+| profit_eaten_ratio = black_debt_interest / net_income | 73.8% = 4.8 / 6.5 |
+
+---
+
+## 8. Assumptions and Limitations
+
+| Assumption / Limitation | Rationale |
+|---|---|
+| Jungkook, V và toàn bộ nhân vật là fictional | Sản phẩm là educational prototype |
+| Báo cáo tài chính là simulated data | Cho phép kiểm soát diagnosis chain |
+| Đơn vị tiền tệ thống nhất là Tỷ VND | Tránh unit mismatch |
+| Mỗi case chỉ có 1 root cause chính | Đơn giản hóa MVP |
+| Ngưỡng an toàn dựa trên tài liệu học thuật | Có thể khác với ngành cụ thể |
+| Phác đồ điều trị có tác động ngay lập tức | MVP đơn giản hóa |
+| Client tuân thủ 100% phác đồ được tư vấn | Tập trung vào quyết định |
+| Báo cáo tài chính client là trung thực | Game tập trung vào phân tích |
+
+---
+
+## 9. Early Logic Test
+
+| Input | Expected Process | Expected Output | Status |
+|---|---|---|---|
+| DSO 229 | So sánh với ngưỡng 60 | 🔴 Cảnh báo: KH chiếm dụng vốn 7.5 tháng | Ready |
+| CFO -14.5 | So sánh với 0 | 🔴 Dòng tiền HĐKD âm | Ready |
+| Quick Ratio 0.015 | So sánh với 0.5 | 🔴 Cạn kiệt tiền mặt | Ready |
+| AR/DT 63% | So sánh với 30% | 🔴 Hơn 1/2 doanh thu bị nhốt | Ready |
+| Nợ đen 8 tỷ × 5% | Tính lãi hàng năm | 4.8 tỷ/năm = 73.8% LN bị bào mòn | Ready |
+| Tất cả red flags | Tổng hợp diagnosis | → D-01: Khủng hoảng dòng tiền do công nợ | Ready |
+| Chọn T-02 (thu hồi nợ) | Tính tác động | Thu 60 tỷ, DSO giảm còn 110 ngày | Target-ready |
+
+---
+
+## 10. Ownership của Data và Evidence
+
+| Output / Evidence | Owner | Consumer / Dependency |
+|---|---|---|
+| Client Profile Input Dictionary | Writer | Gameplay Logic, UI/UX |
+| Financial Statements Input Dictionary | Finance | Gameplay Logic, Diagnosis |
+| Financial Metrics Input Dictionary | Finance | Gameplay Logic, UI/UX |
+| Diagnosis & Treatment Options | Finance + Game | Gameplay Logic, Storyline |
+| Consequence & Learning Evidence | Writer + Finance | Feedback, Learning |
+| Validation Rules và Early Logic Test | Finance | Development, Testing |
+| Data display requirements | UI/UX | UI implementation |
+| Data Flow, integration và repository consistency | Leader | Whole team, checkpoint |
+
+---
