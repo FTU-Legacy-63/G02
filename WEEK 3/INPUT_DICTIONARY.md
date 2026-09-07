@@ -3,7 +3,7 @@
 
 Mục đích: liệt kê **mọi trường dữ liệu** được nạp vào game cho case này, để bất kỳ ai trong team cũng hiểu field đó nghĩa là gì, đơn vị gì, định dạng gì, lấy từ đâu, và nó ảnh hưởng tới output/quyết định nào trong game.
 
-| Field (key trong JSON) | Ý nghĩa (meaning) | Đơn vị (unit) | Định dạng (format) | Nguồn (source) | Output bị ảnh hưởng |
+| Field | Ý nghĩa (meaning) | Đơn vị (unit) | Định dạng (format) | Nguồn (source) | Output bị ảnh hưởng |
 |---|---|---|---|---|---|
 | `net_sales` | Doanh thu thuần hợp nhất theo năm tài chính | triệu USD | number (int) | Báo cáo kết quả kinh doanh FY2016 (8-K, PRNewswire 12/04/2017) | Vitals hiển thị cho player ở bước "khám tổng quát"; dùng để tính % thay đổi YoY |
 | `operating_earnings` (EBIT) | Lợi nhuận từ hoạt động kinh doanh, trước lãi vay và thuế | triệu USD | number (int) | 8-K FY2016 full year results | **Manh mối chẩn đoán #1** — nếu EBIT tăng YoY mà net loss vẫn âm → gợi ý bệnh cấu trúc vốn, không phải bệnh vận hành |
