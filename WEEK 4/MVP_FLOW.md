@@ -221,27 +221,57 @@ Người chơi vẫn chẩn đoán và điều trị bình thường, nhưng s�
 
 Không giới hạn lượt xem từ đây. CFO đưa toàn bộ báo cáo.
 
-### Income Statement (triệu USD)
+# Consolidated Income Statement (triệu USD)
 
-| **Chỉ tiêu** | **FY2024** | **FY2025** | **FY2026** |
-|--------------|------------|------------|------------|
+| Chỉ tiêu | FY2024 | FY2025 | FY2026 |
+|----------|--------|--------|--------|
 | Net Sales | 12,361 | 11,802 | 11,540 |
-| Gross Margin | 4,430 | 4,226 | 4,108 |
+| Cost of Sales | (7,931) | (7,576) | (7,432) |
+| **Gross Margin** | **4,430** | **4,226** | **4,108** |
 | SG&A | (3,915) | (3,593) | (3,480) |
-| D&A | (377) | (343) | (317) |
+| Depreciation & Amortization | (377) | (343) | (317) |
 | Other Income, net | 53 | 88 | 149 |
-| Operating Earnings | 191 | 378 | 460 |
+| **Operating Earnings** | **191** | **378** | **460** |
 | Interest Expense | (451) | (429) | (457) |
-| Net Loss attributable | (292) | (130) | (36) |
+| Interest Income | 4 | 3 | 2 |
+| **Earnings / (Loss) Before Tax** | **(256)** | **(48)** | **5** |
+| Income Tax Expense | (32) | (76) | (34) |
+| **Net Loss** | **(288)** | **(124)** | **(29)** |
+| Noncontrolling Interest | (4) | (6) | (7) |
+| **Net Loss attributable to Toys "R" Us** | **(292)** | **(130)** | **(36)** |
 
-### Balance Sheet — snapshot FY2026
+---
 
-| **Chỉ tiêu** | **Giá trị** |
-|--------------|-------------|
-| Cash & Cash Equivalents | \$566 triệu |
-| Merchandise Inventory | \$2.476 tỷ |
-| Total Indebtedness | ~\$4.8 tỷ (trong đó Secured ~\$3.4 tỷ) |
-| Stockholders' Deficit | ~\$1.3 tỷ (âm) |
+# Operating Metrics
+
+| Chỉ tiêu | FY2024 | FY2025 | FY2026 |
+|----------|--------|--------|--------|
+| Gross Margin % | 35.8% | 35.8% | 35.6% |
+| SG&A / Sales | 31.7% | 30.4% | 30.2% |
+| Adjusted EBITDA | $642m | $800m | $792m |
+| Consolidated SSS | 0.0% | +0.9% | -1.4% |
+
+---
+
+# Balance Sheet Snapshot — FY2026
+
+## Assets
+
+| Chỉ tiêu | Giá trị |
+|----------|---------|
+| Cash & Cash Equivalents | $566m |
+| Receivables | $255m |
+| Inventory | $2.476bn |
+| Total Current Assets | $3.389bn |
+| Property & Equipment | $3.067bn |
+
+## Capital & Funding
+
+| Chỉ tiêu | Giá trị |
+|----------|---------|
+| Total Indebtedness | ~$4.8bn |
+| Secured Indebtedness | ~$3.4bn |
+| Stockholders' Deficit | ~$1.3bn deficit |
 
 ### Chú thích quản trị (chỉ hiện nếu đã mở HS-G ở Màn 2)
 
