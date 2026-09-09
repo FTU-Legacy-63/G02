@@ -79,7 +79,124 @@ Hé lộ một đoạn thư cho thấy Michael đang chuẩn bị sẵn kịch b
 Người chơi vẫn chẩn đoán và điều trị bình thường, nhưng sẽ thiếu căn cứ để chọn CD-F ở Màn 6 (xem điều kiện tại đó), và thiếu công cụ quản lý rủi ro quản trị ở Màn 9–10.
 
 ---
+# HỒ SƠ HS-A — SALES & CUSTOMER
 
+## Same-Store Sales
+
+| | FY2024 | FY2025 | FY2026 |
+|---|--------|--------|--------|
+| Domestic | -1.0% | -0.6% | -1.3% |
+| International | +1.8% | +3.2% | -1.6% |
+| Consolidated | 0.0% | +0.9% | -1.4% |
+
+## Revenue FY2026
+
+| | FY2025 | FY2026 | Change |
+|---|--------|--------|--------|
+| Domestic | $7.356bn | $7.131bn | -3.1% |
+| International | $4.446bn | $4.409bn | -0.8% |
+| Consolidated | $11.802bn | $11.540bn | -2.2% |
+
+**E-commerce sales:** +11%
+
+> **Market Analyst:** *"Traffic yếu đi, nhưng không phải mọi channel đều giảm — e-commerce vẫn tăng hai chữ số."*
+
+---
+
+# HỒ SƠ HS-B — STORES & INVESTMENT
+
+## Các chương trình đang cần vốn:
+
+- Store renovation
+- Mobile & web
+- Omnichannel fulfillment
+- Supply chain
+- Customer experience
+- Holiday inventory
+
+> **Head of Operations:** *"Chúng tôi biết khá rõ những gì muốn nâng cấp."*
+>
+> *"Khó nhất là năm nào cũng có quá nhiều thứ cùng tranh một lượng capital hữu hạn."*
+
+---
+
+# HỒ SƠ HS-C — LIQUIDITY
+
+## FY2026
+
+| Chỉ tiêu | Giá trị |
+|----------|---------|
+| Cash & Cash Equivalents | $566m |
+| Accounts & Other Receivables | $255m |
+| Merchandise Inventory | $2.476bn |
+| Total Current Assets | $3.389bn |
+| Property & Equipment | $3.067bn |
+
+> **Treasurer:** *"Cash cuối kỳ không phản ánh toàn bộ liquidity của một retailer."*
+>
+> *"Holiday inventory, vendor terms và debt maturities đều ảnh hưởng."*
+
+---
+
+# HỒ SƠ HS-D — CAPITAL STRUCTURE & LEVERAGE HISTORY
+
+## Cấu trúc funding hiện tại — FY2026
+
+| Chỉ tiêu | Giá trị |
+|----------|---------|
+| Cash | $566m |
+| Total Indebtedness | ~$4.8bn |
+| Secured Indebtedness | ~$3.4bn |
+| Adjusted EBITDA | $792m |
+| Operating Earnings | $460m |
+
+*Cấu trúc funding bao gồm: secured notes, senior notes, term facilities, revolving facilities, international debt, other financing arrangements.*
+
+> **CFO:** *"Leverage cao, nhưng nó đã tồn tại nhiều năm."*
+
+## Gốc rễ: giao dịch 2015
+
+Toys "R" Us được mua lại trong một leveraged transaction trị giá $6.6bn. Trong các năm sau đó công ty trải qua nhiều vòng: refinancing; maturity extensions; secured borrowing; quyết định đầu tư cửa hàng; sáng kiến tái cấu trúc.
+
+### Operating Cash Flow trước giao dịch 2015
+
+| Năm | Operating Cash Flow |
+|-----|---------------------|
+| 2012 | $575m |
+| 2013 | $801m |
+| 2014 | $746m |
+
+---
+
+# HỒ SƠ HS-E — PRODUCT & CATEGORY TRENDS
+
+## Cơ cấu danh mục — FY2026
+
+- **Domestic toy categories excluding entertainment:** +2.5% SSS
+- **Consolidated toy categories excluding entertainment:** +1.1% SSS
+
+Các category gắn với entertainment/licensing (phim, tie-in) tiếp tục yếu, phụ thuộc nhiều vào lịch phát hành sản phẩm giải trí của đối tác — năm không có blockbuster lớn, category này tụt mạnh hơn phần còn lại của danh mục.
+
+> **Merchandising Director:** *"Đồ chơi truyền thống vẫn có nhu cầu thật."*
+>
+> *"Nhưng phần lớn tăng trưởng danh mục ngày càng phụ thuộc vào chu kỳ ra mắt sản phẩm giải trí bên ngoài — thứ chúng tôi không kiểm soát được."*
+
+---
+
+# HỒ SƠ HS-F — MANAGEMENT TRACK RECORD
+
+## Các sáng kiến đã triển khai trong 3 năm gần nhất:
+
+| Thời gian | Sáng kiến | Kết quả |
+|-----------|-----------|---------|
+| FY2024 | Store renovation pilot | Tăng traffic cục bộ, chưa bù được chi phí đầu tư |
+| FY2024 | Cắt giảm SG&A vòng 1 | Giảm chi phí, nhưng đi kèm giảm marketing → traffic giảm thêm |
+| FY2025 | Đầu tư digital & mobile app mới | E-commerce tăng hai chữ số, chưa bù được store decline |
+| FY2025–26 | Tái cấu trúc một phần nợ quốc tế | Giảm áp lực ngắn hạn, không đổi cấu trúc leverage tổng thể |
+
+> **Board Member:** *"Chúng tôi đã thử nhiều thứ."*
+>
+> *"Vấn đề là chưa có sáng kiến nào đủ lớn để đảo chiều toàn bộ xu hướng — mỗi thứ chỉ xử lý được một phần."*
 ## Màn hình 3 — Câu hỏi bổ sung
 
 **Lựa chọn:** chọn đúng 2 trong 7 câu hỏi. Mỗi câu hé lộ thêm một góc hẹp của đúng khu vực Hồ sơ tương ứng — kể cả khu vực chưa mở ở Màn 2, nhưng luôn ở mức bề mặt, không thay thế Hồ sơ đầy đủ.
