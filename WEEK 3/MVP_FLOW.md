@@ -72,11 +72,6 @@ Bảng thông tin công ty (xem Mục Tổng quan) được hiển thị đầy 
 | HS-F | Management Track Record | Các sáng kiến 3 năm qua — thành/bại |
 | HS-G | Governance & Family | Cơ cấu cổ phần Anderson, thỏa thuận Michael–Houndstooth, động thái Richard, thư luật sư |
 
-### Nếu chọn HS-G
-Hé lộ một đoạn thư cho thấy Michael đang chuẩn bị sẵn kịch bản gây áp lực lên chủ nợ nếu ông ta lên nắm quyền — một dữ kiện quản trị đã xác nhận, không còn là lời đồn.
-
-### Nếu không chọn HS-G
-Người chơi vẫn chẩn đoán và điều trị bình thường, nhưng sẽ thiếu căn cứ để chọn CD-F ở Màn 6 (xem điều kiện tại đó), và thiếu công cụ quản lý rủi ro quản trị ở Màn 9–10.
 
 ---
 # HỒ SƠ HS-A — SALES & CUSTOMER
@@ -197,6 +192,13 @@ Các category gắn với entertainment/licensing (phim, tie-in) tiếp tục y�
 > **Board Member:** *"Chúng tôi đã thử nhiều thứ."*
 >
 > *"Vấn đề là chưa có sáng kiến nào đủ lớn để đảo chiều toàn bộ xu hướng — mỗi thứ chỉ xử lý được một phần."*
+
+### Nếu chọn HS-G
+Hé lộ một đoạn thư cho thấy Michael đang chuẩn bị sẵn kịch bản gây áp lực lên chủ nợ nếu ông ta lên nắm quyền — một dữ kiện quản trị đã xác nhận, không còn là lời đồn.
+
+### Nếu không chọn HS-G
+Người chơi vẫn chẩn đoán và điều trị bình thường, nhưng sẽ thiếu căn cứ để chọn CD-F ở Màn 6 (xem điều kiện tại đó), và thiếu công cụ quản lý rủi ro quản trị ở Màn 9–10.
+
 ## Màn hình 3 — Câu hỏi bổ sung
 
 **Lựa chọn:** chọn đúng 2 trong 7 câu hỏi. Mỗi câu hé lộ thêm một góc hẹp của đúng khu vực Hồ sơ tương ứng — kể cả khu vực chưa mở ở Màn 2, nhưng luôn ở mức bề mặt, không thay thế Hồ sơ đầy đủ.
