@@ -1,6 +1,3 @@
-# CASE 01: ĐÒN BẨY GIẾT NGƯỜI KHỎE MẠNH
-
-**Toy Kingdom Inc. — mô phỏng từ Toys "R" Us, Inc.**
 
 ## MVP FLOW — GAME BÁC SĨ TÀI CHÍNH
 
