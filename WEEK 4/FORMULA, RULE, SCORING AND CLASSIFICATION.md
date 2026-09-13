@@ -19,7 +19,7 @@
 | Diagnosis | Classification | Rule |
 |---|---|---|
 | Capital Structure / Financing Disease | Primary root cause | Supported when player discovers EBIT improvement, mild SSS decline, leverage jump, pre-LBO cash-flow strength and annual interest burden. |
-| Operational / Amazon Disease | Comorbidity / incomplete diagnosis | Supported by sales pressure and e-commerce disruption, but contradicted as sole cause by improved EBIT and mild SSS decline. |
+| Operational / Amazon Disease | Comorbidity / incomplete diagnosis | Supported by sales pressure and e-commerce disruption, but contradicted as sole cause by improved EBIT and mild SSS (Same-Store Sales) decline. |
 | Pure Liquidity Disease | Symptom-level diagnosis | Liquidity stress exists, but cash shortage is downstream of debt burden and constrained reinvestment. |
 | Product / Category Disease | Secondary pressure | Some categories are weak, but this does not explain why interest absorbs operating gains. |
 | Governance / Sponsor Incentive Conflict | Narrative / stakeholder risk | Useful for persuasion and treatment framing, but not the core financial calculation. |
