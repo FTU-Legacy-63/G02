@@ -1,4 +1,4 @@
-## 6. Consistency Check / Questions To Confirm
+## 6. CONSISTENCY_CHECK / Questions To Confirm
 
 | Issue | Current Status | Recommended Decision |
 |---|---|---|
