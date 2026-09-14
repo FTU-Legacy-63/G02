@@ -328,7 +328,7 @@ CD-F không được mô tả là chẩn đoán "đúng nhất". Đây là chẩ
 | PD-B | Deep Cost Cutting | Không cần điều kiện. Cải thiện cash ngắn hạn rõ rệt, nhưng thu nhỏ sales base dài hạn. |
 | PD-C | Debt Restructuring | Phụ thuộc phản ứng chủ nợ. Nếu ưu tiên Creditors ở Màn 9, tỉ lệ thành công cao hơn rõ rệt. |
 | PD-D | Asset Sale | Cải thiện thanh khoản ngay, nhưng thường phải bán đúng phần tài sản khỏe nhất (đồ chơi truyền thống) để bán được giá tốt. |
-| PD-E | Chapter 11 | Xử lý nợ triệt để nhất và vô hiệu hóa thỏa thuận cổ phần chưa kích hoạt của Michael, nhưng rủi ro mất niềm tin vendor/khách hàng cao nhất. |
+| PD-E | Bankrupt with reorganization | Xử lý nợ triệt để nhất và vô hiệu hóa thỏa thuận cổ phần chưa kích hoạt của Michael, nhưng rủi ro mất niềm tin vendor/khách hàng cao nhất. |
 | PD-F | Combined Restructuring | Cần Uy tín Cao. Nhiều mảng phải chạy song song — rủi ro thực thi cao nhất trong 6 phương án. |
 
 ---
