@@ -1,5 +1,5 @@
 
-## MVP FLOW — GAME BÁC SĨ TÀI CHÍNH
+## USER FLOW — GAME BÁC SĨ TÀI CHÍNH
 
 *13 màn hình · Lựa chọn tài chính có điều kiện · Kết cục theo ma trận 3 trục*
 
