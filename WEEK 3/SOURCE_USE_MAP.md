@@ -296,15 +296,10 @@ A player decision is not automatically financially appropriate merely because th
 
 ---
 
-# 5. Open Evidence Items
+# 5. Evidence Readiness
 
-Before Case #01 is considered fully evidence-ready, the team should verify any remaining historical figures that are not directly supported by the approved historical sources above, particularly:
+Historical information is considered **Ready** only when it can be traced to an approved source above.
 
-- historical operating cash flow before the leveraged acquisition;
-- any exact debt figures not directly mapped to the FY2016 Form 10-K;
-- any additional historical claims introduced into `HS-B`, `HS-F`, or later scenario developments.
-
-If a historical claim cannot be verified, it must either:
-
-- be removed; or
-- be clearly reclassified as a simulation assumption in `ASSUMPTIONS.md`.
+Any historical information that cannot yet be verified must be either:
+- verified using an appropriate source before final implementation; or
+- clearly reclassified as **Simulated / Adapted** and documented in `ASSUMPTIONS.md`.
