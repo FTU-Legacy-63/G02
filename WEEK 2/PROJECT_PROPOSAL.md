@@ -1,162 +1,105 @@
-# MEDIFIN - PROJECT PROPOSAL
+# MEDIFIN — PROJECT PROPOSAL
 
 ## 1. Problem Direction
 
-Sinh viên Tài chính – Ngân hàng được học các lý thuyết tài chính, chỉ số tài chính, phương pháp định giá, phân tích tín dụng, đầu tư và lập kế hoạch tài chính trên lớp. Tuy nhiên, các bài tập trên lớp thường đưa ra vấn đề đã được xác định rõ ràng và có tương đối đầy đủ thông tin.
+Finance and Banking students learn financial concepts, ratios, and analytical methods in class, but have limited opportunities to practice **decision-making when the problem is not clearly identified and information is incomplete**.
 
-Trong hoạt động tư vấn tài chính thực tế, khách hàng thường không trực tiếp nói ra vấn đề thực sự của mình. Họ có thể:
+In real financial situations, several problems may exist at the same time. A financial counselor must be able to:
 
-- Hiểu sai về chính tình hình tài chính của mình.
-- Cung cấp thông tin không đầy đủ.
-- Chỉ tập trung vào **triệu chứng** thay vì **nguyên nhân gốc rễ**.
-- Có nhiều mục tiêu tài chính mâu thuẫn với nhau.
-- Đưa ra quyết định dựa trên cảm xúc, nỗi sợ, lòng tự trọng hoặc sự quá tự tin.
-- Từ chối những lời khuyên hợp lý về mặt tài chính vì các ràng buộc cá nhân hoặc kinh doanh.
-
-Vì vậy, sinh viên có rất ít cơ hội thực hành khả năng **phán đoán, điều tra và giao tiếp** cần thiết trong công việc tư vấn tài chính trước khi thực sự bước vào môi trường làm việc.
+- select relevant information;
+- distinguish between **symptoms, contributing problems, and primary causes**;
+- make evidence-based recommendations;
+- understand the trade-offs and consequences of each decision.
 
 ### Core Problem
 
-> Sinh viên tài chính hiểu các kiến thức và khái niệm tài chính nhưng thiếu một môi trường an toàn và thực tế để thực hành chẩn đoán những vấn đề khách hàng chưa thể hiện rõ ràng và đề xuất giải pháp tài chính phù hợp.
+> **Finance students lack a practical environment to apply financial knowledge to investigating, diagnosing, and responding to real-world financial problems.**
 
 ---
 
 ## 2. Target User and User Task
 
-### Primary Target User
+### Target User
 
-Sinh viên Tài chính – Ngân hàng có định hướng trở thành:
-
-- Chuyên viên tư vấn tài chính (**Financial Counselor**)
-- Cố vấn tài chính (**Financial Advisor**)
-
-### User Characteristics
-
-Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản, nhưng chưa có nhiều kinh nghiệm tư vấn và xử lý tình huống thực tế.
-
-Vì vậy, mục tiêu chính của game không phải dạy:
-
-> “Current Ratio là gì?”
-
-Mà game cần rèn luyện cho sinh viên khả năng suy nghĩ:
-
-> “Khi nào tôi cần xem Current Ratio? Chỉ số này cho tôi biết điều gì về tình hình của khách hàng? Và thông tin đó sẽ ảnh hưởng như thế nào đến lời khuyên của tôi?”
+**Finance and Banking students with basic financial knowledge.**
 
 ### Core User Task
 
-Nhiệm vụ chính của người chơi là:
+The player acts as a **Junior Financial Counselor** and follows the decision process:
 
-> **Điều tra tình hình tài chính của khách hàng, xác định vấn đề tài chính cốt lõi và đề xuất phương án xử lý phù hợp.**
+> **Investigate → Diagnose → Treat → Observe Consequences → Reassess**
 
-Người chơi không được cung cấp sẵn chẩn đoán.
-
-Thay vào đó:
-
-> **Khách hàng đưa ra triệu chứng → Người chơi điều tra → Người chơi phân tích bằng chứng → Người chơi chẩn đoán → Người chơi đề xuất phương án xử lý.**
+The player is not given the root cause in advance. Instead, they must select and analyze financial evidence before making a decision.
 
 ---
 
 ## 3. Desired User Outcome
 
-Sau khi chơi game, sinh viên có thể cải thiện khả năng:
+After completing the case, the player should be better able to:
 
-- Xác định những thông tin nào thực sự liên quan đến vấn đề tài chính.
-- Phân biệt giữa **triệu chứng** và **nguyên nhân gốc rễ**.
-- Áp dụng các khái niệm và chỉ số tài chính vào tình huống thực tế.
-- So sánh các giải pháp tài chính khác nhau.
-- Hiểu hậu quả và sự đánh đổi (**trade-off**) giữa các phương án tư vấn.
-- Giao tiếp và đưa ra lời khuyên phù hợp với từng loại khách hàng.
-- Nhận ra rằng trong tư vấn tài chính không phải lúc nào cũng chỉ tồn tại một đáp án đúng duy nhất.
+- select and analyze relevant financial evidence;
+- identify the **primary financial constraint**;
+- make evidence-based recommendations;
+- understand the trade-offs of different treatments;
+- reassess a decision when new information becomes available.
 
-### Proposed Desired User Outcome
-
-> **Sinh viên phát triển khả năng suy nghĩ và đưa ra quyết định như một Financial Counselor, thay vì chỉ biết tính toán các chỉ số tài chính.**
+> **The goal is to develop financial reasoning and decision-making skills, rather than simply test financial calculations.**
 
 ---
 
 ## 4. Product Statement
 
-### Proposed Version
+**MEDIFIN — Financial Clinic** is a **scenario-based financial counseling simulation**.
 
-**MEDIFIN – Financial Clinic** là một game mô phỏng tư vấn tài chính dựa trên các tình huống thực tế. Người chơi đóng vai **Financial Counselor**, tiếp nhận nhiều loại khách hàng với những vấn đề tài chính khác nhau, điều tra tình hình của họ, chẩn đoán vấn đề tài chính cốt lõi, đề xuất phương án xử lý phù hợp và quan sát hậu quả từ những quyết định của mình.
+The player acts as a “financial doctor” who investigates a company's financial condition, identifies its primary financial problem, recommends an appropriate treatment, and observes the consequences of that decision.
 
-### Short Version
+### Current MVP
 
-> **Một game mô phỏng giúp sinh viên thực hành chẩn đoán và xử lý các vấn đề tài chính thực tế.**
+> **Case #01 — Toy Kingdom Inc.**
 
+Toy Kingdom is a retail company facing multiple pressures, including competition, liquidity constraints, reinvestment needs, and a heavy financial burden.
 
-### Game Theme – Financial Clinic
+The player must answer the central question:
 
-Câu chuyện tổng thể của game sử dụng hình ảnh **khám và chữa bệnh** làm phép ẩn dụ.
-
-Người chơi đóng vai một **Financial Counselor**, tương tự như một **bác sĩ tài chính**.
-
-| Medical Clinic | Financial Clinic |
-|---|---|
-| Bệnh nhân | Khách hàng |
-| Triệu chứng | Triệu chứng tài chính |
-| Tiền sử bệnh | Thông tin và hoàn cảnh của khách hàng |
-| Xét nghiệm | Thông tin / tài liệu tài chính |
-| Chẩn đoán | Chẩn đoán tài chính |
-| Căn bệnh | Vấn đề tài chính cốt lõi |
-| Điều trị | Giải pháp / khuyến nghị tài chính |
-| Tái khám | Kết quả tài chính trong tương lai |
-
-
+> **What is the company's primary financial problem, and what should be done about it?**
 
 ---
 
 ## 5. Main Output
 
+At the end of the case, the player receives a **Counselor Case Report**, including:
 
-### Proposed Main Output
+- Counselor Performance;
+- Financial Resilience;
+- Governance Stability;
+- Final Case Outcome;
+- Decision Feedback.
 
-> **Một bản đánh giá về chẩn đoán và phương án xử lý, cho người chơi biết họ đã xác định vấn đề tài chính như thế nào, giải pháp được đề xuất phù hợp đến đâu, quyết định đó tạo ra hậu quả gì và người chơi cần rút ra bài học gì từ tình huống.**
-
-### Example – Counselor Case Report
-
-**Diagnosis:** Quản trị vốn lưu động kém  
-**Diagnosis Accuracy:** 90/100  
-**Treatment Quality:** 82/100  
-**Client Trust:** 74/100  
-**Professional Suitability:** 88/100  
-
-### Six Months Later
-
-- DSO: 162 → 105 ngày
-- Inventory Days: 96 → 73 ngày
-- Tình hình tiền mặt được cải thiện
-- Nợ ngắn hạn giảm
-
-### What You Did Well
-
-Bạn đã xác định đúng rằng tình trạng thiếu thanh khoản chủ yếu xuất phát từ việc quản trị vốn lưu động chưa hiệu quả, thay vì do doanh nghiệp không đủ khả năng sinh lời.
-
-### What You Missed
-
-Bạn chưa xem xét đầy đủ rủi ro tập trung khách hàng khi đề xuất thắt chặt điều khoản bán chịu.
-
-Đây chính là **learning output** quan trọng của sản phẩm.
+The feedback explains **what the player did, why the result occurred, and how their financial reasoning could be improved**.
 
 ---
 
 ## 6. Product Pattern
 
-### Proposed Product Pattern
-
 > **Scenario-Based Decision Simulation**
 
-Thay vì:
+```text
+Situation
+↓
+Investigation
+↓
+Diagnosis
+↓
+Treatment & Execution
+↓
+Consequence
+↓
+Reassessment
+↓
+Learning Feedback
+```
 
-> **Question → Answer → Correct / Incorrect**
-
-Sản phẩm sẽ hoạt động theo:
-
-> **Situation → Investigation → Decision → Consequence → Explanation**
-
-Tức là người chơi không chỉ trả lời các câu hỏi độc lập.
-
-Họ liên tục phải **thu thập thông tin, phân tích và đưa ra quyết định trong một tình huống tài chính**, sau đó quan sát hậu quả của quyết định đó và nhận được giải thích để hiểu mình đã làm tốt hoặc chưa tốt ở đâu.
+Rather than answering independent questions, the player moves through a connected financial decision process in which earlier choices affect later consequences and feedback.
 
 ---
 
@@ -164,29 +107,21 @@ Họ liên tục phải **thu thập thông tin, phân tích và đưa ra quyế
 
 ### Feasibility
 
-Dự án có tính khả thi vì game có thể được xây dựng dưới dạng **web-based scenario simulation**, không yêu cầu đồ họa 3D, dữ liệu thị trường thời gian thực hay hệ thống AI phức tạp.
+MEDIFIN is feasible as a **web-based scenario simulation** because the MVP focuses on one complete case using predefined financial data and rule-based decision logic.
 
-Game sử dụng một **core game loop** chung cho tất cả các tình huống:
+The project does not require real-time data, complex AI, or 3D development.
 
-> **Observe → Investigate → Diagnose → Treat → Consequence → Learn**
+The current development route is:
 
-Sau khi core game loop được xây dựng, các case tiếp theo có thể sử dụng lại cùng một cấu trúc và thay đổi chủ yếu ở:
-
-- Câu chuyện.
-- Dữ liệu tài chính.
-- Diagnosis.
-- Treatment.
-- Consequence.
-
+> **Financial Case Data → Decision Logic → Game Engine → Frontend → Browser**
 
 ### Open Questions
 
-Một số vấn đề nhóm cần tiếp tục kiểm chứng và thống nhất:
+The team will continue to refine:
 
-1. Game nên bao gồm cả **khách hàng cá nhân và doanh nghiệp** hay tập trung vào một nhóm khách hàng chính?
-2. Mỗi case nên có bao nhiêu bước quyết định để đủ chiều sâu nhưng không quá dài?
-3. Các lựa chọn **Investigation** có nên bị giới hạn bởi thời gian hoặc điểm điều tra hay không?
-4. Hệ thống **scoring** nên đánh giá những yếu tố nào và trọng số ra sao?
-5. Financial data cần chi tiết đến mức nào để vừa thực tế vừa phù hợp với sinh viên?
-6. Target cuối cùng nên là **5 hay 6 case**?
-7. Công nghệ nào phù hợp nhất để xây dựng phiên bản web game?
+1. How much financial information should be shown without overwhelming the player?
+2. How should consequence rules balance financial realism and simplicity?
+3. How much controlled variation should be added to improve replayability?
+4. Which supporting features should be added after Case #01 is fully playable?
+
+> These questions may be refined during development without changing MEDIFIN's core product direction.
