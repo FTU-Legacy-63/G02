@@ -36,8 +36,8 @@
 **Source:**  
 Toys "R" Us, Inc., Annual Report on Form 10-K for the fiscal year ended January 28, 2017, filed with the U.S. Securities and Exchange Commission (SEC).
 
-**Link:**  
-https://www.sec.gov/Archives/edgar/data/1005414/000100541417000011/tru201610k.htm
+**Primary Source:**  
+[Toys "R" Us FY2016 Form 10-K — SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1005414/000100541417000011/triu201610k.htm)
 
 **Information supplied:**
 - Net Sales
@@ -54,7 +54,7 @@ https://www.sec.gov/Archives/edgar/data/1005414/000100541417000011/tru201610k.ht
 - `HS-C` — Liquidity
 - `HS-D` — Capital Structure & Leverage
 - `Screen 4` — Full Financial Statements
-- financial evidence used in Diagnosis and Treatment
+- Financial evidence used in Diagnosis and Treatment
 
 **Limitation:**
 - The data belongs to the historical Toys "R" Us case, not Toy Kingdom Inc.
@@ -71,8 +71,8 @@ https://www.sec.gov/Archives/edgar/data/1005414/000100541417000011/tru201610k.ht
 **Source:**  
 Toys "R" Us, Inc., *Reports Results for the Full Year and Fourth Quarter of Fiscal 2016*, April 12, 2017, filed with the SEC.
 
-**Link:**  
-https://www.sec.gov/Archives/edgar/data/1005414/000100541417000010/truq4-16earningsreleaseexh.htm
+**Primary Source:**  
+[Toys "R" Us FY2016 Earnings Release — SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1005414/000100541417000010/truq4-16earningsreleaseexh.htm)
 
 **Information supplied:**
 - Consolidated Net Sales decline
@@ -86,8 +86,8 @@ https://www.sec.gov/Archives/edgar/data/1005414/000100541417000010/truq4-16earni
 **Used in MEDIFIN:**
 - `HS-A` — Sales & Customer
 - `HS-E` — Product & Category Trends
-- evidence of declining store performance alongside continued e-commerce growth
-- evidence of differences in performance across product categories
+- Evidence of declining store performance alongside continued e-commerce growth
+- Evidence of differences in performance across product categories
 
 **Limitation:**
 - It is a company-issued disclosure and includes management commentary.
@@ -102,23 +102,20 @@ https://www.sec.gov/Archives/edgar/data/1005414/000100541417000010/truq4-16earni
 **Source:**  
 SEC filings relating to the 2005 acquisition of Toys "R" Us by affiliates of Bain Capital, KKR and Vornado Realty Trust.
 
-**Links:**  
-Acquisition announcement:  
-https://www.sec.gov/Archives/edgar/data/1005414/000119312505057773/dex991.htm
-
-Transaction completion:  
-https://www.sec.gov/Archives/edgar/data/1040765/000110465905033479/a05-13329_18k.htm
+**Primary Sources:**
+- [2005 Acquisition Announcement — SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1005414/000119312505057773/dex991.htm)
+- [2005 Transaction Completion — SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1040765/000110465905033479/a05-13329_18k.htm)
 
 **Information supplied:**
-- approximately $6.6 billion transaction value
-- investor group involved in the acquisition
-- transaction timing
-- use of debt financing as part of the acquisition
+- Approximately $6.6 billion transaction value
+- Investor group involved in the acquisition
+- Transaction timing
+- Use of debt financing as part of the acquisition
 
 **Used in MEDIFIN:**
 - `HS-D` — Capital Structure & Leverage History
 - `Historical Financing Event — 2005`
-- historical context for the company's financing structure
+- Historical context for the company's financing structure
 
 **Limitation:**
 - The filings establish the acquisition and its financing context.
@@ -159,9 +156,9 @@ The following information is created or adapted by the MEDIFIN team. Detailed ex
 **Source:** Player
 
 **Information supplied:**
-- selected Diagnostic Files
-- selected Follow-Up Questions
-- selected Final Diagnostic Question
+- Selected Diagnostic Files
+- Selected Follow-Up Questions
+- Selected Final Diagnostic Question
 
 **Used in MEDIFIN:**  
 Determines which evidence becomes available before the player makes a diagnosis.
@@ -205,9 +202,9 @@ A player decision is not automatically financially appropriate merely because th
 - Final Outcome
 
 **Used in MEDIFIN:**
-- treatment access where applicable
-- consequence generation
-- final outcome
+- Treatment access where applicable
+- Consequence generation
+- Final outcome
 - Counselor Case Report
 
 **Limitation:**
