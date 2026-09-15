@@ -5,21 +5,20 @@
 > Educational financial simulation inspired by the historical Toys "R" Us case.
 
 ---
-
 ## 1. Midterm Evidence Index
 
 This file provides a quick map of the project evidence prepared for the midterm review.
 
 | Evidence | Document | What It Shows |
 |---|---|---|
-| **Product Direction** | `PROJECT_PROPOSAL.md` | Problem, target user, desired outcome, and product direction |
-| **Solution Structure** | `SOLUTION_STRUCTURE.md` | User → Input → Process → Output → User Action |
-| **Input Readiness** | `INPUT_DICTIONARY.md` | Required financial data, case information, player choices, and game states |
-| **Source Readiness** | `SOURCE_USE_MAP.md` | Historical sources and how each source supports the case |
-| **Assumptions** | `ASSUMPTIONS.md` | Historical evidence, fictional adaptations, and simulation assumptions |
-| **Project Logic** | `PROJECT_LOGIC_CHAIN.md` | Complete reasoning flow from investigation to final output |
-| **Decision & Scoring Logic** | `DECISION_RULES_AND_SCORING.md` | Financial calculations, decision criteria, stage scoring, and outcome logic |
-| **Expected Result** | `EXPECTED_RESULT_AND_LOGIC_TEST.md` | Predicted output and hand-calculated score used to validate the logic |
+| **Product Direction** | [`PROJECT_PROPOSAL.md`](../PROJECT_PROPOSAL.md) | Problem, target user, desired outcome, and product direction |
+| **Solution Structure** | [`SOLUTION_STRUCTURE.md`](../SOLUTION_STRUCTURE.md) | User → Input → Process → Output → User Action |
+| **Input Readiness** | [`INPUT_DICTIONARY.md`](../WEEK%203/INPUT_DICTIONARY.md) | Required financial data, case information, player choices, and game states |
+| **Source Readiness** | [`SOURCE_USE_MAP.md`](../WEEK%203/SOURCE_USE_MAP.md) | Historical sources and how each source supports the case |
+| **Assumptions** | [`ASSUMPTIONS.md`](../WEEK%203/ASSUMPTIONS.md) | Historical evidence, fictional adaptations, and simulation assumptions |
+| **Project Logic** | [`PROJECT_LOGIC_CHAIN.md`](PROJECT_LOGIC_CHAIN.md) | Complete reasoning flow from investigation to final output |
+| **Decision & Scoring Logic** | [`DECISION_RULES_AND_SCORING.md`](DECISION_RULES_AND_SCORING.md) | Financial calculations, decision criteria, stage scoring, and outcome logic |
+| **Expected Result** | [`EXPECTED_RESULT_AND_LOGIC_TEST.md`](EXPECTED_RESULT_AND_LOGIC_TEST.md) | Predicted output and hand-calculated score used to validate the logic |
 
 ---
 
