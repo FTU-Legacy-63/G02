@@ -31,7 +31,6 @@ This feature directly supports the main user goal and uses the financial and dec
 **Decision:** KEEP — Must work in the MVP.
 
 **Feature Owner:** Team Integration  
-**Primary Integration Owner:** Trương Vĩnh Thịnh — Frontend & Integration Developer
 
 ---
 
