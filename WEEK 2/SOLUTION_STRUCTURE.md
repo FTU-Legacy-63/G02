@@ -17,7 +17,7 @@ In real financial situations, several problems may exist at the same time. A fin
 
 ---
 
-## 2. Target User & User Task
+## 2. Target User and User Task
 
 ### Target User
 
@@ -33,7 +33,21 @@ The player is not given the root cause in advance. Instead, they must select and
 
 ---
 
-## 3. Product Statement
+## 3. Desired User Outcome
+
+After completing the case, the player should be better able to:
+
+- select and analyze relevant financial evidence;
+- identify the **primary financial constraint**;
+- make evidence-based recommendations;
+- understand the trade-offs of different treatments;
+- reassess a decision when new information becomes available.
+
+> **The goal is to develop financial reasoning and decision-making skills, rather than simply test financial calculations.**
+
+---
+
+## 4. Product Statement
 
 **MEDIFIN — Financial Clinic** is a **scenario-based financial counseling simulation**.
 
@@ -51,20 +65,6 @@ The player must answer the central question:
 
 ---
 
-## 4. Desired User Outcome
-
-After completing the case, the player should be better able to:
-
-- select and analyze relevant financial evidence;
-- identify the **primary financial constraint**;
-- make evidence-based recommendations;
-- understand the trade-offs of different treatments;
-- reassess a decision when new information becomes available.
-
-> **The goal is to develop financial reasoning and decision-making skills, rather than simply test financial calculations.**
-
----
-
 ## 5. Main Output
 
 At the end of the case, the player receives a **Counselor Case Report**, including:
@@ -79,9 +79,7 @@ The feedback explains **what the player did, why the result occurred, and how th
 
 ---
 
-## 6. Product Pattern & MVP Scope
-
-### Product Pattern
+## 6. Product Pattern
 
 > **Scenario-Based Decision Simulation**
 
@@ -99,6 +97,9 @@ Consequence
 Reassessment
 ↓
 Learning Feedback
+```
+
+Rather than answering independent questions, the player moves through a connected financial decision process in which earlier choices affect later consequences and feedback.
 
 ---
 
@@ -106,7 +107,7 @@ Learning Feedback
 
 ### Feasibility
 
-MEDIFIN is feasible as a **web-based scenario simulation** because the MVP focuses on one complete case and uses predefined financial data and rule-based decision logic.
+MEDIFIN is feasible as a **web-based scenario simulation** because the MVP focuses on one complete case using predefined financial data and rule-based decision logic.
 
 The project does not require real-time data, complex AI, or 3D development.
 
@@ -119,8 +120,8 @@ The current development route is:
 The team will continue to refine:
 
 1. How much financial information should be shown without overwhelming the player?
-2. How should the consequence rules balance realism and simplicity?
+2. How should consequence rules balance financial realism and simplicity?
 3. How much controlled variation should be added to improve replayability?
-4. Which supporting features should be added only after Case #01 is fully playable?
+4. Which supporting features should be added after Case #01 is fully playable?
 
 > These questions may be refined during development without changing MEDIFIN's core product direction.
