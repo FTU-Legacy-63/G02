@@ -1,158 +1,242 @@
-# MEDIFIN — Inside the Mind of a Counselor
+# 🩺 MEDIFIN — Inside the Mind of a Counselor
 
-> **MEDIFIN** là game mô phỏng tư vấn tài chính, trong đó người chơi đóng vai một “bác sĩ tài chính”, điều tra tình hình khách hàng, chẩn đoán các “căn bệnh” tài chính và đề xuất phương án xử lý phù hợp.
+> **A scenario-based financial counseling simulation for Finance and Banking students.**
 
----
+MEDIFIN puts the player in the role of a **Junior Financial Counselor** who must investigate incomplete financial information, identify the client's primary financial problem, recommend an appropriate response, and reassess the decision after observing its consequences.
 
-## 1. Team Members and Roles
-
-| Họ tên | Mã sinh viên | Vai trò chính | Output |
-|---|---|---|---|
-| **Nguyễn Phương Khuê** | 2413380023 | Coordinator & Scenario Designer | Kiểm soát tiến độ, kiểm tra output, thiết kế các tình huống tài chính và xây dựng các phương án xử lý mẫu. |
-| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer | Phát triển giao diện chơi và tích hợp các scenario, đồng thời hỗ trợ triển khai game logic, testing và debugging. |
-| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead | Xây dựng các chỉ số tài chính cho từng “căn bệnh”, dữ liệu báo cáo tài chính mẫu và answer keys. |
-| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer | Thiết kế screen flow, wireframe, kịch bản tình huống và hội thoại cho từng scenario. |
-| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer | Phát triển core game engine, bao gồm diagnosis logic, scoring system, treatment outcomes và player progression. |
+> **Investigate → Diagnose → Treat → Execute → Observe Consequences → Reassess → Learn**
 
 ---
 
-## 2. Product Overview
+## 1. Current MVP
 
-**MEDIFIN – Financial Clinic** là game mô phỏng trong đó người chơi đóng vai một **Financial Counselor** – tương tự một “bác sĩ tài chính” – có nhiệm vụ chẩn đoán và xử lý các vấn đề tài chính của khách hàng thông qua quá trình điều tra, phân tích số liệu và ra quyết định.
+### Case #01 — Toy Kingdom Inc.
 
-Game không nói trực tiếp cho người chơi biết khách hàng đang gặp vấn đề gì. Thay vào đó, người chơi chỉ được tiếp nhận các **“triệu chứng”** và phải tự tìm ra **“căn bệnh tài chính”** thực sự.
+The current MVP focuses on **one complete corporate financial counseling case**.
 
-> **Client Symptoms → Investigation → Financial Evidence → Diagnosis → Treatment**
+Toy Kingdom is a retail company facing multiple pressures, including:
 
----
+- competitive pressure;
+- liquidity constraints;
+- reinvestment needs;
+- high financial leverage; and
+- governance conflicts.
 
-## 3. Problem Candidates
+The player must answer:
 
-Trong giai đoạn xác định vấn đề ban đầu, nhóm đã xem xét ba hướng phát triển sản phẩm.
+> **What is the company's primary financial problem, and what should be done about it?**
 
-| Candidate | Target User | Task / Decision | Khó khăn chính | Đánh giá |
-|---|---|---|---|---|
-| **Candidate 1: Financial Clinic – Financial Diagnosis & Counseling Simulation** | Sinh viên Tài chính – Ngân hàng có định hướng làm Financial Counselor; chuyên viên tư vấn/RM/Advisor mới vào nghề | Thu thập chứng cứ, phân biệt triệu chứng và nguyên nhân, chẩn đoán “bệnh lý” tài chính và đề xuất giải pháp có tính đến hành vi và ràng buộc của khách hàng | Bài tập trên lớp thường cung cấp dữ liệu và vấn đề rõ ràng. Trong thực tế, khách hàng có thể cung cấp thông tin thiếu, mâu thuẫn hoặc ra quyết định dựa trên cảm xúc | **ĐƯỢC CHỌN** – Giải quyết khoảng trống giữa lý thuyết và thực hành, hỗ trợ nhiều scenario và tạo khác biệt với game mô phỏng đầu tư |
-| **Candidate 2: SME Cash-Flow & Working Capital Diagnostic Tool** | Chủ doanh nghiệp SME, chuyên viên phân tích tín dụng doanh nghiệp | Phân tích dòng tiền, vòng quay tồn kho, DSO và lập kế hoạch tái cấu trúc vốn lưu động | Doanh nghiệp thường nhầm giữa lợi nhuận kế toán và dòng tiền thực, dẫn đến thiếu thanh khoản dù doanh thu tăng | **KHẢ THI NHƯNG HẸP** – Có chiều sâu định lượng nhưng chủ yếu tập trung vào tài chính doanh nghiệp ngắn hạn và ít yếu tố tương tác con người |
-| **Candidate 3: Personal Wealth & Debt Restructuring Simulator** | Cá nhân/gia đình gặp khó khăn tài chính và chuyên viên lập kế hoạch tài chính cá nhân | Đánh giá tài sản, nợ, xây dựng kế hoạch trả nợ và phân bổ dòng tiền | Người vay có thể giấu nợ, ra quyết định theo cảm xúc và thiếu kỷ luật trong việc cắt giảm chi tiêu | **KHÔNG ĐƯỢC CHỌN** – Đã có nhiều sản phẩm quản lý tài chính cá nhân tương tự và chưa khai thác hết kiến thức tài chính của sinh viên |
+The case is implemented through a **13-screen / 6-phase decision flow**.
 
-### Selected Direction
-
-> **Candidate 1: Financial Clinic – Financial Diagnosis & Counseling Simulation**
-
-MEDIFIN tập trung vào **quá trình tư duy và ra quyết định của một Financial Counselor**, thay vì chỉ yêu cầu người chơi tính toán chỉ số hoặc lựa chọn một khoản đầu tư.
-
----
-
-## 4. Selected Target Users
-
-### Primary Target User
-
-Đối tượng người dùng chính là:
-
-> **Sinh viên năm 3–4 ngành Tài chính – Ngân hàng, đã học các môn nền tảng về kế toán và phân tích tài chính, đang chuẩn bị thực tập hoặc làm việc trong các vị trí Financial Advisor, Relationship Manager, Credit Analyst hoặc Financial Counselor.**
-
-Người chơi được kỳ vọng đã có kiến thức tài chính cơ bản: Financial Statements, Accounting fundamentals, Financial ratios, Working capital, Debt & financing, Basic financial analysis nhưng chưa có nhiều kinh nghiệm xử lý các tình huống khách hàng thực tế.
-
-
----
-
-## 5. User Task or Decision
-
-Nhiệm vụ chính của người chơi là:
-
-> **Điều tra tình hình tài chính của khách hàng, xác định vấn đề tài chính cốt lõi và đề xuất phương án xử lý phù hợp.**
-
-Người chơi **không được cung cấp sẵn chẩn đoán**.
-
-Thay vào đó:
-
-> **Khách hàng đưa ra triệu chứng → Người chơi điều tra → Phân tích bằng chứng → Chẩn đoán → Đề xuất phương án xử lý**
-
-Trong quá trình này, người chơi phải quyết định:
-
-- Cần hỏi khách hàng những gì.
-- Cần xem những thông tin và tài liệu tài chính nào.
-- Bằng chứng nào thực sự liên quan.
-- Nguyên nhân gốc rễ của vấn đề là gì.
-- Phương án xử lý nào phù hợp.
-- Nên giao tiếp và tư vấn với khách hàng như thế nào.
-
----
-
-## 6. Draft Problem Statement
-
-Sinh viên ngành Tài chính – Ngân hàng nắm được các lý thuyết và công cụ phân tích tài chính nhưng thường gặp khó khăn khi áp dụng vào tư vấn thực tế, do các bài tập trên lớp thường dựa trên dữ liệu tương đối đầy đủ và vấn đề đã được xác định rõ ràng.
-
-Trong thực tế, khách hàng có thể đưa ra các triệu chứng mơ hồ, thông tin không đầy đủ, mục tiêu mâu thuẫn và quyết định chịu ảnh hưởng bởi cảm xúc.
-
-> **Do đó, sinh viên Tài chính – Ngân hàng thiếu một môi trường an toàn và thực tế để rèn luyện khả năng điều tra các tình huống tài chính chưa rõ ràng, chẩn đoán nguyên nhân gốc rễ và đưa ra quyết định tư vấn phù hợp trước khi bước vào môi trường làm việc thực tế.**
-
----
-
-## 7. Visible Contribution — Week 1
-
-| Thành viên | Đóng góp Week 1 | Output nhìn thấy được |
-|---|---|---|
-| **Nguyễn Phương Khuê** | Tổ chức repository và tích hợp các phần Week 1 thành README có thể review | Cấu trúc README, liên kết evidence |
-| **Lâm Diệu Anh** | Phân tích, định hình đối tượng người dùng và khảo sát định hướng sản phẩm | Target-user definition, problem candidate |
-| **Trương Vĩnh Thịnh** | Tìm kiếm, phân tích và đề xuất Problem Candidates; xác định nhiệm vụ chính của người chơi | Problem candidates và user task |
-| **Bùi Lê Trà Giang** | Xác định financial reasoning của MEDIFIN; làm rõ difficulty và finance relevance | Mô tả difficulty, problem statement |
-| **Lê Bảo Ngọc** | Xác định những vấn đề còn tồn đọng của Week 1 và tổng hợp các góp ý | Open questions, tổng hợp Checkpoint 1 |
-
----
-
-## 8. Open Questions
-
-Những vấn đề nhóm vẫn cần tiếp tục kiểm chứng và thống nhất:
-
-1. Game nên bao gồm cả **individual và corporate clients**, hay cần thu hẹp target scenarios?
-2. Một case nên có bao nhiêu **decision points** để đủ chiều sâu nhưng không quá dài?
-3. Investigation có nên bị giới hạn bằng **time / investigation points** hay không?
-4. Financial datasets nên phức tạp đến mức nào để vừa thực tế vừa phù hợp với sinh viên?
-5. Hệ thống scoring nên đánh giá những yếu tố nào: **Investigation, Diagnosis, Treatment, Communication**?
-6. Treatment có nên có một **“best answer”**, hay cho phép nhiều phương án hợp lý với các trade-off khác nhau?
-7. Cần thu thập evidence nào để xác nhận sinh viên thực sự gặp vấn đề mà nhóm đang giả định?
-
----
-
-## 9. Checkpoint 1 Feedback and Revision
-
-| Item | Nội dung |
+| Phase | Main Task |
 |---|---|
-| **Feedback Received** | Chủ đề Financial Counselor có nguy cơ giống Group 1's Shark Tank investment simulation; scenario cần độc đáo hơn và thể hiện được nhiều hoàn cảnh khách hàng. Responsibilities của hai developer ban đầu cũng bị overlap. |
-| **Decision** | **Change / Refine** – Giữ concept Financial Counselor nhưng làm rõ core task và gameplay. |
-| **Revision Made** | Chuyển trọng tâm từ investment selection sang **financial diagnosis and treatment**; sử dụng phép ẩn dụ **Financial Clinic**; tách technical roles thành **Game Engine & Logic Developer** và **Frontend & Integration Developer**. |
-| **Reason** | Tạo sự khác biệt với investment simulation và đảm bảo mỗi thành viên có output riêng, có thể kiểm tra được. |
-| **Remaining Questions** | Cần xác định bộ scenario cuối cùng và tiếp tục kiểm chứng vấn đề của target user. |
+| **1. Client Intake & Investigation** | Understand the case and collect evidence |
+| **2. Diagnosis** | Identify the primary financial problem |
+| **3. Treatment & Execution Planning** | Select treatment, timing, and stakeholder priorities |
+| **4. Consequence** | Observe the effects of previous decisions |
+| **5. Reassessment** | Keep or revise professional judgment |
+| **6. Final Assessment** | Receive the Counselor Case Report |
 
 ---
 
-## 10. Week 2 — Product Development
+## 2. Main Product Output
 
-Dựa trên problem direction đã lựa chọn, Week 2 tập trung chuyển MEDIFIN từ một ý tưởng thành một sản phẩm có cấu trúc cụ thể và có thể kiểm chứng.
+At the end of the case, the player receives a **Counselor Case Report**.
 
-### Week 2 Deliverables
+It contains two separate results:
 
-- [Project Proposal](PROJECT_PROPOSAL.md)
-- [Solution Structure](SOLUTION_STRUCTURE.md)
+### Counselor Performance
 
-### Core Product Direction
+Evaluates the quality of the player's decision process across:
 
-Core loop dự kiến của MEDIFIN:
+**Investigation · Diagnosis · Treatment · Execution Planning · Reassessment**
 
-> **OBSERVE → INVESTIGATE → DIAGNOSE → TREAT → CONSEQUENCE → LEARN**
+### Case Outcome
 
-Mục tiêu của game không chỉ là tạo điểm số, badge hay leaderboard, mà quan trọng hơn là giúp sinh viên **thực hành cách suy nghĩ, điều tra và ra quyết định như một Financial Counselor thực tế**.
+Shows the simulated impact on:
+
+**Financial Resilience · Governance Stability · Final Ending**
+
+> **Decision Quality ≠ Company Outcome**
+
+The purpose is not only to give the player a score, but to explain **why the result occurred and how the player's financial reasoning could improve**.
 
 ---
 
-## 11. Project Status
+## 3. Product Structure
 
-**Current Stage:** Week 2 – Product Definition & MVP Planning
+```mermaid
+flowchart LR
+    A["Client Situation"] --> B["Investigation"]
+    B --> C["Financial Evidence"]
+    C --> D["Diagnosis"]
+    D --> E["Treatment"]
+    E --> F["Execution Planning"]
+    F --> G["Consequences"]
+    G --> H["Reassessment"]
+    H --> I["Counselor Case Report"]
+```
 
-**Selected Concept:** MEDIFIN – Financial Clinic
+MEDIFIN is designed as a **decision simulation rather than a traditional correct/incorrect quiz**.
 
-**Product Pattern:** Scenario-Based Decision Simulation
+Player choices influence later evidence, consequences, feedback, and the final case outcome.
 
-**Initial MVP:** 1 case tư vấn tài chính hoàn chỉnh có thể chơi từ đầu đến cuối
+---
+
+## 4. Repository Evidence
+
+The repository documents the development of MEDIFIN from problem definition to a testable product.
+
+### Week 1 — Problem Direction
+
+**Focus:** What problem are we solving?
+
+- Financial Clinic concept
+- Target user
+- Problem candidates
+- Core user task
+- Initial problem statement
+
+---
+
+### Week 2 — Product Direction & Solution Structure
+
+**Focus:** What exactly are we building?
+
+- [PROJECT_PROPOSAL.md](WEEK%202/PROJECT_PROPOSAL.md)
+- [SOLUTION_STRUCTURE.md](WEEK%202/SOLUTION_STRUCTURE.md)
+
+**Key Output:**  
+MEDIFIN was defined as a **scenario-based financial counseling simulation** with one complete decision flow and a Counselor Case Report as the main output.
+
+---
+
+### Week 3 — Information & Evidence Readiness
+
+**Focus:** What information must be ready?
+
+- [INPUT_DICTIONARY.md](WEEK%203/INPUT_DICTIONARY.md)
+- [SOURCE_USE_MAP.md](WEEK%203/SOURCE_USE_MAP.md)
+- [ASSUMPTIONS.md](WEEK%203/ASSUMPTIONS.md)
+- [SAMPLE_INPUT_OUTPUT.md](WEEK%203/SAMPLE_INPUT_OUTPUT.md)
+
+**Key Output:**  
+Case inputs, financial evidence, sources, assumptions, and expected uses were documented before implementation.
+
+---
+
+### Week 4 — Decision Logic & Midterm Readiness
+
+**Focus:** How does MEDIFIN decide?
+
+- [PROJECT_LOGIC_CHAIN.md](WEEK%204/PROJECT_LOGIC_CHAIN.md)
+- [DECISION_RULES_AND_SCORING.md](WEEK%204/DECISION_RULES_AND_SCORING.md)
+- [EXPECTED_RESULT_AND_LOGIC_TEST.md](WEEK%204/EXPECTED_RESULT_AND_LOGIC_TEST.md)
+- [MIDTERM_REVIEW.md](WEEK%204/MIDTERM_REVIEW.md)
+
+**Key Output:**  
+The team defined the complete:
+
+> **Input → Decision Logic → Consequence → Reassessment → Output**
+
+Counselor Performance and Case Outcome are evaluated separately.
+
+---
+
+### Week 5 — Product Refinement
+
+**Focus:** How will the user experience the product?
+
+- [FEATURE_MAP.md](WEEK%205/FEATURE_MAP.md)
+- [USER_FLOW.md](WEEK%205/USER_FLOW.md)
+- [WORKING_INTERFACE_DRAFT_AND_REVISION_EVIDENCE.md](WEEK%205/WORKING_INTERFACE_DRAFT_AND_REVISION_EVIDENCE.md)
+
+**Key Output:**
+
+> **Refined Flow + Clearer Interface + Cut Decisions + Visible Ownership**
+
+Week 5 focuses on making one complete Case #01 easier to use, test, and integrate before Week 6.
+
+---
+
+## 5. Working Prototype
+
+### UI/UX Draft
+
+🎨 [Canva — MEDIFIN UI/UX Draft](https://www.canva.com/design/DAHUrjuo2iU/TwEgLcpHq5jNEXqZxAyq5Q/edit?ui=eyJBIjp7fX0)
+
+### Interactive Prototype
+
+🖥️ [Figma — MEDIFIN Interactive Prototype](https://www.figma.com/proto/VtlhknTup0qQw5TX7OhloF/Medifin?node-id=1-14&p=f&t=Q6iSnSJUCTCF9sF1-0&scaling=min-zoom&content-scaling=fixed&page-id=1%3A8&starting-point-node-id=1%3A14)
+
+The current development priority is:
+
+> **Prototype → Frontend → Game Logic Integration → Complete Playable Case**
+
+---
+
+## 6. Team Members & Ownership
+
+| Member | Student ID | Role / Responsibility | Main Contribution |
+|---|---|---|---|
+| **Nguyễn Phương Khuê** | 2413380023 | Project Coordinator & Scenario Designer | Scenario structure, storyline, and case progression |
+| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer | Playable frontend and integration of UI, financial data, and game logic |
+| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead | Financial data, evidence, diagnosis/treatment content, and financial feedback |
+| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer | Screen flow, Canva/Figma prototype, dialogue, and interface design |
+| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer | Decision rules, scoring, consequence logic, and main game engine |
+
+### Shared Working Folder
+
+📁 [MEDIFIN — NHÓM 2](https://docs.google.com/document/d/1LDxYMVNUmx3nDv6oSetyHl7smptbk7PI986ljM8tMw4/edit?tab=t.0)
+
+---
+
+## 7. MVP Scope
+
+### Current MVP
+
+> **One complete playable Case #01 — Toy Kingdom Inc.**
+
+### Keep
+
+- Investigation
+- Diagnosis
+- Treatment & Execution
+- Consequence
+- Reassessment
+- Counselor Case Report
+
+### Simplify
+
+- Governance / family storyline where it distracts from financial reasoning
+
+### Postpone
+
+- Additional cases
+- Controlled scenario variation
+- Advanced animations and visual effects
+
+### Out of Scope
+
+- Multiplayer
+- Real-time financial data
+- AI-generated cases
+- Open-ended AI chatbot
+- 3D / Open World
+- Real-money transactions
+
+---
+
+## 8. Current Status
+
+**Current Stage:** Week 5 — Product Refinement
+
+**Product:** MEDIFIN — Financial Clinic  
+**Product Pattern:** Scenario-Based Decision Simulation  
+**Current Case:** Toy Kingdom Inc.  
+**MVP:** 1 Complete Playable Case  
+**Interface:** Interactive Prototype Available  
+**Decision Logic:** Defined  
+**Current Priority:** Frontend & Game Logic Integration
+
+> **Goal before Week 6: one complete, understandable, and testable Case #01 flow.**
