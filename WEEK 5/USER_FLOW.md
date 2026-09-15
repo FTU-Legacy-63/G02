@@ -14,11 +14,10 @@
 | Doanh thu FY2026 | \$11.540 tỷ |
 | Quy mô | ~1.700 cửa hàng toàn cầu |
 | Sở hữu | Gia đình Anderson 78% (David — CEO, Michael — em trai, Richard — chú) ; Quỹ đầu tư tư nhân 22% |
-| Giao dịch lớn | Leveraged buyout \$6.6 tỷ năm 2015 |
 | Adjusted EBITDA FY2026 | \$792 triệu |
 | Operating Earnings FY2026 | \$460 triệu |
 | Net Loss (attributable) FY2026 | −\$36 triệu |
-| Lý do khám | Vận hành cải thiện dần nhưng thiếu vốn tái đầu tư, trong khi ban lãnh đạo gia đình đang chia rẽ về hướng đi |
+| Lý do khám | Hoạt động kinh doanh có dấu hiệu cải thiện, nhưng công ty vẫn thiếu nguồn lực để tái đầu tư và ngày càng chịu áp lực tài chính, trong khi ban lãnh đạo gia đình đang chia rẽ về hướng đi |
 
 ---
 
@@ -52,13 +51,13 @@ Bảng thông tin công ty (xem Mục Tổng quan) được hiển thị đầy 
 
 > ***David (CEO):** "Sales tiếp tục giảm. Amazon, Walmart và online retail đang thay đổi cả ngành. Chúng tôi đã cắt chi phí, đóng cửa hàng yếu, đầu tư digital. Một số chỉ số tốt lên nhưng công ty vẫn ngày càng khó xoay xở."*
 >
-> ***David (CEO):** "Còn chuyện gia đình... tôi phát hiện Michael đang thuê luật sư riêng, và Richard âm thầm chào bán tài sản quốc tế mà không qua hội đồng. Tôi không biết đây là bệnh của thị trường, hay bệnh trong chính bộ tứ nhà tôi."*
+> ***David (CEO):** "Còn chuyện gia đình... tôi phát hiện Michael đang thuê luật sư riêng, và Richard âm thầm chào bán tài sản quốc tế mà không qua hội đồng. Tôi không biết vấn đề thực sự nằm ở thị trường, ở cấu trúc tài chính của công ty, hay ở chính ban lãnh đạo.”*
 
 *Hệ thống hiện nút: **[BẮT ĐẦU CHẨN ĐOÁN]** *
 
 ---
 
-## Màn hình 2 — Bảng sinh hiệu
+## Màn hình 2 — Hồ sơ chẩn đoán
 
 **Lựa chọn:** chọn đúng 3 trong 7 Hồ sơ. 4 hồ sơ không chọn sẽ đóng vĩnh viễn — không thể mở lại ở Màn 3, 4, 5, hay khi Tái khám ở Màn 11, kể cả khi đổi chẩn đoán sau này.
 
@@ -67,7 +66,7 @@ Bảng thông tin công ty (xem Mục Tổng quan) được hiển thị đầy 
 | HS-A | Sales & Customer | Doanh thu, traffic, kênh bán (E-commerce +11% FY2026) |
 | HS-B | Stores & Investment | Mạng lưới cửa hàng, danh sách CapEx đang tranh vốn |
 | HS-C | Liquidity | Cash, holiday inventory, vendor terms, debt maturities |
-| HS-D | Capital Structure & Leverage History | Nợ ~\$4.8 tỷ, gốc rễ giao dịch 2015 |
+| HS-D | Capital Structure & Leverage History | Historical Financing Event — 2015 |
 | HS-E | Product & Category Trends | Đồ chơi truyền thống vs. entertainment/licensing |
 | HS-F | Management Track Record | Các sáng kiến 3 năm qua — thành/bại |
 | HS-G | Governance & Family | Cơ cấu cổ phần Anderson, thỏa thuận Michael–Houndstooth, động thái Richard, thư luật sư |
@@ -208,8 +207,8 @@ Người chơi vẫn chẩn đoán và điều trị bình thường, nhưng s�
 | CH1-A | Traffic giảm, e-commerce tăng — khách rời bỏ hay đổi kênh? | Phần lớn đổi kênh; biên lợi nhuận online thấp hơn đáng kể so với tại cửa hàng. Thêm: tin đồn tái cấu trúc gia đình khiến một phần khách chuyển sang đối thủ vì sợ công ty đóng cửa. |
 | CH1-B | Chương trình vốn nào bị trì hoãn lâu nhất? | Store renovation — gác 3 năm liên tiếp vì omnichannel luôn được ưu tiên trước. Richard nhiều lần bỏ phiếu trì hoãn vì đang đàm phán bán tài sản riêng. |
 | CH1-C | Holiday kém 10% thì thanh khoản ra sao? | Vẫn đủ cash hoạt động, nhưng biên độ an toàn với covenant mỏng đi đáng kể. |
-| CH1-D | Khoản nợ nào đến hạn sớm nhất? | Một phần secured notes đáo hạn trong 18 tháng — áp lực gần nhất, không phải áp lực lớn nhất; áp lực EBITDA để tránh kích hoạt điều khoản của Michael còn cấp bách hơn. |
-| CH1-E | Category nào biên lợi nhuận tốt nhất? | Đồ chơi truyền thống, nhưng quy mô nhỏ hơn nhiều phần đang suy yếu — và đây cũng là mảng Richard đang âm thầm rao bán vì giá trị thanh lý cao. |
+| CH1-D | Khoản nợ nào đến hạn sớm nhất? | Một phần secured notes đáo hạn trong 18 tháng — áp lực gần nhất, không phải áp lực lớn nhất. Tuy nhiên, EBITDA trigger trong thỏa thuận Houndstooth có thể phát sinh sớm hơn nếu operating performance suy yếu. |
+| CH1-E | Nhóm sản phẩm nào đang hoạt động tốt nhất?| Đồ chơi truyền thống, nhưng quy mô nhỏ hơn nhiều phần đang suy yếu — và đây cũng là mảng Richard đang âm thầm rao bán vì giá trị thanh lý cao. |
 | CH1-F | Ban lãnh đạo có đồng thuận không? | Không — Michael đã mời riêng một luật sư chuyên "chuyển giao quyền lực" đến họp. |
 | CH1-G | Houndstooth Capital thực sự có quyền gì? | Quyền mua ưu tiên có điều kiện — chỉ kích hoạt nếu EBITDA giảm thêm 5%; mọi quyết định làm giảm EBITDA ngắn hạn đều đưa công ty gần ngưỡng đó hơn. |
 
@@ -291,7 +290,7 @@ Khoản \$149 triệu "Other Income, net" năm nay phần lớn đến từ ti�
 | CH2-B | Có thêm vốn thì dùng vào đâu? | Digital, fulfillment, renovation. Nếu Houndstooth thắng, phần lớn khoản đầu tư này sẽ bị dừng ngay. |
 | CH2-C | Sao không đóng mạnh cửa hàng? | Một số nên đóng, nhưng cắt quá sâu làm nhỏ sales base; nhiều hợp đồng thuê do Richard đứng tên cá nhân. |
 | CH2-D | Amazon biến mất thì công ty khỏe chưa? | Không — áp lực nội bộ (gia đình, nợ) vẫn còn nguyên. |
-| CH2-E | Xóa hết nợ thì công ty khỏe chưa? | Không — vẫn phải xử lý store base và cạnh tranh. Hết nợ thì Michael/Richard sẽ chuyển hẳn sang đấu tố quyền kiểm soát. |
+| CH2-E | Nếu loại bỏ được phần lớn áp lực nợ, công ty đã giải quyết được toàn bộ vấn đề chưa? | Không — vẫn phải xử lý store base và cạnh tranh. Hết nợ thì Michael/Richard sẽ chuyển hẳn sang đấu tố quyền kiểm soát. |
 | CH2-F | Lo nhất điều gì 12 tháng tới? | Liquidity & refinancing. David (thì thầm): Michael sẽ dùng khoản lỗ này để thuyết phục cổ đông nhỏ lẻ rằng tôi hết năng lực. |
 | CH2-G | Nếu EBITDA giảm thêm 5%, điều gì xảy ra ngay lập tức? | (hiển thị đầy đủ nếu đã mở HS-G) Điều khoản Houndstooth kích hoạt tự động — không cần họp hội đồng, không cần đa số phiếu. |
 
@@ -306,7 +305,7 @@ Khoản \$149 triệu "Other Income, net" năm nay phần lớn đến từ ti�
 | CD-A | Competitive / E-commerce Disease | HS-A, CH1-A — áp lực cạnh tranh & đổi kênh, đo được |
 | CD-B | Operating / Store Network Disease | HS-B, CH1-B — CapEx bị dồn nén nhiều năm |
 | CD-C | Liquidity Disease | HS-C, CH1-C — biên an toàn covenant mỏng |
-| CD-D | Capital Structure / Financing Disease | HS-D, CH1-D — leverage giới hạn khả năng tái đầu tư |
+| CD-D | Capital Structure / Financing Disease | HS-D, CH1-D — high leverage, significant secured debt and upcoming refinancing pressure. |
 | CD-E | Product & Category Disease | HS-E, CH1-E — category truyền thống co lại |
 | CD-F | Mixed Disease | Cần HS-D và ít nhất 1 trong (HS-A / HS-B / HS-E / HS-F) |
 
@@ -326,9 +325,9 @@ CD-F không được mô tả là chẩn đoán "đúng nhất". Đây là chẩ
 |--------|-------------|-----------------------------------|
 | PD-A | Invest to Compete | Cần Uy tín ≥ Trung bình để được duyệt (thanh khoản đã mỏng theo HS-C). Nếu không đủ, tự động hạ xuống PD-B. |
 | PD-B | Deep Cost Cutting | Không cần điều kiện. Cải thiện cash ngắn hạn rõ rệt, nhưng thu nhỏ sales base dài hạn. |
-| PD-C | Debt Restructuring | Phụ thuộc phản ứng chủ nợ. Nếu ưu tiên Creditors ở Màn 9, tỉ lệ thành công cao hơn rõ rệt. |
+| PD-C | Debt Restructuring | Phụ thuộc phản ứng chủ nợ. Nếu ưu tiên Creditors ở Màn 9, khả năng đạt được thỏa thuận thuận lợi hơn |
 | PD-D | Asset Sale | Cải thiện thanh khoản ngay, nhưng thường phải bán đúng phần tài sản khỏe nhất (đồ chơi truyền thống) để bán được giá tốt. |
-| PD-E | Bankrupt with reorganization | Xử lý nợ triệt để nhất và vô hiệu hóa thỏa thuận cổ phần chưa kích hoạt của Michael, nhưng rủi ro mất niềm tin vendor/khách hàng cao nhất. |
+| PD-E | Bankruptcy Restructuring | Xử lý nợ triệt để nhất và vô hiệu hóa thỏa thuận cổ phần chưa kích hoạt của Michael, nhưng rủi ro mất niềm tin vendor/khách hàng cao nhất. |
 | PD-F | Combined Restructuring | Cần Uy tín Cao. Nhiều mảng phải chạy song song — rủi ro thực thi cao nhất trong 6 phương án. |
 
 ---
@@ -418,7 +417,7 @@ Nội dung là hàm số của 3 lựa chọn trước: Phác đồ (Màn 7), Th
 | Đã chọn TG-D | −1 |
 | Không ưu tiên Holiday Inventory ở Màn 9 | −1 |
 
-**Quy đổi:** tổng điểm ≥ 5 = Sống sót vững · 1–4 = Sống sót mong manh · ≤ 0 = Sụp đổ tài chính.
+**Quy đổi:** tổng điểm ≥ 5 = Ổn định tài chính · 1–4 = Ổn định mong manh · ≤ 0 = Sụp đổ tài chính.
 
 ### Công thức tính điểm Ổn định Quản trị — Gia tộc
 
@@ -469,7 +468,7 @@ Uy tín (Thấp / Trung bình / Cao) không đổi ô kết cục, mà đổi c�
 
 ## So sánh với thực tế
 
-Toys "R" Us gốc cuối cùng vẫn nộp đơn phá sản và thanh lý dù từng cải thiện operating earnings nhiều năm liền — minh chứng rằng chẩn đoán đúng không đảm bảo phác đồ đúng, và *"khỏe hơn về vận hành"* không đồng nghĩa *"sống sót về tài chính"*. Lớp gia tộc trong case này thêm một trục thứ ba mà báo cáo tài chính thuần túy không bao giờ thể hiện: ai còn quyền quyết định khi các con số đã tệ đi.
+Toys “R” Us filed for Chapter 11 bankruptcy protection in 2017 in an attempt to restructure its debt. Its U.S. business later moved toward liquidation in 2018 after the restructuring effort failed to stabilize the company.
 
 ---
 
