@@ -99,3 +99,26 @@ Consequence
 Reassessment
 ↓
 Learning Feedback
+
+## 7. Feasibility and Open Questions
+
+### Feasibility
+
+MEDIFIN is feasible as a **web-based scenario simulation** because the MVP focuses on one complete case and uses predefined financial data and rule-based decision logic.
+
+The project does not require real-time data, complex AI, or 3D development.
+
+The current development route is:
+
+> **Financial Case Data → Decision Logic → Game Engine → Frontend → Browser**
+
+### Open Questions
+
+The team will continue to refine:
+
+1. How much financial information should be shown without overwhelming the player?
+2. How should the consequence rules balance realism and simplicity?
+3. How much controlled variation should be added to improve replayability?
+4. Which supporting features should be added only after Case #01 is fully playable?
+
+> These questions may be refined during development without changing MEDIFIN's core product direction.
