@@ -1,4 +1,4 @@
-# INPUT_DICTIONARY.md
+# INPUT DICTIONARY
 
 ## Case #01 — Toy Kingdom Inc.
 
