@@ -4,28 +4,26 @@
 
 > **Educational financial simulation inspired by the historical Toys "R" Us case.**
 >
-> This file identifies **where case information comes from, what information each source supports, how it is used in MEDIFIN, and its limitations**.
+> This file identifies where case information comes from, what each source supports, how it is used in MEDIFIN, and its limitations.
 
 ---
 
 ## ID Guide
 
-To make each information item easy to trace across the Week 3 documents:
-
-| ID | Meaning | Used for |
+| ID | Meaning | Documented in |
 |---|---|---|
-| **S01, S02, ...** | **Source** | Historical evidence from public sources |
-| **A01, A02, ...** | **Assumption / Adaptation** | Information created or adapted by the MEDIFIN team for the simulation |
-| **G01, G02, ...** | **Game State** | Information generated from player choices or the game system |
+| **S01, S02, ...** | Historical sources from public evidence | `SOURCE_USE_MAP.md` |
+| **A01, A02, ...** | Assumptions or adaptations created by the MEDIFIN team | `ASSUMPTIONS.md` |
+| **G01, G02, ...** | Player choices or game-generated states | Game system / `INPUT_DICTIONARY.md` |
 
-### Source Classification
+### Information Classification
 
-| Classification | Meaning |
-|---|---|
-| **Historical** | Based directly on public information from the real Toys "R" Us case |
-| **Historical / Adapted** | Based on historical evidence but adjusted to fit the fictional Toy Kingdom simulation |
-| **Simulated** | Created by the MEDIFIN team for educational purposes |
-| **Game State** | Generated during gameplay from player choices or game progression |
+| Classification | Meaning | Typical Source |
+|---|---|---|
+| **Historical** | Based directly on public historical evidence | S |
+| **Historical / Adapted** | Historical evidence adjusted to fit the Toy Kingdom simulation | S + A |
+| **Simulated** | Created by the MEDIFIN team for the fictional case | A |
+| **Game State** | Generated from player choices or game progression | G |
 
 > Historical evidence supports the factual foundation of the case. It does not automatically validate fictional Toy Kingdom events, diagnoses, treatments, or simulated outcomes.
 
@@ -35,7 +33,11 @@ To make each information item easy to trace across the Week 3 documents:
 
 ## S01 — Toys "R" Us FY2016 Form 10-K
 
-**Source:** Toys "R" Us, Inc., Annual Report on Form 10-K for the fiscal year ended January 28, 2017, filed with the U.S. Securities and Exchange Commission (SEC).
+**Source:**  
+Toys "R" Us, Inc., Annual Report on Form 10-K for the fiscal year ended January 28, 2017, filed with the U.S. Securities and Exchange Commission (SEC).
+
+**Link:**  
+https://www.sec.gov/Archives/edgar/data/1005414/000100541417000011/tru201610k.htm
 
 **Information supplied:**
 - Net Sales
@@ -52,12 +54,12 @@ To make each information item easy to trace across the Week 3 documents:
 - `HS-C` — Liquidity
 - `HS-D` — Capital Structure & Leverage
 - `Screen 4` — Full Financial Statements
-- financial evidence for Diagnosis and Treatment
+- financial evidence used in Diagnosis and Treatment
 
 **Limitation:**
 - The data belongs to the historical Toys "R" Us case, not Toy Kingdom Inc.
-- Historical reporting years are adapted to the Toy Kingdom timeline.
-- Financial statements show financial conditions but do not prove one unique root cause of distress.
+- Historical reporting years are adapted to the Toy Kingdom timeline through `A04`.
+- Financial statements describe financial conditions but do not prove one unique root cause of distress.
 - Adjusted EBITDA should not be interpreted as cash flow.
 
 **Status:** Primary historical source — Ready
@@ -66,7 +68,11 @@ To make each information item easy to trace across the Week 3 documents:
 
 ## S02 — Toys "R" Us FY2016 Earnings Release
 
-**Source:** Toys "R" Us, Inc., *Reports Results for the Full Year and Fourth Quarter of Fiscal 2016*, April 12, 2017, filed with the SEC.
+**Source:**  
+Toys "R" Us, Inc., *Reports Results for the Full Year and Fourth Quarter of Fiscal 2016*, April 12, 2017, filed with the SEC.
+
+**Link:**  
+https://www.sec.gov/Archives/edgar/data/1005414/000100541417000010/truq4-16earningsreleaseexh.htm
 
 **Information supplied:**
 - Consolidated Net Sales decline
@@ -81,11 +87,11 @@ To make each information item easy to trace across the Week 3 documents:
 - `HS-A` — Sales & Customer
 - `HS-E` — Product & Category Trends
 - evidence of declining store performance alongside continued e-commerce growth
-- evidence that performance differed across product categories
+- evidence of differences in performance across product categories
 
 **Limitation:**
 - It is a company-issued disclosure and includes management commentary.
-- It reports performance but does not establish e-commerce, competition, product mix, or leverage as the single cause of financial distress.
+- It reports operating performance but does not establish e-commerce, competition, product mix, or leverage as the single cause of financial distress.
 
 **Status:** Primary company disclosure — Ready
 
@@ -93,7 +99,15 @@ To make each information item easy to trace across the Week 3 documents:
 
 ## S03 — 2005 Toys "R" Us Acquisition Filings
 
-**Source:** SEC filings relating to the 2005 acquisition of Toys "R" Us by affiliates of Bain Capital, KKR and Vornado Realty Trust.
+**Source:**  
+SEC filings relating to the 2005 acquisition of Toys "R" Us by affiliates of Bain Capital, KKR and Vornado Realty Trust.
+
+**Links:**  
+Acquisition announcement:  
+https://www.sec.gov/Archives/edgar/data/1005414/000119312505057773/dex991.htm
+
+Transaction completion:  
+https://www.sec.gov/Archives/edgar/data/1040765/000110465905033479/a05-13329_18k.htm
 
 **Information supplied:**
 - approximately $6.6 billion transaction value
@@ -107,7 +121,7 @@ To make each information item easy to trace across the Week 3 documents:
 - historical context for the company's financing structure
 
 **Limitation:**
-- The filings establish the transaction and its financing context.
+- The filings establish the acquisition and its financing context.
 - They do not prove that the leveraged acquisition alone caused the company's later financial distress or bankruptcy.
 - MEDIFIN therefore treats the transaction as evidence for analysis, not as a predetermined diagnosis.
 
@@ -117,98 +131,24 @@ To make each information item easy to trace across the Week 3 documents:
 
 # 2. Simulation Assumptions & Adaptations
 
-## A01 — Toy Kingdom Governance Scenario
+The following information is created or adapted by the MEDIFIN team. Detailed explanations, purposes, limitations and disclosure rules are documented in `ASSUMPTIONS.md`.
 
-**Created by:** MEDIFIN Scenario Design Team
+| ID | Assumption / Adaptation | Classification | Used in MEDIFIN |
+|---|---|---|---|
+| **A01** | Toy Kingdom & Anderson Family | Simulated | Case setting, ownership and governance structure |
+| **A02** | Houndstooth Capital Trigger | Simulated | `HS-G`, governance evidence and later developments |
+| **A03** | Family Conflict & Asset-Sale Scenario | Simulated | Governance questions, stakeholder decisions and consequences |
+| **A04** | Financial Timeline Adaptation | Historical / Adapted | FY2024–FY2026 financial statements and case timeline |
+| **A05** | Investment & Management Scenario | Historical / Adapted | `HS-B`, `HS-F`, treatment trade-offs and developments |
+| **A06** | Holiday Liquidity Scenario | Historical / Adapted | Liquidity questions, Timing and Holiday Inventory decisions |
 
-**Information supplied:**
-- Toy Kingdom Inc.
-- Anderson family ownership
-- David, Michael and Richard
-- 78% family / 22% private-equity ownership
-- family leadership conflict
-- Houndstooth Capital and its conditional agreement
-- Richard's international asset-sale plan
+> See `ASSUMPTIONS.md` for the full definition and limitation of each `A` item.
 
-**Used in MEDIFIN:**
-- `HS-G` — Governance & Family
-- governance-related questions and stakeholder decisions
-- Governance Stability outcome
+### Important Boundary
 
-**Limitation:**
-- Entirely fictional.
-- It must not be presented as historical information about Toys "R" Us.
-- It exists to create information asymmetry and decision trade-offs in the simulation.
-
-**Status:** Simulated — documented in `ASSUMPTIONS.md`
-
----
-
-## A02 — Toy Kingdom Timeline Adaptation
-
-**Created by:** MEDIFIN Scenario Design Team
-
-**Information supplied:**
-
-Historical financial information from Toys "R" Us is adapted into the fictional FY2024–FY2026 Toy Kingdom timeline.
-
-**Used in MEDIFIN:**
-- financial statements
-- diagnostic files
-- case progression
-
-**Limitation:**
-- FY2024–FY2026 are fictional simulation years.
-- They must not be presented as actual Toys "R" Us reporting years.
-
-**Status:** Historical / Adapted — documented in `ASSUMPTIONS.md`
-
----
-
-## A03 — Investment & Management Scenario
-
-**Created / adapted by:** MEDIFIN Scenario Design Team using historical retail context.
-
-**Information supplied:**
-- competing investment needs
-- store renovation
-- digital and omnichannel investment
-- supply-chain and customer-experience investment
-- simulated management track record
-
-**Used in MEDIFIN:**
-- `HS-B` — Stores & Investment
-- `HS-F` — Management Track Record
-- Treatment choices and later developments
-
-**Limitation:**
-- The general business challenges are historically inspired.
-- The specific management actions, timing and consequences are simulation design and are not an exact reconstruction of Toys "R" Us history.
-
-**Status:** Historical / Adapted — documented in `ASSUMPTIONS.md`
-
----
-
-## A04 — Holiday Liquidity Scenario
-
-**Created / adapted by:** MEDIFIN Scenario Design Team using historical seasonality evidence.
-
-**Information supplied:**
-
-A weak holiday period may increase Toy Kingdom's liquidity and refinancing pressure.
-
-**Used in MEDIFIN:**
-- liquidity-related follow-up questions
-- Timing decisions
-- Holiday Inventory priority
-- later scenario developments
-
-**Limitation:**
-- Historical evidence supports the importance of the holiday season for a toy retailer.
-- It does not provide an empirical probability that a specific Toy Kingdom treatment will succeed or fail.
-- The resulting consequences remain simulation assumptions.
-
-**Status:** Historical / Adapted — documented in `ASSUMPTIONS.md`
+- `A01–A03` are fictional Toy Kingdom scenario elements.
+- `A04–A06` use historical context or evidence but are adapted for the simulation.
+- They must not be presented as direct historical facts about Toys "R" Us.
 
 ---
 
@@ -219,16 +159,14 @@ A weak holiday period may increase Toy Kingdom's liquidity and refinancing press
 **Source:** Player
 
 **Information supplied:**
-- selected diagnostic files
-- selected follow-up questions
-- selected final diagnostic question
+- selected Diagnostic Files
+- selected Follow-Up Questions
+- selected Final Diagnostic Question
 
-**Used in MEDIFIN:**
-
+**Used in MEDIFIN:**  
 Determines which evidence becomes available before the player makes a diagnosis.
 
-**Limitation:**
-
+**Limitation:**  
 These variables represent player behavior, not company information.
 
 **Status:** Game State
@@ -246,12 +184,10 @@ These variables represent player behavior, not company information.
 - Stakeholder Priorities
 - Reassessment decisions
 
-**Used in MEDIFIN:**
-
+**Used in MEDIFIN:**  
 Used by the game system to generate later developments and the final Counselor Case Report.
 
-**Limitation:**
-
+**Limitation:**  
 A player decision is not automatically financially appropriate merely because the option is available.
 
 **Status:** Game State
@@ -275,8 +211,9 @@ A player decision is not automatically financially appropriate merely because th
 - Counselor Case Report
 
 **Limitation:**
-- These are simulation outputs, not empirical predictions of real corporate outcomes.
-- Detailed rules and state transitions are defined separately in the Week 4 Logic Specification.
+- These are educational simulation outputs, not empirical predictions of real corporate outcomes.
+- Their meaning is documented in `ASSUMPTIONS.md — A07–A08`.
+- Detailed calculation rules and thresholds belong to the Week 4 Logic Specification.
 
 **Status:** Derived Game State
 
@@ -284,15 +221,12 @@ A player decision is not automatically financially appropriate merely because th
 
 # 4. Source–Use Rules
 
-1. **Historical information must be traceable to a historical source (`S`).**
-
-2. **Fictional or adapted information must be identified as an assumption/adaptation (`A`) and documented in `ASSUMPTIONS.md`.**
-
-3. **Player and system-generated information is classified as Game State (`G`).**
-
-4. **A source must not support a stronger claim than the evidence actually provides.**
-
-5. **Primary sources are preferred when available. Secondary sources should only be used when necessary and must have their limitations stated.**
+1. **Historical information** must be traceable to an approved `S` source.
+2. **Historical / Adapted information** must identify both its historical basis and the relevant `A` adaptation.
+3. **Simulated information** must be documented as an `A` assumption in `ASSUMPTIONS.md`.
+4. **Player and system-generated information** is identified as `G` Game State.
+5. A source must not be used to support a stronger claim than the evidence provides.
+6. Primary historical sources are preferred whenever available.
 
 ---
 
@@ -301,5 +235,6 @@ A player decision is not automatically financially appropriate merely because th
 Historical information is considered **Ready** only when it can be traced to an approved source above.
 
 Any historical information that cannot yet be verified must be either:
+
 - verified using an appropriate source before final implementation; or
-- clearly reclassified as **Simulated / Adapted** and documented in `ASSUMPTIONS.md`.
+- clearly reclassified as **Simulated / Historical-Adapted** and documented in `ASSUMPTIONS.md`.
