@@ -99,6 +99,7 @@ Consequence
 Reassessment
 ↓
 Learning Feedback
+
 ---
 
 ## 7. Feasibility and Open Questions
