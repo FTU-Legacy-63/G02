@@ -1,127 +1,194 @@
-# MEDIFIN — PROJECT PROPOSAL
+# MEDIFIN — SOLUTION STRUCTURE
 
-## 1. Problem Direction
+## 1. User → Input → Process → Output → User Action
 
-Finance and Banking students learn financial concepts, ratios, and analytical methods in class, but have limited opportunities to practice **decision-making when the problem is not clearly identified and information is incomplete**.
+MEDIFIN follows one connected product chain:
 
-In real financial situations, several problems may exist at the same time. A financial counselor must be able to:
+> **Finance Student → Financial Case & Evidence → Investigate & Decide → Counselor Case Report → Review & Improve**
 
-- select relevant information;
-- distinguish between **symptoms, contributing problems, and primary causes**;
-- make evidence-based recommendations;
-- understand the trade-offs and consequences of each decision.
-
-### Core Problem
-
-> **Finance students lack a practical environment to apply financial knowledge to investigating, diagnosing, and responding to real-world financial problems.**
-
----
-
-## 2. Target User and User Task
-
-### Target User
-
-**Finance and Banking students with basic financial knowledge.**
-
-### Core User Task
-
-The player acts as a **Junior Financial Counselor** and follows the decision process:
-
-> **Investigate → Diagnose → Treat → Observe Consequences → Reassess**
-
-The player is not given the root cause in advance. Instead, they must select and analyze financial evidence before making a decision.
+| Stage | Description |
+|---|---|
+| **User** | Finance and Banking student with basic financial knowledge |
+| **Input** | Client scenario, financial data, diagnostic files, and decision options |
+| **Process** | Investigate → Diagnose → Treat → Execute → Observe Consequences → Reassess |
+| **Output** | Counselor Case Report with decision quality, case outcome, and feedback |
+| **User Action** | Review the decision path, learn from feedback, or replay the case |
 
 ---
 
-## 3. Desired User Outcome
+## 2. Initial Required Information
 
-After completing the case, the player should be better able to:
+Each MEDIFIN case requires four main information groups:
 
-- select and analyze relevant financial evidence;
-- identify the **primary financial constraint**;
-- make evidence-based recommendations;
-- understand the trade-offs of different treatments;
-- reassess a decision when new information becomes available.
+### A. Client & Scenario Information
 
-> **The goal is to develop financial reasoning and decision-making skills, rather than simply test financial calculations.**
+- Company background
+- Presenting financial problem
+- Business context and constraints
 
----
+### B. Financial Information
 
-## 4. Product Statement
+- Financial statements
+- Operating indicators
+- Liquidity and debt information
+- Other case-specific financial evidence
 
-**MEDIFIN — Financial Clinic** is a **scenario-based financial counseling simulation**.
+### C. Investigation Evidence
 
-The player acts as a “financial doctor” who investigates a company's financial condition, identifies its primary financial problem, recommends an appropriate treatment, and observes the consequences of that decision.
+Information is divided into selectable sources such as:
 
-### Current MVP
+- Diagnostic Files
+- Follow-Up Questions
+- Financial Statements
+- Final Diagnostic Question
 
-> **Case #01 — Toy Kingdom Inc.**
+The player cannot access every piece of information at the beginning, making **evidence selection part of the decision process**.
 
-Toy Kingdom is a retail company facing multiple pressures, including competition, liquidity constraints, reinvestment needs, and a heavy financial burden.
+### D. Decision Set
 
-The player must answer the central question:
+The case requires decisions on:
 
-> **What is the company's primary financial problem, and what should be done about it?**
-
----
-
-## 5. Main Output
-
-At the end of the case, the player receives a **Counselor Case Report**, including:
-
-- Counselor Performance;
-- Financial Resilience;
-- Governance Stability;
-- Final Case Outcome;
-- Decision Feedback.
-
-The feedback explains **what the player did, why the result occurred, and how their financial reasoning could be improved**.
+- Diagnosis
+- Treatment
+- Implementation Timing
+- Stakeholder Priorities
+- Reassessment
 
 ---
 
-## 6. Product Pattern
+## 3. Core Process Type
+
+### Product Pattern
 
 > **Scenario-Based Decision Simulation**
 
+### Core Process
+
 ```text
-Situation
+CLIENT SITUATION
 ↓
-Investigation
+INVESTIGATE
 ↓
-Diagnosis
+ANALYZE EVIDENCE
 ↓
-Treatment & Execution
+DIAGNOSE
 ↓
-Consequence
+TREAT & PLAN EXECUTION
 ↓
-Reassessment
+OBSERVE CONSEQUENCES
 ↓
-Learning Feedback
+REASSESS
+↓
+LEARN
 ```
 
-Rather than answering independent questions, the player moves through a connected financial decision process in which earlier choices affect later consequences and feedback.
+The game does not simply evaluate whether an answer is correct or incorrect.
+
+Instead, it evaluates how the player **uses evidence, makes financial decisions, responds to trade-offs, and updates judgment when new information appears**.
 
 ---
 
-## 7. Feasibility and Open Questions
+## 4. MVP Flow
 
-### Feasibility
+### Case #01 — Toy Kingdom Inc.
 
-MEDIFIN is feasible as a **web-based scenario simulation** because the MVP focuses on one complete case using predefined financial data and rule-based decision logic.
+The current MVP is one complete corporate financial counseling case.
 
-The project does not require real-time data, complex AI, or 3D development.
+Toy Kingdom is a retail company facing several simultaneous pressures, including competition, liquidity constraints, reinvestment needs, and a heavy financial burden.
+
+The player must determine:
+
+> **What is the company's primary financial problem, and what should be done about it?**
+
+### MVP Flow
+
+The case contains **13 screens organized into 6 phases**:
+
+| Phase | Screens | Main Task |
+|---|---:|---|
+| **1. Client Intake & Investigation** | 0–5 | Understand the case and collect financial evidence |
+| **2. Diagnosis** | 6 | Identify the primary financial problem |
+| **3. Treatment & Execution Planning** | 7–9 | Select treatment, timing, and stakeholder priorities |
+| **4. Consequence** | 10 | Observe developments resulting from the decisions |
+| **5. Reassessment** | 11 | Keep or revise professional judgment |
+| **6. Final Assessment** | 12 | Receive the Counselor Case Report |
+
+---
+
+## 5. Target / Fallback / Out of Scope
+
+### MVP Scope
+
+> **1 complete playable case — Toy Kingdom Inc.**
+
+The priority is to demonstrate that the full financial counseling loop works from investigation to final feedback.
+
+### Target Scope
+
+After Case #01 is complete and stable, MEDIFIN may expand to additional financial counseling cases using the same core structure.
+
+### Fallback Scope
+
+If development time is limited:
+
+> **Complete and polish Case #01 without optional replay or visual features.**
+
+The core decision process will not be removed.
+
+### Out of Scope
+
+The current project does not include:
+
+- Multiplayer
+- Real-time financial market data
+- AI-generated scenarios
+- Open-ended AI chatbot
+- 3D / Open World
+- Voice interaction
+- Real-money transactions
+
+---
+
+## 6. Initial Route Hypothesis
+
+### Product Route
+
+> **Code-Based Web Simulation**
 
 The current development route is:
 
-> **Financial Case Data → Decision Logic → Game Engine → Frontend → Browser**
+```text
+Financial Case Data
+↓
+Decision & Scoring Logic
+↓
+Game Engine
+↓
+Frontend Interface
+↓
+Browser
+```
 
-### Open Questions
+The interface is designed through Canva/Figma and implemented as an interactive browser-based experience.
 
-The team will continue to refine:
+---
 
-1. How much financial information should be shown without overwhelming the player?
-2. How should consequence rules balance financial realism and simplicity?
-3. How much controlled variation should be added to improve replayability?
-4. Which supporting features should be added after Case #01 is fully playable?
+## 7. Responsibility by Output
 
-> These questions may be refined during development without changing MEDIFIN's core product direction.
+| Member | Role | Main Output / Responsibility |
+|---|---|---|
+| **Nguyễn Phương Khuê** | Project Coordinator & Scenario Designer | Scenario structure, storyline, and case progression |
+| **Trương Vĩnh Thịnh** | Frontend & Integration Developer | Playable frontend and integration of interface, data, and game logic |
+| **Lâm Diệu Anh** | Financial Content Lead | Financial data, evidence, diagnosis/treatment content, and financial feedback |
+| **Bùi Lê Trà Giang** | UI/UX Designer & Dialogue Writer | Screen flow, UI/UX prototype, and dialogue |
+| **Lê Bảo Ngọc** | Game Engine & Logic Developer | Decision rules, scoring, consequence logic, and main game engine |
+
+---
+
+## Solution Chain
+
+The complete Week 2 solution structure can be summarized as:
+
+> **User Task → Financial Evidence → Decision Process → Counselor Case Report → Learning & Reassessment**
+
+This structure defines the current MEDIFIN product direction while later weeks provide the detailed information, logic, interface, and testing evidence.
