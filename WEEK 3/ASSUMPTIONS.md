@@ -1,23 +1,200 @@
-# ASSUMPTIONS.md
-### Case #01 — Toys "R" Us
+# ASSUMPTIONS
 
-Mục đích: liệt kê mọi chỗ nhóm thiết kế **tự suy luận hoặc tự đặt ra con số/luật chơi** mà không có nguồn tài chính thật xác nhận trực tiếp — để không ai trong team nhầm giả định thiết kế với sự thật lịch sử.
+## Case #01 — Toy Kingdom Inc.
 
-| # | Giả định (assumption) | Lý do đặt ra (reason) | Rủi ro nếu sai (risk) | Mức công khai với player (disclosure) |
-|---|---|---|---|---|
-| 1 | Chọn khoảng 400 triệu USD/năm làm số lãi vay đại diện, dù các nguồn dao động 400–447 triệu | Cần MỘT con số duy nhất để game logic tính "EBIT còn lại sau lãi vay"; 400 là con số được nhắc nhiều nhất trên báo chí công khai và gần giá trị trung vị các nguồn | Nếu người chơi/giảng viên tra cứu và thấy con số 426 hay 447 ở báo cáo gốc, có thể nghi ngờ độ chính xác của game | **Công khai**: ghi rõ trong tooltip/footnote UI "~400 triệu USD/năm (làm tròn, nguồn dao động 400-450tr tùy năm tài chính)" |
-| 2 | Coi "Amazon/e-commerce" là comorbidity (yếu tố làm nặng thêm) chứ không phải root cause | Dữ liệu định lượng (EBIT tăng, same-store sales giảm nhẹ) không đủ mạnh để kết luận Amazon là nguyên nhân chính, nhưng cũng không thể phủ nhận hoàn toàn vai trò của nó trong ngành bán lẻ 2010s | Đây là một diễn giải (interpretation), không phải sự thật tuyệt đối — có thể có chuyên gia tài chính khác lập luận theo hướng khác (vd cho rằng cả 2 yếu tố ngang nhau) | **Công khai**: case sheet ghi rõ đây là "kết luận chẩn đoán mà game coi là đúng để chấm điểm", không tuyên bố đây là sự đồng thuận học thuật tuyệt đối |
-| 3 | `success_prob_base` của từng phác đồ điều trị (A=0.30, B=0.60, C=0.50, D=0.45) | Không tồn tại "xác suất thành công" thật của các phương án phản thực (counterfactual) — vì trong lịch sử chỉ có Option D thực sự xảy ra (và đã thất bại). A/B/C là kịch bản giả định không xảy ra n" | Đây là con số duy nhất tìm được công khai mô tả sự thay đổi rõ ràng nhất; không có quyền truy cập trực tiếp 10-K gốc năm 2004-2005 trong quá trình build case | Nếu phthật | **Rủi ro cao nhất trong toàn bộ case**: đây là con số hoàn toàn do nhóm thiết kế game tự đặt, không kiểm chứng được bằng dữ liệu tài chính thật | **Bắt buộc công khai rõ ràng**: phải có disclaimer trong game (vd màn hình "Về case này") rằng xác suất các phác đồ A/B/C là **mô phỏng giáo dục**, không phải dự báo tài chính thật |
-| 4 | Modifier `if_creditor_is_pe_sponsor: -0.10` cho Option A | Suy luận logic: nếu chủ nợ đồng thời là cổ đông đã thu phí quản lý, động lực đàm phán thiện chí giảm — đây là lý thuyết agency conflict phổ biến trong tài chính doanh nghiệp | Mức giảm cụ thể "-0.10" là số áng chừng để tạo chênh lệch trải nghiệm chơi, không phải hệ số đo lường thực nghiệm | Không cần công khai chi tiết số cho player (sẽ lộ đáp án), nhưng phải công khai với giảng viên/team trong file evidence này |
-| 5 | Modifier `if_filed_before_holiday_season: -0.35` cho Option D | Dựa trên sự kiện thật: TRU nộp Chapter 11 tháng 9/2017 ngay trước mùa xây tồn kho lễ hội (Q4 chiếm ~40% doanh thu năm) và đã thất bại | Con số "-0.35" là ước lượng định tính được số hóa để phục vụ game logic, không phải hệ số tính được từ mô hình tài chính | Sau khi player hoàn thành case, màn hình so sánh với `real_world_outcome` nên giải thích rõ đây là lý do vì sao Option D "đúng lý thuyết nhưng vẫn có thể thua nếu sai thời điểm" |
-| 6 | Coi tỷ lệ nợ/vốn 30%/70% (trước LBO) và 78%/22% (sau LBO) là đại diện chính xác cho "cấu trúc vốương pháp tính của nguồn gốc (LinkedIn) khác chuẩn kế toán game đang ngầm giả định (vd tính theo giá trị sổ sách vs giá trị thị trường), tỷ lệ % có thể lệch | **Công khai**: đã ghi trong `SOURCE_USE_MAP.md` nguồn 3 là "con số minh họa xu hướng, không phải số kiểm toán tuyệt đối" |
-| 7 | Same-store sales "giảm 2 chữ số" được dùng làm ngưỡng tham chiếu để phân biệt "bệnh vận hành thật sự nghiêm trọng" | Không có một chuẩn ngành chính thức nào định nghĩa "ngưỡng sụp đổ vận hành" — đây là suy luận so sánh định tính (so với các case phá sản bán lẻ khác được biết đến rộng rãi như Circuit City, RadioShack) | Ngưỡng này mang tính minh họa giáo dục, không phải một chỉ số tài chính được công nhận rộng rãi (không có ISO/GAAP nào định nghĩa "ngưỡng bệnh nặng" cho same-store sales) | **Công khai**: nên ghi chú trong tài liệu giảng dạy đi kèm case rằng đây là heuristic giáo dục, khuyến khích player tự tra cứu thêm case thật để kiểm chứng |
-| 8 | Giả định người chơi tiếp cận case theo đúng trình tự: Vitals (gây nhiễu) → Xét nghiệm chuyên sâu → Chẩn đoán → Điều trị | Đây là thiết kế trải nghiệm (UX) có chủ đích để mô phỏng đúng quy trình khám bệnh thật (không cho xem hết dữ liệu ngay từ đầu) | Nếu game engine cho phép player skip thẳng tới phần "xét nghiệm chuyên sâu", toàn bộ giá trị giáo dục của "bẫy chẩn đoán vội" sẽ mất tác dụng | Đây là ràng buộc thiết kế nội bộ, không cần công khai với player nhưng phải ghi rõ trong tài liệu handoff cho dev để không bị code sai thứ tự |
+> **Educational financial simulation inspired by the historical Toys "R" Us case.**
+>
+> This file identifies the assumptions, adaptations, and simulation constraints created by the MEDIFIN team. Its purpose is to clearly separate **historical evidence** from **fictional or adapted case information**.
 
 ---
 
-## Nguyên tắc xử lý giả định mới
+## ID Guide
 
-1. Bất kỳ con số nào không truy được về một nguồn cụ thể trong `SOURCE_USE_MAP.md` → mặc định coi là giả định, phải thêm dòng vào bảng trên trước khi đưa vào code.
-2. Giả định ảnh hưởng trực tiếp đến **kết quả thắng/thua của player** (như xác suất treatment) → bắt buộc mức disclosure cao nhất (công khai dạng disclaimer trong game).
-3. Giả định chỉ ảnh hưởng đến **cách trình bày/diễn giải** (như coi Amazon là comorbidity) → công khai ở mức tài liệu case, không nhất thiết phải hiện ngay trong UI chính.
+| ID | Meaning |
+|---|---|
+| **S01, S02, ...** | Historical sources documented in `SOURCE_USE_MAP.md` |
+| **A01, A02, ...** | Assumptions or adaptations documented in this file |
+| **G01, G02, ...** | Player choices or game-generated states |
+
+> Historical facts must be traceable to an approved `S` source. Information created or materially adapted by the team must be identified as an `A` assumption.
+
+---
+
+# 1. Case Fiction & Governance
+
+## A01 — Toy Kingdom & Anderson Family
+
+**Assumption / Adaptation:**  
+Toy Kingdom Inc. is a fictional company inspired by Toys "R" Us. The Anderson family, including David, Michael and Richard, and the 78% family / 22% private-equity ownership structure are created for the simulation.
+
+**Why needed:**  
+Creates a realistic corporate setting in which financial decisions interact with ownership and management interests.
+
+**Limitation:**  
+These entities, individuals and ownership percentages must not be interpreted as historical information about Toys "R" Us.
+
+**Disclosure:**  
+Clearly identified as fictional in the case disclaimer.
+
+---
+
+## A02 — Houndstooth Capital Trigger
+
+**Assumption / Adaptation:**  
+Michael has a conditional agreement with Houndstooth Capital. If Adjusted EBITDA declines by another 5%, Houndstooth receives a preferential right to acquire part of the family's equity at a discounted price.
+
+**Why needed:**  
+Creates a hidden governance constraint that can affect the consequences of financial decisions.
+
+**Limitation:**  
+The agreement and the 5% threshold are entirely fictional and are not based on an actual Toys "R" Us agreement.
+
+**Disclosure:**  
+Presented as part of the fictional Toy Kingdom scenario. It becomes verified evidence for the player only if the relevant governance information is discovered.
+
+---
+
+## A03 — Family Conflict & Asset-Sale Scenario
+
+**Assumption / Adaptation:**  
+David favors reinvestment and financial recovery, while Michael is considering changes in corporate control and Richard is exploring an international asset sale.
+
+**Why needed:**  
+Creates competing stakeholder objectives and allows the player to consider governance consequences alongside financial consequences.
+
+**Limitation:**  
+The family conflict and proposed asset sale are fictional simulation elements.
+
+**Disclosure:**  
+Presented only as Toy Kingdom case information, not as historical Toys "R" Us evidence.
+
+---
+
+# 2. Historical Adaptations
+
+## A04 — Financial Timeline Adaptation
+
+**Assumption / Adaptation:**  
+Selected historical financial information from Toys "R" Us is adapted into Toy Kingdom's fictional FY2024–FY2026 timeline.
+
+**Why needed:**  
+Allows historical financial evidence to be used in a consistent fictional case timeline.
+
+**Limitation:**  
+FY2024–FY2026 are simulation years. They are not actual Toys "R" Us reporting periods.
+
+**Disclosure:**  
+Historical figures used in the case remain traceable to their original sources in `SOURCE_USE_MAP.md`.
+
+---
+
+## A05 — Investment & Management Scenario
+
+**Assumption / Adaptation:**  
+Toy Kingdom faces competing capital needs including store renovation, digital and omnichannel development, fulfillment, supply chain and customer experience. Specific management actions and their timing are adapted or created for the simulation.
+
+**Why needed:**  
+Creates realistic capital-allocation trade-offs under limited financial flexibility.
+
+**Limitation:**  
+The general business challenges are historically inspired, but the specific sequence of management actions and consequences is not an exact reconstruction of Toys "R" Us history.
+
+**Disclosure:**  
+Classified as **Historical / Adapted** rather than purely historical information.
+
+---
+
+## A06 — Holiday Liquidity Scenario
+
+**Assumption / Adaptation:**  
+A weak holiday period is assumed to increase pressure on Toy Kingdom's liquidity, inventory position and refinancing flexibility.
+
+**Why needed:**  
+Retail seasonality creates a meaningful timing trade-off for the player's decisions.
+
+**Limitation:**  
+Historical evidence supports the importance of the holiday season, but the specific consequences experienced by Toy Kingdom are simulation outcomes rather than empirical predictions.
+
+**Disclosure:**  
+Historical seasonality evidence and simulated consequences are kept separate.
+
+---
+
+# 3. Simulation Boundaries
+
+## A07 — Treatment Outcomes
+
+**Assumption:**  
+The consequences of treatment choices represent educational scenarios designed to illustrate financial trade-offs.
+
+**Why needed:**  
+The alternative treatments are counterfactual decisions, so their exact real-world outcomes cannot be directly observed or verified.
+
+**Limitation:**  
+MEDIFIN does not claim that a treatment will produce the same result for a real company under similar conditions.
+
+**Disclosure:**  
+Final results are presented as **simulation outcomes**, not financial forecasts.
+
+---
+
+## A08 — Outcome Indicators
+
+**Assumption:**  
+MEDIFIN uses **Financial Resilience** and **Governance Stability** as outcome dimensions and **Credibility** as a decision-quality indicator.
+
+**Why needed:**  
+These indicators allow the game to summarize the financial, governance and evidence-quality consequences of the player's decisions.
+
+**Limitation:**  
+They are educational simulation constructs, not standardized financial ratios, credit ratings or validated professional assessment measures.
+
+**Disclosure:**  
+The meaning of each indicator is explained to the player. Detailed calculation rules and thresholds are defined separately in the Week 4 Logic Specification.
+
+---
+
+# 4. Information & Gameplay Constraints
+
+## A09 — Limited Information Access
+
+**Assumption:**  
+The player cannot access every available piece of information before making decisions. For example, only a limited number of Diagnostic Files and Follow-Up Questions can be selected.
+
+**Why needed:**  
+The constraint requires the player to prioritize relevant evidence and make professional judgments under incomplete information.
+
+**Limitation:**  
+The access limits are game-design rules, not restrictions that necessarily exist in real financial advisory work.
+
+**Disclosure:**  
+The player is informed of the selection limits before making a choice.
+
+---
+
+## A10 — Evidence Remains Limited During Reassessment
+
+**Assumption:**  
+Information that was not selected during the investigation stage remains unavailable during reassessment. The player must reconsider the case using previously discovered evidence together with new developments.
+
+**Why needed:**  
+Preserves the consequences of earlier information-selection decisions and tests whether the player can update a judgment when new information appears.
+
+**Limitation:**  
+This is an educational gameplay constraint and does not represent a universal professional advisory process.
+
+**Disclosure:**  
+Locked information is clearly shown as unavailable in the interface.
+
+---
+
+# 5. Assumption Management Rules
+
+To keep the case evidence-ready:
+
+1. **Historical facts** must be traceable to an approved `S` source in `SOURCE_USE_MAP.md`.
+2. **Fictional or materially adapted information** must be documented as an `A` assumption in this file.
+3. **Player choices and game-generated states** are identified as `G` information.
+4. Historical evidence and simulation assumptions must not be presented as equivalent.
+5. Detailed formulas, scoring rules and thresholds belong to the **Week 4 Logic Specification**, not this Week 3 assumptions file.
+6. If new unsupported information is added to the case, it must either be verified with an appropriate source or clearly documented here as an assumption.
