@@ -2,9 +2,9 @@
 
 > **A scenario-based financial counseling simulation for Finance and Banking students.**
 
-MEDIFIN puts the player in the role of a **Junior Financial Counselor** who must investigate incomplete financial information, identify the client's primary financial problem, recommend an appropriate response, and reassess the decision after observing its consequences.
+MEDIFIN puts the player in the role of a **Junior Financial Counselor** who must investigate incomplete financial information, identify the client's primary financial problem, recommend a treatment, observe its consequences, and reassess the decision.
 
-> **Investigate → Diagnose → Treat → Execute → Observe Consequences → Reassess → Learn**
+> **Investigate → Diagnose → Treat → Execute → Observe → Reassess → Learn**
 
 ---
 
@@ -12,80 +12,118 @@ MEDIFIN puts the player in the role of a **Junior Financial Counselor** who must
 
 ### Case #01 — Toy Kingdom Inc.
 
-The current MVP focuses on **one complete corporate financial counseling case**.
+The current MVP focuses on **one complete playable financial counseling case** inspired by the historical Toys "R" Us case.
 
-Toy Kingdom is a retail company facing multiple pressures, including:
+Toy Kingdom faces multiple pressures, including:
 
 - competitive pressure;
 - liquidity constraints;
 - reinvestment needs;
-- high financial leverage; and
+- high financial leverage;
+- refinancing pressure; and
 - governance conflicts.
 
-The player must answer:
+The player must determine:
 
 > **What is the company's primary financial problem, and what should be done about it?**
 
-The case is implemented through a **13-screen / 6-phase decision flow**.
+The case follows a **13-screen / 6-phase flow**:
 
 | Phase | Main Task |
 |---|---|
-| **1. Client Intake & Investigation** | Understand the case and collect evidence |
+| **1. Client Intake & Investigation** | Collect and analyze relevant financial evidence |
 | **2. Diagnosis** | Identify the primary financial problem |
 | **3. Treatment & Execution Planning** | Select treatment, timing, and stakeholder priorities |
 | **4. Consequence** | Observe the effects of previous decisions |
-| **5. Reassessment** | Keep or revise professional judgment |
+| **5. Reassessment** | Maintain or revise professional judgment |
 | **6. Final Assessment** | Receive the Counselor Case Report |
 
 ---
 
-## 2. Main Product Output
+## 2. Live Working Build
 
-At the end of the case, the player receives a **Counselor Case Report**.
+### 🎮 Play MEDIFIN
 
-It contains two separate results:
+**[Launch Case #01 — Toy Kingdom Inc.](https://kirisakitrangngocbk-a11y.github.io/Medifin/)**
 
-### Counselor Performance
+### Current Build Status
 
-Evaluates the quality of the player's decision process across:
+| Component | Status |
+|---|---|
+| 13-screen / 6-phase core flow | ✅ Working |
+| Financial case data | ✅ Integrated |
+| Investigation & Diagnosis | ✅ Working |
+| Treatment & Execution Planning | ✅ Working |
+| Counselor Performance Scoring | ✅ Working |
+| Reassessment | ✅ Working |
+| Counselor Case Report | ✅ Working |
+| Decision-to-Outcome Rules | 🟡 Refinement / Testing |
+| Consequence Calibration | 🟡 Refinement / Testing |
+| Public Build | ✅ Deployed |
 
-**Investigation · Diagnosis · Treatment · Execution Planning · Reassessment**
+The current Week 6 priority is:
 
-### Case Outcome
+> **Integration → Testing → Bug Fixing → Stabilization**
 
-Shows the simulated impact on:
-
-**Financial Resilience · Governance Stability · Final Ending**
-
-> **Decision Quality ≠ Company Outcome**
-
-The purpose is not only to give the player a score, but to explain **why the result occurred and how the player's financial reasoning could improve**.
+rather than adding new major features.
 
 ---
 
-## 3. Product Structure
+## 3. How MEDIFIN Works
 
 ```mermaid
 flowchart LR
-    A["Client Situation"] --> B["Investigation"]
-    B --> C["Financial Evidence"]
-    C --> D["Diagnosis"]
-    D --> E["Treatment"]
-    E --> F["Execution Planning"]
-    F --> G["Consequences"]
-    G --> H["Reassessment"]
-    H --> I["Counselor Case Report"]
+    A["Financial Evidence"] --> B["Investigation"]
+    B --> C["Diagnosis"]
+    C --> D["Treatment"]
+    D --> E["Execution Planning"]
+    E --> F["Consequences"]
+    F --> G["Reassessment"]
+    G --> H["Counselor Case Report"]
 ```
 
 MEDIFIN is designed as a **decision simulation rather than a traditional correct/incorrect quiz**.
 
-Player choices influence later evidence, consequences, feedback, and the final case outcome.
+Player decisions are evaluated in context, and different choices may create different financial trade-offs and consequences.
 
 ---
 
-## 4. Repository Evidence
+## 4. Main Output
 
-The repository documents the development of MEDIFIN from problem definition to a testable product.
+At the end of the case, the player receives a **Counselor Case Report**.
+
+The report separates two types of results:
+
+### Counselor Performance
+
+Evaluates the quality of the player's decision process:
+
+| Component | Weight |
+|---|---:|
+| Investigation | 20% |
+| Diagnosis | 30% |
+| Treatment | 20% |
+| Execution Planning | 15% |
+| Reassessment | 15% |
+| **Total** | **100%** |
+
+### Company Outcome
+
+Shows the simulated condition of Toy Kingdom through:
+
+> **Financial Resilience + Governance Stability → Final Case Outcome**
+
+Therefore:
+
+> **Decision Quality ≠ Company Outcome**
+
+A reasonable decision may still lead to a difficult company outcome when the company begins from a financially constrained position.
+
+---
+
+## 5. Project Evidence
+
+The repository documents the development of MEDIFIN from problem definition to a working and testable MVP.
 
 ### Week 1 — Problem Direction
 
@@ -93,9 +131,8 @@ The repository documents the development of MEDIFIN from problem definition to a
 
 - Financial Clinic concept
 - Target user
-- Problem candidates
-- Core user task
-- Initial problem statement
+- Core problem
+- Initial product direction
 
 ---
 
@@ -107,13 +144,13 @@ The repository documents the development of MEDIFIN from problem definition to a
 - [SOLUTION_STRUCTURE.md](WEEK%202/SOLUTION_STRUCTURE.md)
 
 **Key Output:**  
-MEDIFIN was defined as a **scenario-based financial counseling simulation** with one complete decision flow and a Counselor Case Report as the main output.
+MEDIFIN was defined as a **scenario-based financial counseling simulation** with one complete case as the MVP.
 
 ---
 
 ### Week 3 — Information & Evidence Readiness
 
-**Focus:** What information must be ready?
+**Focus:** What information does the product need?
 
 - [INPUT_DICTIONARY.md](WEEK%203/INPUT_DICTIONARY.md)
 - [SOURCE_USE_MAP.md](WEEK%203/SOURCE_USE_MAP.md)
@@ -121,45 +158,61 @@ MEDIFIN was defined as a **scenario-based financial counseling simulation** with
 - [SAMPLE_INPUT_OUTPUT.md](WEEK%203/SAMPLE_INPUT_OUTPUT.md)
 
 **Key Output:**  
-Case inputs, financial evidence, sources, assumptions, and expected uses were documented before implementation.
+Case inputs, financial evidence, historical sources, simulation assumptions, and expected information use were documented before implementation.
 
 ---
 
 ### Week 4 — Decision Logic & Midterm Readiness
 
-**Focus:** How does MEDIFIN decide?
+**Focus:** How does MEDIFIN make decisions and evaluate the player?
 
 - [PROJECT_LOGIC_CHAIN.md](WEEK%204/PROJECT_LOGIC_CHAIN.md)
 - [DECISION_RULES_AND_SCORING.md](WEEK%204/DECISION_RULES_AND_SCORING.md)
 - [EXPECTED_RESULT_AND_LOGIC_TEST.md](WEEK%204/EXPECTED_RESULT_AND_LOGIC_TEST.md)
 - [MIDTERM_REVIEW.md](WEEK%204/MIDTERM_REVIEW.md)
 
-**Key Output:**  
-The team defined the complete:
+**Key Output:**
 
 > **Input → Decision Logic → Consequence → Reassessment → Output**
 
-Counselor Performance and Case Outcome are evaluated separately.
+Financial calculations, decision criteria, scoring logic, and expected results were defined.
 
 ---
 
 ### Week 5 — Product Refinement
 
-**Focus:** How will the user experience the product?
+**Focus:** How does the user experience the product?
 
 - [FEATURE_MAP.md](WEEK%205/FEATURE_MAP.md)
 - [USER_FLOW.md](WEEK%205/USER_FLOW.md)
-- [WORKING_INTERFACE_DRAFT_AND_REVISION_EVIDENCE.md](WEEK%205/WORKING_INTERFACE_DRAFT_AND_REVISION_EVIDENCE.md)
+- [INTERFACE_DRAFT.md](WEEK%205/INTERFACE_DRAFT.md)
 
 **Key Output:**
 
 > **Refined Flow + Clearer Interface + Cut Decisions + Visible Ownership**
 
-Week 5 focuses on making one complete Case #01 easier to use, test, and integrate before Week 6.
+The product was refined into a clearer **13-screen / 6-phase user journey** before implementation and integration.
 
 ---
 
-## 5. Working Prototype
+### Week 6 — Working Build, Integration & Testing
+
+**Focus:** Does the core product actually work end-to-end?
+
+- [CORE_FLOW_AND_INTEGRATION.md](WEEK%206/CORE_FLOW_AND_INTEGRATION.md)
+- [TEST_CASES.md](WEEK%206/TEST_CASES.md)
+- [BUG_LOG.md](WEEK%206/BUG_LOG.md)
+- [SCOPE_FREEZE.md](WEEK%206/SCOPE_FREEZE.md)
+
+**Key Output:**
+
+> **Working Core Flow → Integration → Testing → Bug Fixing → Scope Freeze**
+
+Week 6 connects the previous product structure, financial logic, user flow, and interface into a **playable and testable MVP**.
+
+---
+
+## 6. Working Prototype & Interface
 
 ### UI/UX Draft
 
@@ -169,74 +222,71 @@ Week 5 focuses on making one complete Case #01 easier to use, test, and integrat
 
 🖥️ [Figma — MEDIFIN Interactive Prototype](https://www.figma.com/proto/VtlhknTup0qQw5TX7OhloF/Medifin?node-id=1-14&p=f&t=Q6iSnSJUCTCF9sF1-0&scaling=min-zoom&content-scaling=fixed&page-id=1%3A8&starting-point-node-id=1%3A14)
 
-The current development priority is:
+### Playable Build
 
-> **Prototype → Frontend → Game Logic Integration → Complete Playable Case**
+🎮 [MEDIFIN — Live Case #01](https://kirisakitrangngocbk-a11y.github.io/Medifin/)
 
----
+The development route is now:
 
-## 6. Team Members & Ownership
-
-| Member | Student ID | Role / Responsibility | Main Contribution |
-|---|---|---|---|
-| **Nguyễn Phương Khuê** | 2413380023 | Project Coordinator & Scenario Designer | Scenario structure, storyline, and case progression |
-| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer | Playable frontend and integration of UI, financial data, and game logic |
-| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead | Financial data, evidence, diagnosis/treatment content, and financial feedback |
-| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer | Screen flow, Canva/Figma prototype, dialogue, and interface design |
-| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer | Decision rules, scoring, consequence logic, and main game engine |
-
-### Shared Working Folder
-
-📁 [MEDIFIN — NHÓM 2](https://docs.google.com/document/d/1LDxYMVNUmx3nDv6oSetyHl7smptbk7PI986ljM8tMw4/edit?tab=t.0)
+> **Prototype → Integrated Build → Testing → Stabilized MVP**
 
 ---
 
-## 7. MVP Scope
+## 7. Team Members & Ownership
 
-### Current MVP
+| Member | Student ID | Role / Responsibility |
+|---|---|---|
+| **Nguyễn Phương Khuê** | 2413380023 | Project Coordinator & Scenario Designer |
+| **Trương Vĩnh Thịnh** | 2412380046 | Frontend & Integration Developer |
+| **Lâm Diệu Anh** | 2413380007 | Financial Content Lead |
+| **Bùi Lê Trà Giang** | 2413380015 | UI/UX Designer & Dialogue Writer |
+| **Lê Bảo Ngọc** | 2412380033 | Game Engine & Logic Developer |
 
-> **One complete playable Case #01 — Toy Kingdom Inc.**
+Detailed contribution evidence is recorded in:
 
-### Keep
+**[MEMBER_CONTRIBUTION.md](MEMBER_CONTRIBUTION.md)**
 
-- Investigation
+---
+
+## 8. Frozen MVP Scope
+
+### Included
+
+- One complete Case #01
+- 13 screens / 6 phases
+- Financial evidence investigation
 - Diagnosis
-- Treatment & Execution
+- Treatment & Execution Planning
 - Consequence
 - Reassessment
+- Counselor Performance
+- Company Outcome
 - Counselor Case Report
 
-### Simplify
-
-- Governance / family storyline where it distracts from financial reasoning
-
-### Postpone
+### Postponed / Out of Scope
 
 - Additional cases
-- Controlled scenario variation
-- Advanced animations and visual effects
-
-### Out of Scope
-
-- Multiplayer
-- Real-time financial data
-- AI-generated cases
 - Open-ended AI chatbot
-- 3D / Open World
-- Real-money transactions
+- AI-generated scenarios
+- Custom company financial uploads
+- Real-time financial data
+- Multiplayer
+- Advanced visual effects
+
+The current priority is to make **one case complete, explainable, stable, and testable** before expanding MEDIFIN.
 
 ---
 
-## 8. Current Status
+## 9. Current Status
 
-**Current Stage:** Week 5 — Product Refinement
-
+**Current Stage:** Week 6 — Working Build, Integration & Testing  
 **Product:** MEDIFIN — Financial Clinic  
 **Product Pattern:** Scenario-Based Decision Simulation  
 **Current Case:** Toy Kingdom Inc.  
-**MVP:** 1 Complete Playable Case  
-**Interface:** Interactive Prototype Available  
-**Decision Logic:** Defined  
-**Current Priority:** Frontend & Game Logic Integration
+**MVP:** One Complete Playable Case  
+**Core Flow:** Working  
+**Public Build:** Deployed  
+**Testing:** In Progress  
+**Current Priority:** Decision Logic Refinement, Testing & Stabilization
 
-> **Goal before Week 6: one complete, understandable, and testable Case #01 flow.**
+> **Week 6 Goal: one connected, financially explainable, and testable Case #01 from player input to final Counselor Case Report.**
