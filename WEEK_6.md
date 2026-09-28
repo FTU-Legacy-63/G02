@@ -4,7 +4,7 @@
 
 The demo satisfies a single primary mission: the user acts as a **Junior Financial Counselor** to investigate a client company's financial health, diagnose root financial issues, prescribe an appropriate treatment, execute an action plan, observe simulated consequences, reassess their decision based on new developments, and receive an explainable Counselor Case Report.
 
-The complete counseling interaction flow runs in [`demo/index.html`](../demo/index.html):
+The complete counseling interaction flow runs in (https://kirisakitrangngocbk-a11y.github.io/Medifin/)
 
 ```text
 Select Diagnostic Files & Questions
@@ -29,7 +29,7 @@ The MEDIFIN MVP interface retains the structured 13-screen / 6-phase layout defi
 | **Logic -> Output** | Report reflects player choices with exact score breakdown and company state | Interface renders scores across 5 criteria (0–100), Financial Resilience, and Governance Stability | **Pass** Chrome/Safari local, Sep 28, 2026 |
 | **Output -> Action** | Player records final reasoning, decision confirmation, and case reflections | Interactive form at case closure logs session decisions and qualitative notes | **Implemented**; browser verified |
 | **Repo -> Local Run** | Executable locally using standard project scripts | `npm install` / `python3 demo/server.py` and navigate to `/demo/` | **Pass**, HTTP 200 & API 200 |
-| **Repo -> Public URL** | Fully playable deployment accessible via public web URL | [medifin-simulation.vercel.app](https://medifin-simulation.vercel.app/) hosts static UI & Python engine API | **Pass**, production HTTP 200 & API 200 |
+| **Repo -> Public URL** | Fully playable deployment accessible via public web URL | [medifin-simulation.vercel.app]([https://medifin-simulation.vercel.app/](https://kirisakitrangngocbk-a11y.github.io/Medifin/)) hosts static UI & Python engine API | **Pass**, production HTTP 200 & API 200 |
 
 ## Sample Input for In-Class Presentation
 
@@ -96,6 +96,6 @@ API boundary and engine unit tests are run via `python3 -m unittest discover -s 
 
 ## Production Deployment
 
-- **Public Production URL:** [medifin-simulation.vercel.app](https://medifin-simulation.vercel.app/)
+- **Public Production URL:** ([https://medifin-simulation.vercel.app/](https://kirisakitrangngocbk-a11y.github.io/Medifin/))
 - **Infrastructure:** Hosted on Vercel utilizing static HTML5/JS frontend and Python Serverless Functions (`/api/simulate`, `/api/case-data`).
 - **Deployment Status:** Live and verified on Sep 28, 2026. All static assets and API endpoints return HTTP 200 with sub-150ms response times.
