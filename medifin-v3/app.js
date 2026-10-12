@@ -50,7 +50,12 @@ diagnosisCategory: "./asset/images/round6/diagnosis-category.png",
 diagnosisMultifactor: "./asset/images/round6/diagnosis-multifactor.png",
 
 // ROUND 11
-round11Doctor: "./asset/images/round6/diagnosis-doctor.png"
+round11Doctor: "./asset/images/round6/diagnosis-doctor.png",
+
+// ROUND 12
+round12DoctorGood: "./asset/images/round12/doctor-good.png",
+round12DoctorMedium: "./asset/images/round12/doctor-medium.png",
+round12DoctorBad: "./asset/images/round12/doctor-bad.png"
 };
 
 // ======================================================
@@ -74,8 +79,10 @@ let selectedFinalQuestion = null;
 let currentFinalQuestion = null;
 // ROUND 6
 let selectedDiagnosis = null;
+let initialDiagnosis = null;
 // ROUND 7
 let selectedTreatment = null;
+let initialTreatment = null;
 // ROUND 8
 let selectedTiming = null;
 // ROUND 9
@@ -659,6 +666,12 @@ case 16:
 case 17:
 
     renderRound11FollowUp();
+
+    break;
+
+    case 18:
+
+    renderRound12Conclusion();
 
     break;
 
@@ -3261,6 +3274,11 @@ function confirmDiagnosis() {
         return;
     }
 
+    // Save the first diagnosis for the final report
+    if (initialDiagnosis === null) {
+        initialDiagnosis = selectedDiagnosis;
+    }
+
     goToScreen(13);
 }
 // ======================================================
@@ -3611,6 +3629,11 @@ function confirmTreatment() {
 
     if (!selectedTreatment) {
         return;
+    }
+
+    // Save the first treatment for the final report
+    if (initialTreatment === null) {
+        initialTreatment = selectedTreatment;
     }
 
     goToScreen(14);
@@ -4333,6 +4356,7 @@ function confirmStakeholders() {
     }
 
     currentProgressUpdate = 0;
+    highestProgressUpdate = 0;
 
     goToScreen(16);
 }
@@ -4694,7 +4718,11 @@ function openProgressUpdate(index) {
 
 function nextProgressUpdate() {
 
-    if (
+    if (currentProgressUpdate < highestProgressUpdate) {
+
+        currentProgressUpdate++;
+
+    } else if (
         highestProgressUpdate <
         ROUND10_UPDATES.length - 1
     ) {
@@ -4703,9 +4731,9 @@ function nextProgressUpdate() {
 
         currentProgressUpdate =
             highestProgressUpdate;
-
-        renderRound10Progress();
     }
+
+    renderRound10Progress();
 }
 
 
@@ -5754,15 +5782,1083 @@ function finishRound11() {
         "ROUND 11 RESULT",
         {
             action: round11Action,
-            diagnosis: selectedDiagnosis,
-            treatment: selectedTreatment
+            initialDiagnosis: initialDiagnosis,
+            finalDiagnosis: selectedDiagnosis,
+            initialTreatment: initialTreatment,
+            finalTreatment: selectedTreatment
         }
     );
 
-    // Round 12 sẽ nối vào đây.
-    alert(
-        "Round 11 completed. Ready for Case Closure."
+    goToScreen(18);
+}
+
+// ======================================================
+// SCREEN 18 — ROUND 12 CONCLUSION
+// ======================================================
+
+
+// ======================================================
+// ROUND 12 — COUNSELOR SCORE
+// ======================================================
+
+function calculateCounselorScore() {
+
+    let investigationScore = 0;
+    let diagnosisScore = 0;
+    let treatmentScore = 0;
+    let executionScore = 0;
+    let reassessmentScore = 0;
+
+
+    // --------------------------------------------------
+    // 1. INVESTIGATION — 20%
+    // --------------------------------------------------
+
+    // Strongest files for identifying the central problem
+    const strongFiles = ["C", "D", "F"];
+
+    const strongFileCount =
+        selectedFiles.filter(id =>
+            strongFiles.includes(id)
+        ).length;
+
+    let fileScore = 40;
+
+    if (strongFileCount === 1) fileScore = 60;
+    if (strongFileCount === 2) fileScore = 80;
+    if (strongFileCount === 3) fileScore = 100;
+
+
+    // Relevant follow-up questions
+    const strongQuestions = ["C", "D", "F", "G"];
+
+    const strongQuestionCount =
+        selectedQuestions.filter(id =>
+            strongQuestions.includes(id)
+        ).length;
+
+    let questionScore = 40;
+
+    if (strongQuestionCount === 1) questionScore = 70;
+    if (strongQuestionCount === 2) questionScore = 100;
+
+
+    // Final question quality
+    const finalQuestionScores = {
+        A: 60,
+        B: 60,
+        C: 60,
+        D: 80,
+        E: 80,
+        F: 100,
+        G: 80
+    };
+
+    const finalQuestionScore =
+        finalQuestionScores[selectedFinalQuestion] || 40;
+
+
+    investigationScore =
+        fileScore * 0.50 +
+        questionScore * 0.30 +
+        finalQuestionScore * 0.20;
+
+
+    // --------------------------------------------------
+    // 2. DIAGNOSIS — 30%
+    // --------------------------------------------------
+
+    const diagnosisScores = {
+        A: 60,
+        B: 70,
+        C: 80,
+        D: 100,
+        E: 55,
+        F: 85
+    };
+
+    diagnosisScore =
+        diagnosisScores[initialDiagnosis] || 50;
+
+
+    // Evidence support bonus / penalty
+    if (
+        initialDiagnosis === "D" &&
+        selectedFiles.includes("D")
+    ) {
+        diagnosisScore = Math.min(
+            100,
+            diagnosisScore
+        );
+    }
+
+    if (
+        initialDiagnosis === "D" &&
+        !selectedFiles.includes("D")
+    ) {
+        diagnosisScore -= 15;
+    }
+
+
+    // --------------------------------------------------
+    // 3. TREATMENT — 20%
+    // --------------------------------------------------
+
+    const treatmentScores = {
+        A: 72,
+        B: 60,
+        C: 92,
+        D: 75,
+        E: 82,
+        F: 88
+    };
+
+    treatmentScore =
+        treatmentScores[initialTreatment] || 50;
+
+
+    // Diagnosis-treatment fit
+    if (
+        initialDiagnosis === "D" &&
+        ["C", "E", "F"].includes(initialTreatment)
+    ) {
+        treatmentScore =
+            Math.min(100, treatmentScore + 8);
+    }
+
+
+    // --------------------------------------------------
+    // 4. EXECUTION PLANNING — 15%
+    // --------------------------------------------------
+
+    const timingScores = {
+        A: 85,
+        B: 70,
+        C: 90,
+        D: 45
+    };
+
+    const timingScore =
+        timingScores[selectedTiming] || 50;
+
+
+    let stakeholderScore = 50;
+
+    if (selectedStakeholders.includes("D")) {
+        stakeholderScore += 20;
+    }
+
+    if (selectedStakeholders.includes("A")) {
+        stakeholderScore += 10;
+    }
+
+    if (selectedStakeholders.includes("F")) {
+        stakeholderScore += 10;
+    }
+
+    if (selectedStakeholders.includes("G")) {
+        stakeholderScore += 10;
+    }
+
+    stakeholderScore =
+        Math.min(100, stakeholderScore);
+
+
+    executionScore =
+        timingScore * 0.40 +
+        stakeholderScore * 0.60;
+
+
+// --------------------------------------------------
+// 5. REASSESSMENT — 15%
+// --------------------------------------------------
+
+const diagnosisImproved =
+    selectedDiagnosis === "D";
+
+const treatmentFitsFinalDiagnosis =
+    selectedDiagnosis === "D" &&
+    ["C", "E", "F"].includes(selectedTreatment);
+
+const diagnosisStayed =
+    selectedDiagnosis === initialDiagnosis;
+
+const treatmentStayed =
+    selectedTreatment === initialTreatment;
+
+
+// Keeping a strong original plan is valid
+if (
+    diagnosisStayed &&
+    treatmentStayed &&
+    initialDiagnosis === "D" &&
+    ["C", "E", "F"].includes(initialTreatment)
+) {
+    reassessmentScore = 95;
+}
+
+// Changing toward a better-supported diagnosis/treatment
+else if (
+    diagnosisImproved &&
+    treatmentFitsFinalDiagnosis
+) {
+    reassessmentScore = 95;
+}
+
+// Final diagnosis is well supported
+else if (diagnosisImproved) {
+    reassessmentScore = 88;
+}
+
+// Reasonable reassessment, but not strongly aligned
+else if (
+    round11Action === "B" ||
+    round11Action === "C" ||
+    round11Action === "D"
+) {
+    reassessmentScore = 78;
+}
+
+// Keeping a weaker original plan
+else {
+    reassessmentScore = 70;
+}
+
+
+
+    // --------------------------------------------------
+    // FINAL COUNSELOR SCORE
+    // --------------------------------------------------
+
+    const finalScore =
+        investigationScore * 0.20 +
+        diagnosisScore * 0.30 +
+        treatmentScore * 0.20 +
+        executionScore * 0.15 +
+        reassessmentScore * 0.15;
+
+
+    return {
+        investigation:
+            Math.round(investigationScore),
+
+        diagnosis:
+            Math.round(diagnosisScore),
+
+        treatment:
+            Math.round(treatmentScore),
+
+        execution:
+            Math.round(executionScore),
+
+        reassessment:
+            Math.round(reassessmentScore),
+
+        total:
+            Math.round(finalScore)
+    };
+}
+
+
+// ======================================================
+// ROUND 12 — CASE OUTCOME
+// ======================================================
+function calculateCaseOutcome() {
+
+    let financial = 5;
+    let governance = 2;
+
+
+    // --------------------------------------------------
+    // FINANCIAL RESILIENCE
+    // Maximum = 12
+    // --------------------------------------------------
+
+    if (selectedTreatment === "C") {
+        financial += 3;
+    }
+
+    if (selectedTreatment === "F") {
+        financial += 3;
+    }
+
+    if (selectedTreatment === "E") {
+        financial += 2;
+    }
+
+    if (selectedTreatment === "D") {
+        financial += 2;
+    }
+
+    if (selectedTreatment === "A") {
+        financial += 1;
+    }
+
+    if (selectedTreatment === "B") {
+        financial -= 1;
+    }
+
+
+    // Timing effect
+    if (selectedTiming === "A") {
+        financial += 1;
+    }
+
+    if (selectedTiming === "C") {
+        financial += 2;
+    }
+
+    if (selectedTiming === "D") {
+        financial -= 2;
+    }
+
+
+    // Stakeholder preparation effect
+    if (selectedStakeholders.includes("D")) {
+        financial += 1;
+    }
+
+    if (selectedStakeholders.includes("A")) {
+        financial += 1;
+    }
+
+    if (selectedStakeholders.includes("F")) {
+        financial += 1;
+    }
+
+
+    // Keep score between 0 and 12
+    financial = Math.max(
+        0,
+        Math.min(12, Math.round(financial))
     );
+
+
+    // --------------------------------------------------
+    // GOVERNANCE STABILITY
+    // Maximum = 6
+    // --------------------------------------------------
+
+    // Governance explicitly prioritized
+    if (selectedStakeholders.includes("G")) {
+        governance += 2;
+    }
+
+
+    // Governance risk was identified AND acted upon
+    if (
+        selectedStakeholders.includes("G") &&
+        (
+            selectedFiles.includes("G") ||
+            selectedQuestions.includes("F") ||
+            selectedQuestions.includes("G")
+        )
+    ) {
+        governance += 1;
+    }
+
+
+    // Combined restructuring can improve coordination
+    // only when governance is explicitly prioritized
+    if (
+        selectedTreatment === "F" &&
+        selectedStakeholders.includes("G")
+    ) {
+        governance += 1;
+    }
+
+
+    // Governance risk discovered but ignored
+    if (
+        (
+            selectedFiles.includes("G") ||
+            selectedQuestions.includes("F") ||
+            selectedQuestions.includes("G")
+        ) &&
+        !selectedStakeholders.includes("G")
+    ) {
+        governance -= 1;
+    }
+
+
+    // Keep score between 0 and 6
+    governance = Math.max(
+        0,
+        Math.min(6, Math.round(governance))
+    );
+
+
+    // IMPORTANT:
+    // Return both scores to Round 12
+    return {
+        financial: financial,
+        governance: governance
+    };
+}
+
+
+// ======================================================
+// ROUND 12 — RESULT LEVEL
+// ======================================================
+
+function getRound12Result(score) {
+
+    if (score >= 80) {
+
+        return {
+            level: "good",
+            doctor: ASSET.round12DoctorGood,
+            title: "STRATEGIC COUNSELOR",
+            message:
+                "You built a strong, evidence-based counseling strategy."
+        };
+
+    }
+
+    if (score >= 60) {
+
+        return {
+            level: "medium",
+            doctor: ASSET.round12DoctorMedium,
+            title: "DEVELOPING COUNSELOR",
+            message:
+                "Your reasoning was sound, but several decisions could be strengthened."
+        };
+
+    }
+
+    return {
+        level: "bad",
+        doctor: ASSET.round12DoctorBad,
+        title: "JUNIOR COUNSELOR",
+        message:
+            "Your case requires further review and stronger evidence-based reasoning."
+    };
+}
+
+
+// ======================================================
+// ROUND 12 — FINANCIAL TIER
+// ======================================================
+
+function getFinancialTier(score) {
+
+    if (score >= 9) {
+        return {
+            name: "Stable",
+            className: "good"
+        };
+    }
+
+    if (score >= 5) {
+        return {
+            name: "Fragile",
+            className: "medium"
+        };
+    }
+
+    return {
+        name: "Collapse",
+        className: "bad"
+    };
+}
+
+
+// ======================================================
+// ROUND 12 — GOVERNANCE TIER
+// ======================================================
+
+function getGovernanceTier(score) {
+
+    if (score >= 5) {
+        return {
+            name: "Stabilized",
+            className: "good"
+        };
+    }
+
+    if (score >= 3) {
+        return {
+            name: "Divided",
+            className: "medium"
+        };
+    }
+
+    return {
+        name: "Loss",
+        className: "bad"
+    };
+}
+
+
+// ======================================================
+// ROUND 12 — FINAL ENDING
+// ======================================================
+
+function getFinalEnding(financialTier, governanceTier) {
+
+    const endings = {
+
+        "Stable-Stabilized":
+            "The Successor",
+
+        "Stable-Divided":
+            "Conditional Truce",
+
+        "Stable-Loss":
+            "Win the Company, Lose the Throne",
+
+        "Fragile-Stabilized":
+            "Holding the Line Together",
+
+        "Fragile-Divided":
+            "Dividing the Lifeboat",
+
+        "Fragile-Loss":
+            "Cannibalizing the Company",
+
+        "Collapse-Stabilized":
+            "United in Failure",
+
+        "Collapse-Divided":
+            "The Fund's Company",
+
+        "Collapse-Loss":
+            "Total Breakdown"
+    };
+
+
+    return endings[
+        `${financialTier}-${governanceTier}`
+    ] || "Uncertain Recovery";
+}
+
+
+// ======================================================
+// ROUND 12 — HELPER NAMES
+// ======================================================
+
+function getDiagnosisName(id) {
+
+    if (!id || !ROUND6_DIAGNOSES[id]) {
+        return "—";
+    }
+
+    return `${ROUND6_DIAGNOSES[id].code} · ${ROUND6_DIAGNOSES[id].title}`;
+}
+
+
+function getTreatmentName(id) {
+
+    if (!id || !ROUND7_TREATMENTS[id]) {
+        return "—";
+    }
+
+    return `${ROUND7_TREATMENTS[id].code} · ${ROUND7_TREATMENTS[id].title}`;
+}
+
+
+function getTimingName(id) {
+
+    if (!id || !ROUND8_TIMINGS[id]) {
+        return "—";
+    }
+
+    return `${ROUND8_TIMINGS[id].code} · ${ROUND8_TIMINGS[id].title}`;
+}
+
+
+function getStakeholderNames() {
+
+    if (!selectedStakeholders.length) {
+        return "—";
+    }
+
+    return selectedStakeholders
+        .map(id =>
+            ROUND9_STAKEHOLDERS[id].title
+        )
+        .join(", ");
+}
+
+
+// ======================================================
+// ROUND 12 — PROGRESS
+// ======================================================
+
+function renderRound12Progress() {
+
+    const steps = [
+        "Intake",
+        "Clinic",
+        "Case files",
+        "Questions",
+        "Financial assessment",
+        "Final questions"
+    ];
+
+    return `
+        <div class="round12-progress">
+
+            ${steps.map((step, index) => `
+
+                <div class="round12-progress-step completed">
+
+                    <span>✓</span>
+
+                    <b>
+                        ${step}
+                    </b>
+
+                </div>
+
+                ${
+                    index < steps.length - 1
+                        ? `<i></i>`
+                        : ""
+                }
+
+            `).join("")}
+
+        </div>
+    `;
+}
+
+
+// ======================================================
+// ROUND 12 — MAIN RENDER
+// ======================================================
+
+function renderRound12Conclusion() {
+
+    const counselor =
+        calculateCounselorScore();
+
+    const caseOutcome =
+        calculateCaseOutcome();
+
+    const result =
+        getRound12Result(counselor.total);
+
+    const financialTier =
+        getFinancialTier(caseOutcome.financial);
+
+    const governanceTier =
+        getGovernanceTier(caseOutcome.governance);
+
+    const finalEnding =
+        getFinalEnding(
+            financialTier.name,
+            governanceTier.name
+        );
+
+
+    const reviewedFiles =
+        selectedFiles.length
+            ? selectedFiles
+                .map(id => `DOC-${id}`)
+                .join(", ")
+            : "—";
+
+
+    const askedQuestions =
+        selectedQuestions.length
+            ? selectedQuestions
+                .map(id => `Q1-${id}`)
+                .join(", ")
+            : "—";
+
+
+    screenContent.innerHTML = `
+        <section class="round12-screen ${result.level}">
+
+            <div class="round12-shell">
+
+                <header class="round12-heading">
+
+                    <h1>
+                        ROUND 12 - CONCLUSION
+                    </h1>
+
+                    <p>
+                        Closing case · review, feedback and optimization.
+                    </p>
+
+                </header>
+
+
+                ${renderRound12Progress()}
+
+
+                <div class="round12-completed-card">
+
+                    <div class="round12-completed-title">
+
+                        <span></span>
+
+                        <strong>
+                            CASE COMPLETED
+                        </strong>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="round12-result-card">
+
+                        <div class="round12-doctor-wrap">
+
+                            <small>
+                                RESULT
+                            </small>
+
+                            <h2>
+                                ${result.title}
+                            </h2>
+
+                            <img
+                                src="${result.doctor}"
+                                alt="${result.title}"
+                            >
+
+                        </div>
+
+
+                        <div class="round12-score-area">
+
+                            <span>
+                                You received:
+                            </span>
+
+                            <div class="round12-score-box">
+
+                                <strong>
+                                    ${counselor.total}
+                                </strong>
+
+                                <small>
+                                    COUNSELOR SCORE
+                                </small>
+
+                            </div>
+
+                            <p>
+                                ${result.message}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="round12-report-card">
+
+
+                    <div class="round12-outcome-grid">
+
+
+                        <div class="round12-outcome-box">
+
+                            <h3>
+                                ⊕ Financial health
+                            </h3>
+
+                            <div class="round12-outcome-score">
+
+                                <strong>
+                                    ${caseOutcome.financial} / 12
+                                </strong>
+
+                                <span class="round12-tier ${financialTier.className}">
+                                    ${financialTier.name}
+                                </span>
+
+                            </div>
+
+
+                            <div class="round12-tier-legend">
+
+                                <span>
+                                    🟢 Stable<br>
+                                    9–12
+                                </span>
+
+                                <span>
+                                    🟡 Fragile<br>
+                                    5–8
+                                </span>
+
+                                <span>
+                                    🔴 Collapse<br>
+                                    0–4
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="round12-outcome-box">
+
+                            <h3>
+                                ⊕ Governance · Family stability
+                            </h3>
+
+                            <div class="round12-outcome-score">
+
+                                <strong>
+                                    ${caseOutcome.governance} / 6
+                                </strong>
+
+                                <span class="round12-tier ${governanceTier.className}">
+                                    ${governanceTier.name}
+                                </span>
+
+                            </div>
+
+
+                            <div class="round12-tier-legend">
+
+                                <span>
+                                    🟢 Stabilized<br>
+                                    5–6
+                                </span>
+
+                                <span>
+                                    🟡 Divided<br>
+                                    3–4
+                                </span>
+
+                                <span>
+                                    🔴 Loss<br>
+                                    0–2
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="round12-reputation">
+
+                        <strong>
+    COUNSELOR PERFORMANCE
+</strong>
+
+                        <div class="round12-reputation-track">
+
+                            <div
+                                class="round12-reputation-fill"
+                                style="width:${counselor.total}%"
+                            ></div>
+
+                            <span
+                                class="round12-reputation-marker"
+                                style="left:${counselor.total}%"
+                            >
+                                ${counselor.total}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="round12-profile">
+
+                        <div class="round12-profile-heading">
+
+                            <h3>
+                                ⊕ Profile summary
+                            </h3>
+
+                            <p>
+                                Review of your choices and results.
+                            </p>
+
+                        </div>
+
+
+                        <div class="round12-profile-table">
+
+                            <div class="round12-profile-column">
+
+                                <div>
+                                    <span>Profile viewed</span>
+                                    <strong>${reviewedFiles}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Questions asked</span>
+                                    <strong>${askedQuestions}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Final question</span>
+                                    <strong>
+                                        ${
+                                            selectedFinalQuestion
+                                                ? `Q2-${selectedFinalQuestion}`
+                                                : "—"
+                                        }
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>First diagnosis → after re-examination</span>
+                                    <strong>
+                                        ${getDiagnosisName(initialDiagnosis)}
+                                        →
+                                        ${getDiagnosisName(selectedDiagnosis)}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>First treatment → after re-examination</span>
+                                    <strong>
+                                        ${getTreatmentName(initialTreatment)}
+                                        →
+                                        ${getTreatmentName(selectedTreatment)}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Timing chosen</span>
+                                    <strong>
+                                        ${getTimingName(selectedTiming)}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Selected priority group</span>
+                                    <strong>
+                                        ${getStakeholderNames()}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="round12-profile-column">
+
+                                <div>
+                                    <span>Investigation</span>
+                                    <strong>
+                                        ${counselor.investigation} / 100
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Diagnosis</span>
+                                    <strong>
+                                        ${counselor.diagnosis} / 100
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Treatment</span>
+                                    <strong>
+                                        ${counselor.treatment} / 100
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Execution planning</span>
+                                    <strong>
+                                        ${counselor.execution} / 100
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Reassessment</span>
+                                    <strong>
+                                        ${counselor.reassessment} / 100
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Financial score → Tier</span>
+                                    <strong>
+                                        ${caseOutcome.financial} / 12
+                                        → ${financialTier.name}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Governance score → Tier</span>
+                                    <strong>
+                                        ${caseOutcome.governance} / 6
+                                        → ${governanceTier.name}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Final case outcome</span>
+                                    <strong>
+                                        ${finalEnding}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="round12-reality">
+
+                        <h3>
+                            ⊕ Comparison with reality
+                        </h3>
+
+                        <p>
+                            Toy Kingdom is a fictional educational simulation
+                            inspired by Toys “R” Us. The real Toys “R” Us filed
+                            for Chapter 11 bankruptcy protection in 2017 and its
+                            U.S. business later moved toward liquidation in 2018.
+                            The family-governance storyline and game mechanics
+                            used in this case are fictional.
+                        </p>
+
+                    </div>
+
+
+                    <div class="round12-ending">
+
+                        <span>
+                            FINAL CASE OUTCOME
+                        </span>
+
+                        <strong>
+                            ${finalEnding}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="round12-back-row">
+
+                        <button
+                            class="round12-back-button"
+                            onclick="goToScreen(17)"
+                        >
+                            Back
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    `;
 }
 // ======================================================
 // START APP

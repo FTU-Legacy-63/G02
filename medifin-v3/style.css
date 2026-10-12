@@ -7866,3 +7866,873 @@ button.round11-action-card:hover {
 .round11-section-divider {
     background: #e3e5e8;
 }
+/* ======================================================
+   ROUND 12 — CONCLUSION
+   ====================================================== */
+
+.round12-screen {
+    min-height: 100vh;
+    padding: 38px 24px 70px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 18% 20%,
+            rgba(16, 157, 194, 0.34),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 82% 82%,
+            rgba(16, 122, 178, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #087fa8 0%,
+            #075d8d 42%,
+            #064b7c 72%,
+            #043b6d 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* ======================================================
+   ROUND 12 — SHELL
+   ====================================================== */
+
+.round12-screen .round12-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+
+/* ======================================================
+   ROUND 12 — HEADER
+   ====================================================== */
+
+.round12-screen .round12-heading {
+    margin-bottom: 24px;
+}
+
+.round12-screen .round12-heading h1 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.05;
+
+    color: #ffffff;
+}
+
+.round12-screen .round12-heading p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* ======================================================
+   ROUND 12 — PROGRESS
+   ====================================================== */
+
+.round12-screen .round12-progress {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    margin: 0 0 28px;
+    padding: 14px 18px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 24px rgba(0, 31, 63, 0.12);
+}
+
+.round12-screen .round12-progress-step {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    color: #42657c;
+}
+
+.round12-screen .round12-progress-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #0a779f;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.round12-screen .round12-progress-step b {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.round12-screen .round12-progress > i {
+    flex: 1;
+    min-width: 20px;
+    height: 1px;
+
+    margin: 0 12px;
+
+    background: #bfd0db;
+}
+
+
+/* ======================================================
+   CASE COMPLETED CARD
+   ====================================================== */
+
+.round12-screen .round12-completed-card {
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(10, 74, 115, 0.12);
+    border-radius: 16px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 30, 60, 0.18);
+}
+
+.round12-screen .round12-completed-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    padding: 14px 24px;
+
+    background: #f2f7fa;
+
+    border-bottom: 1px solid #d8e4eb;
+}
+
+.round12-screen .round12-completed-title strong {
+    color: #23465d;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.round12-screen .round12-completed-title span {
+    width: 80px;
+    height: 1px;
+
+    background: #a9becb;
+}
+
+
+/* ======================================================
+   RESULT CARD
+   ====================================================== */
+
+.round12-screen .round12-result-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+    align-items: center;
+    gap: 40px;
+
+    min-height: 330px;
+    padding: 34px 56px 26px;
+}
+
+
+/* ======================================================
+   RESULT — DOCTOR
+   ====================================================== */
+
+.round12-screen .round12-doctor-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 280px;
+
+    text-align: center;
+}
+
+.round12-screen .round12-doctor-wrap small {
+    margin-bottom: 4px;
+
+    color: #668091;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.round12-screen .round12-doctor-wrap h2 {
+    margin: 0 0 4px;
+
+    color: #123f5e;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    line-height: 1.1;
+}
+
+.round12-screen .round12-doctor-wrap img {
+    display: block;
+
+    width: min(250px, 90%);
+    height: 225px;
+
+    margin-top: 8px;
+
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+
+/* ======================================================
+   COUNSELOR SCORE
+   ====================================================== */
+
+.round12-screen .round12-score-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    color: #183f59;
+}
+
+.round12-screen .round12-score-area > span {
+    margin-bottom: 10px;
+
+    color: #617b8d;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.round12-screen .round12-score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 170px;
+    height: 170px;
+
+    border: 8px solid #0b789e;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #f5fafc 72%,
+            #e6f1f5 100%
+        );
+
+    box-shadow:
+        0 10px 28px rgba(6, 88, 128, 0.16),
+        inset 0 0 0 5px #d8edf3;
+}
+
+.round12-screen .round12-score-box strong {
+    color: #075d85;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 58px;
+    line-height: 0.95;
+}
+
+.round12-screen .round12-score-box small {
+    max-width: 110px;
+    margin-top: 9px;
+
+    color: #456c81;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+}
+
+.round12-screen .round12-score-area p {
+    max-width: 460px;
+
+    margin: 18px 0 0;
+
+    color: #49687b;
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* ======================================================
+   REPORT CARD
+   ====================================================== */
+
+.round12-screen .round12-report-card {
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(10, 74, 115, 0.12);
+    border-radius: 16px;
+
+    color: #173c55;
+
+    box-shadow:
+        0 18px 45px rgba(0, 30, 60, 0.18);
+}
+
+
+/* ======================================================
+   OUTCOME GRID
+   ====================================================== */
+
+.round12-screen .round12-outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+.round12-screen .round12-outcome-box {
+    padding: 22px 24px;
+
+    background: #f8fbfd;
+
+    border: 1px solid #d6e3ea;
+    border-radius: 12px;
+}
+
+.round12-screen .round12-outcome-box h3 {
+    margin: 0 0 18px;
+
+    color: #214b66;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.round12-screen .round12-outcome-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.round12-screen .round12-outcome-score > strong {
+    color: #0b557c;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+}
+
+
+/* ======================================================
+   TIERS
+   ====================================================== */
+
+.round12-screen .round12-tier {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 92px;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.round12-screen .round12-tier.good {
+    background: #e2f4ea;
+    color: #187344;
+}
+
+.round12-screen .round12-tier.medium {
+    background: #fff2d3;
+    color: #9b6500;
+}
+
+.round12-screen .round12-tier.bad {
+    background: #fde4e4;
+    color: #a73535;
+}
+
+
+/* ======================================================
+   TIER LEGEND
+   ====================================================== */
+
+.round12-screen .round12-tier-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #e1eaef;
+}
+
+.round12-screen .round12-tier-legend span {
+    color: #607989;
+
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+/* ======================================================
+   COUNSELOR PERFORMANCE BAR
+   ====================================================== */
+
+.round12-screen .round12-reputation {
+    margin-bottom: 20px;
+    padding: 20px 24px;
+
+    background: #f8fbfd;
+
+    border: 1px solid #d6e3ea;
+    border-radius: 12px;
+}
+
+.round12-screen .round12-reputation > strong {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #244d67;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.round12-screen .round12-reputation-track {
+    position: relative;
+
+    height: 9px;
+
+    margin: 22px 4px 12px;
+
+    background: #dce8ee;
+
+    border-radius: 999px;
+}
+
+.round12-screen .round12-reputation-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #6caec3,
+        #0b789e
+    );
+}
+
+.round12-screen .round12-reputation-marker {
+    position: absolute;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+
+    background: #075f87;
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(0, 57, 92, 0.25);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* ======================================================
+   PROFILE SUMMARY
+   ====================================================== */
+
+.round12-screen .round12-profile {
+    margin-bottom: 20px;
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #d6e3ea;
+    border-radius: 12px;
+}
+
+.round12-screen .round12-profile-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #dce6ec;
+}
+
+.round12-screen .round12-profile-heading h3 {
+    margin: 0;
+
+    color: #214b66;
+
+    font-size: 15px;
+}
+
+.round12-screen .round12-profile-heading p {
+    margin: 0;
+
+    color: #7a909d;
+
+    font-size: 11px;
+}
+
+.round12-screen .round12-profile-table {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.round12-screen .round12-profile-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.round12-screen .round12-profile-column > div {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.85fr) minmax(0, 1.15fr);
+    gap: 14px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #e5edf1;
+}
+
+.round12-screen .round12-profile-column > div:last-child {
+    border-bottom: none;
+}
+
+.round12-screen .round12-profile-column span {
+    color: #6a8291;
+
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.round12-screen .round12-profile-column strong {
+    color: #173f5a;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   COMPARISON WITH REALITY
+   ====================================================== */
+
+.round12-screen .round12-reality {
+    margin-bottom: 20px;
+    padding: 22px 24px;
+
+    background: #eef7fa;
+
+    border: 1px solid #cee2e9;
+    border-radius: 12px;
+}
+
+.round12-screen .round12-reality h3 {
+    margin: 0 0 10px;
+
+    color: #20516c;
+
+    font-size: 14px;
+}
+
+.round12-screen .round12-reality p {
+    margin: 0;
+
+    color: #506f80;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ======================================================
+   FINAL CASE OUTCOME
+   ====================================================== */
+
+.round12-screen .round12-ending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 26px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b7298 0%,
+            #07557f 55%,
+            #073e6c 100%
+        );
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+.round12-screen .round12-ending span {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+.round12-screen .round12-ending strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.15;
+}
+
+
+/* ======================================================
+   BACK BUTTON
+   ====================================================== */
+
+.round12-screen .round12-back-row {
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 20px;
+}
+
+.round12-screen .round12-back-button {
+    min-width: 105px;
+
+    padding: 10px 22px;
+
+    background: #ffffff;
+    color: #07577e;
+
+    border: 1px solid #07577e;
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.round12-screen .round12-back-button:hover {
+    background: #07577e;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   RESULT LEVEL — SMALL VISUAL DIFFERENTIATION
+   ====================================================== */
+
+.round12-screen.good .round12-score-box {
+    border-color: #168a67;
+}
+
+.round12-screen.good .round12-score-box strong {
+    color: #147657;
+}
+
+.round12-screen.medium .round12-score-box {
+    border-color: #c18a22;
+}
+
+.round12-screen.medium .round12-score-box strong {
+    color: #9c6a10;
+}
+
+.round12-screen.bad .round12-score-box {
+    border-color: #b95151;
+}
+
+.round12-screen.bad .round12-score-box strong {
+    color: #9f3f3f;
+}
+
+
+/* ======================================================
+   RESPONSIVE — TABLET
+   ====================================================== */
+
+@media (max-width: 900px) {
+
+    .round12-screen {
+        padding: 28px 18px 55px;
+    }
+
+    .round12-screen .round12-progress {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .round12-screen .round12-progress > i {
+        flex: 0 0 28px;
+    }
+
+    .round12-screen .round12-result-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+
+        padding: 30px;
+    }
+
+    .round12-screen .round12-doctor-wrap {
+        min-height: 230px;
+    }
+
+    .round12-screen .round12-doctor-wrap img {
+        height: 190px;
+    }
+
+    .round12-screen .round12-outcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .round12-screen .round12-profile-table {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+
+/* ======================================================
+   RESPONSIVE — MOBILE
+   ====================================================== */
+
+@media (max-width: 600px) {
+
+    .round12-screen {
+        padding: 22px 12px 40px;
+    }
+
+    .round12-screen .round12-heading h1 {
+        font-size: 27px;
+    }
+
+    .round12-screen .round12-completed-title span {
+        width: 30px;
+    }
+
+    .round12-screen .round12-result-card {
+        padding: 24px 18px;
+    }
+
+    .round12-screen .round12-score-box {
+        width: 145px;
+        height: 145px;
+    }
+
+    .round12-screen .round12-score-box strong {
+        font-size: 48px;
+    }
+
+    .round12-screen .round12-report-card {
+        padding: 14px;
+    }
+
+    .round12-screen .round12-outcome-box,
+    .round12-screen .round12-reputation,
+    .round12-screen .round12-profile,
+    .round12-screen .round12-reality {
+        padding: 18px;
+    }
+
+    .round12-screen .round12-outcome-score {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .round12-screen .round12-tier-legend {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .round12-screen .round12-profile-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .round12-screen .round12-profile-column > div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .round12-screen .round12-ending {
+        padding: 22px 14px;
+    }
+}
