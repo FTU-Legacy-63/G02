@@ -1,0 +1,532 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef4f1;
+    color: #18392b;
+}
+
+.game-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    color: #64756d;
+    margin-bottom: 40px;
+}
+
+.case-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.case-number {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #3d7b60;
+}
+
+.case-card h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.case-title {
+    color: #687a71;
+    margin-bottom: 30px;
+}
+
+.client-message {
+    background: #f2f7f4;
+    padding: 20px;
+    border-left: 4px solid #3d7b60;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+button {
+    background: #245c43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CLIENT INTERVIEW
+========================= */
+
+.hidden {
+    display: none;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.top-bar h2 {
+    margin: 5px 0 0;
+}
+
+.investigation-box {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.interview-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 25px;
+}
+
+.client-panel,
+.question-panel {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.client-panel h3 {
+    margin-bottom: 4px;
+}
+
+.client-role {
+    color: #687a71;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.client-response {
+    background: #f2f7f4;
+    border-left: 4px solid #3d7b60;
+    padding: 18px;
+    line-height: 1.6;
+}
+
+.question-panel h3 {
+    margin-top: 0;
+}
+
+.question-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 12px;
+
+    background: white;
+    color: #18392b;
+
+    border: 1px solid #cfdcd5;
+}
+
+.question-button:hover {
+    background: #edf5f1;
+}
+
+.question-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.interview-footer {
+    margin-top: 25px;
+    text-align: right;
+}
+
+#continueButton {
+    background: #18392b;
+}
+/* =========================
+   FINANCIAL INVESTIGATION
+========================= */
+
+.investigation-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr;
+    gap: 24px;
+}
+
+.document-panel,
+.report-panel,
+.evidence-box {
+    background: white;
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.document-panel {
+    text-align: left;
+}
+
+.document-panel h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.panel-note {
+    margin-top: 0;
+    color: #7a8981;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.document-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    text-align: left;
+
+    background: #ffffff;
+    color: #18392b;
+
+    border: 1px solid #d5e0da;
+}
+
+.document-button:hover {
+    background: #edf5f1;
+}
+
+.document-button.viewed {
+    background: #e5f3eb;
+    border-color: #3d7b60;
+}
+
+.report-panel {
+    text-align: left;
+    min-height: 430px;
+}
+
+.empty-report {
+    color: #829088;
+    padding-top: 120px;
+    text-align: center;
+}
+
+.report-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.report-title h3 {
+    margin: 0;
+}
+
+.report-tag {
+    font-size: 12px;
+    background: #edf5f1;
+    color: #2e6d51;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.financial-table th,
+.financial-table td {
+    padding: 11px 10px;
+    border-bottom: 1px solid #e7ece9;
+}
+
+.financial-table th {
+    text-align: left;
+    color: #687a71;
+    font-size: 13px;
+}
+
+.financial-table td:not(:first-child),
+.financial-table th:not(:first-child) {
+    text-align: right;
+}
+
+.financial-warning {
+    margin-top: 20px;
+    padding: 14px;
+    background: #fff8e6;
+    border-left: 4px solid #d5a72e;
+    line-height: 1.5;
+}
+
+.evidence-box {
+    margin-top: 24px;
+    text-align: left;
+}
+
+.evidence-box h3 {
+    margin-top: 0;
+}
+
+.evidence-item {
+    display: inline-block;
+    padding: 9px 12px;
+    margin: 5px 7px 5px 0;
+
+    background: #edf5f1;
+    color: #245c43;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.empty-evidence {
+    color: #829088;
+}
+
+#diagnosisButton {
+    background: #18392b;
+}
+/* =========================
+   DIAGNOSIS SCREEN
+========================= */
+
+.diagnosis-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+}
+
+.diagnosis-evidence-panel,
+.diagnosis-panel {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.diagnosis-evidence-panel h3,
+.diagnosis-panel h3 {
+    margin-top: 0;
+}
+
+.diagnosis-evidence-item {
+    padding: 12px;
+    margin-bottom: 10px;
+
+    background: #f2f7f4;
+    border-left: 4px solid #3d7b60;
+
+    border-radius: 6px;
+
+    line-height: 1.5;
+}
+
+.diagnosis-option {
+    display: block;
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 12px;
+
+    background: white;
+    color: #18392b;
+
+    border: 1px solid #d5e0da;
+}
+
+.diagnosis-option:hover {
+    background: #edf5f1;
+}
+
+.diagnosis-option.selected {
+    background: #dcefe5;
+    border-color: #2e6d51;
+}
+
+.diagnosis-option:disabled {
+    cursor: not-allowed;
+}
+
+.diagnosis-feedback {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background: #f2f7f4;
+
+    border-left: 4px solid #3d7b60;
+
+    line-height: 1.6;
+}
+
+#treatmentButton {
+    margin-top: 22px;
+    width: 100%;
+}
+/* =========================
+   TREATMENT SCREEN
+========================= */
+
+.treatment-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr;
+    gap: 24px;
+}
+
+.treatment-summary,
+.treatment-panel {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.treatment-summary h3,
+.treatment-panel h3 {
+    margin-top: 0;
+}
+
+.treatment-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    margin-bottom: 14px;
+    padding: 18px;
+
+    background: white;
+    color: #18392b;
+
+    border: 1px solid #d5e0da;
+}
+
+.treatment-option strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.treatment-option span {
+    display: block;
+    color: #6d7e75;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.treatment-option:hover {
+    background: #edf5f1;
+}
+
+.treatment-option.selected {
+    background: #dcefe5;
+    border-color: #2e6d51;
+}
+
+.treatment-option:disabled {
+    cursor: not-allowed;
+}
+
+#communicationButton {
+    margin-top: 20px;
+    width: 100%;
+}
+/* =========================
+   COMMUNICATION SCREEN
+========================= */
+
+.communication-card {
+    max-width: 760px;
+    margin: 0 auto;
+
+    background: white;
+
+    padding: 34px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    text-align: left;
+}
+
+.client-profile-small h3 {
+    margin-bottom: 4px;
+}
+
+.client-profile-small p {
+    margin-top: 0;
+    color: #6d7e75;
+}
+
+.client-objection {
+    margin: 25px 0;
+
+    background: #f2f7f4;
+
+    border-left: 4px solid #3d7b60;
+
+    padding: 20px;
+
+    line-height: 1.6;
+}
+
+.communication-option {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    text-align: left;
+
+    background: white;
+
+    color: #18392b;
+
+    border: 1px solid #d5e0da;
+
+    line-height: 1.5;
+}
+
+.communication-option:hover {
+    background: #edf5f1;
+}
+
+.communication-option.selected {
+    background: #dcefe5;
+    border-color: #2e6d51;
+}
+
+#outcomeButton {
+    width: 100%;
+    margin-top: 20px;
+}

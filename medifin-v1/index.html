@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MEDIFIN - Financial Clinic</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <!-- SCREEN 1: CASE INTRO -->
+        <section id="introScreen">
+
+            <div class="logo">
+                MEDIFIN
+            </div>
+
+            <p class="subtitle">
+                Inside the Mind of a Financial Counselor
+            </p>
+
+            <div class="case-card">
+
+                <p class="case-number">
+                    PATIENT #01
+                </p>
+
+                <h1>
+                    GreenLeaf Furniture
+                </h1>
+
+                <p class="case-title">
+                    The Profitable Company That Is Running Out of Cash
+                </p>
+
+                <div class="client-message">
+
+                    <strong>Client:</strong>
+
+                    <p>
+                        “Doanh thu và lợi nhuận của công ty đều tăng,
+                        nhưng chúng tôi liên tục thiếu tiền để thanh toán
+                        cho nhà cung cấp.”
+                    </p>
+
+                    <p>
+                        “Tôi nghĩ công ty cần vay thêm 5 tỷ đồng.”
+                    </p>
+
+                </div>
+
+                <button id="startButton">
+                    Start Consultation
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 2: CLIENT INTERVIEW -->
+        <section id="interviewScreen" class="hidden">
+
+            <div class="top-bar">
+
+                <div>
+                    <p class="case-number">PATIENT #01</p>
+                    <h2>Client Interview</h2>
+                </div>
+
+                <div class="investigation-box">
+                    Investigation Points:
+                    <strong id="points">6</strong>
+                </div>
+
+            </div>
+
+
+            <div class="interview-layout">
+
+                <div class="client-panel">
+
+                    <h3>Nguyễn Minh Nam</h3>
+
+                    <p class="client-role">
+                        Owner — GreenLeaf Furniture
+                    </p>
+
+                    <div id="clientResponse" class="client-response">
+
+                        “Tôi nghĩ vấn đề đơn giản là công ty đang thiếu vốn.
+                        Nếu có thêm 5 tỷ thì mọi chuyện sẽ ổn.”
+
+                    </div>
+
+                </div>
+
+
+                <div class="question-panel">
+
+                    <h3>What would you like to ask?</h3>
+
+                    <button class="question-button"
+                        data-cost="1"
+                        data-answer="Trước đây khách hàng thường thanh toán trong khoảng 60–90 ngày, nhưng gần đây một số khách lớn kéo dài đến 120–150 ngày.">
+
+                        How long do customers usually take to pay?
+
+                    </button>
+
+
+                    <button class="question-button"
+                        data-cost="1"
+                        data-answer="Chúng tôi đang giữ nhiều nguyên vật liệu hơn vì tôi sợ thiếu hàng khi có đơn lớn.">
+
+                        Why has inventory increased?
+
+                    </button>
+
+
+                    <button class="question-button"
+                        data-cost="1"
+                        data-answer="Nhà cung cấp hiện cho chúng tôi khoảng 60 ngày để thanh toán và họ không muốn kéo dài thêm.">
+
+                        What are your supplier payment terms?
+
+                    </button>
+
+
+                    <button class="question-button"
+                        data-cost="1"
+                        data-answer="Khoản vay ngắn hạn đã tăng khá nhiều trong năm nay vì chúng tôi thường xuyên thiếu tiền mặt.">
+
+                        Has the company borrowed more recently?
+
+                    </button>
+
+
+                    <button class="question-button irrelevant"
+                        data-cost="1"
+                        data-answer="Logo công ty vẫn như cũ và hiện tại chúng tôi chưa có kế hoạch thay đổi.">
+
+                        Are you planning to redesign the company logo?
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="interview-footer">
+
+                <button id="continueButton">
+                    Continue to Financial Investigation
+                </button>
+
+            </div>
+
+        </section>
+<!-- SCREEN 3: FINANCIAL INVESTIGATION -->
+<section id="investigationScreen" class="hidden">
+
+    <div class="top-bar">
+
+        <div>
+            <p class="case-number">PATIENT #01</p>
+            <h2>Financial Investigation</h2>
+        </div>
+
+        <div class="investigation-box">
+            Evidence Found:
+            <strong id="evidenceCount">0</strong>/5
+        </div>
+
+    </div>
+
+
+    <div class="investigation-layout">
+
+        <!-- LEFT: DOCUMENT MENU -->
+        <div class="document-panel">
+
+            <h3>Financial Records</h3>
+
+            <p class="panel-note">
+                Select the records you want to examine.
+            </p>
+
+            <button class="document-button" data-document="income">
+                📄 Income Statement
+            </button>
+
+            <button class="document-button" data-document="balance">
+                📄 Balance Sheet
+            </button>
+
+            <button class="document-button" data-document="cashflow">
+                📄 Cash Flow Statement
+            </button>
+
+            <button class="document-button" data-document="ar">
+                🔎 Accounts Receivable Aging
+            </button>
+
+            <button class="document-button" data-document="debt">
+                🏦 Debt Information
+            </button>
+
+        </div>
+
+
+        <!-- RIGHT: DOCUMENT CONTENT -->
+        <div class="report-panel">
+
+            <div id="reportContent">
+
+                <div class="empty-report">
+
+                    <h3>Financial Examination</h3>
+
+                    <p>
+                        Chọn một tài liệu ở bên trái để bắt đầu phân tích.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="evidence-box">
+
+        <h3>Evidence Collected</h3>
+
+        <div id="evidenceList">
+            <p class="empty-evidence">
+                Chưa có bằng chứng nào được ghi nhận.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="interview-footer">
+
+        <button id="diagnosisButton">
+            Proceed to Diagnosis
+        </button>
+
+    </div>
+
+</section>
+<!-- SCREEN 4: DIAGNOSIS -->
+<section id="diagnosisScreen" class="hidden">
+
+    <div class="top-bar">
+
+        <div>
+            <p class="case-number">PATIENT #01</p>
+            <h2>Financial Diagnosis</h2>
+        </div>
+
+        <div class="investigation-box">
+    Case Status:
+    <strong>Diagnosis</strong>
+</div>
+
+    </div>
+
+
+    <div class="diagnosis-layout">
+
+        <!-- LEFT: EVIDENCE SUMMARY -->
+        <div class="diagnosis-evidence-panel">
+
+            <h3>Evidence Summary</h3>
+
+            <p class="panel-note">
+                Review the evidence before making your diagnosis.
+            </p>
+
+            <div id="diagnosisEvidenceList">
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT: DIAGNOSIS OPTIONS -->
+        <div class="diagnosis-panel">
+
+            <h3>What is the primary financial disease?</h3>
+
+            <p class="panel-note">
+                Choose the root cause, not just a visible symptom.
+            </p>
+
+
+            <button
+                class="diagnosis-option"
+                data-diagnosis="low_profitability"
+                data-score="5"
+                data-feedback="Lợi nhuận của doanh nghiệp vẫn đang tăng. Đây không phải nguyên nhân chính của tình trạng thiếu tiền mặt.">
+
+                Low Profitability
+
+            </button>
+
+
+            <button
+                class="diagnosis-option"
+                data-diagnosis="insufficient_sales"
+                data-score="0"
+                data-feedback="Doanh thu đã tăng mạnh. Thiếu doanh thu không phù hợp với bằng chứng đã thu thập.">
+
+                Insufficient Sales
+
+            </button>
+
+
+            <button
+                class="diagnosis-option"
+                data-diagnosis="excessive_debt"
+                data-score="18"
+                data-feedback="Nợ ngắn hạn tăng là một vấn đề thực sự, nhưng chủ yếu là hậu quả của việc doanh nghiệp liên tục thiếu dòng tiền.">
+
+                Excessive Short-Term Debt
+
+            </button>
+
+
+            <button
+                class="diagnosis-option"
+                data-diagnosis="working_capital"
+                data-score="30"
+                data-feedback="Chính xác. Accounts Receivable và Inventory tăng mạnh, DSO kéo dài và Operating Cash Flow âm cho thấy vấn đề cốt lõi nằm ở quản trị vốn lưu động.">
+
+                Working-Capital Mismanagement
+
+            </button>
+
+
+            <button
+                class="diagnosis-option"
+                data-diagnosis="insufficient_financing"
+                data-score="10"
+                data-feedback="Doanh nghiệp đang cần tiền mặt, nhưng vay thêm chỉ xử lý triệu chứng. Nguyên nhân sâu hơn nằm ở cách vốn lưu động đang bị sử dụng.">
+
+                Insufficient Financing
+
+            </button>
+
+
+            <div id="diagnosisFeedback" class="diagnosis-feedback hidden">
+            </div>
+
+
+            <button id="treatmentButton" class="hidden">
+                Continue to Treatment
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SCREEN 5: TREATMENT -->
+<section id="treatmentScreen" class="hidden">
+
+    <div class="top-bar">
+
+        <div>
+            <p class="case-number">PATIENT #01</p>
+            <h2>Treatment Plan</h2>
+        </div>
+
+        <div class="investigation-box">
+            Case Status:
+            <strong>Treatment</strong>
+        </div>
+
+    </div>
+
+
+    <div class="treatment-layout">
+
+        <div class="treatment-summary">
+
+            <h3>Your Diagnosis</h3>
+
+            <div id="selectedDiagnosisSummary"
+                 class="diagnosis-evidence-item">
+            </div>
+
+            <p class="panel-note">
+                Chọn phương án xử lý phù hợp nhất với tình hình hiện tại của khách hàng.
+            </p>
+
+        </div>
+
+
+        <div class="treatment-panel">
+
+            <h3>What treatment would you recommend?</h3>
+
+            <button
+                class="treatment-option"
+                data-treatment="borrow_more">
+
+                <strong>Borrow an additional VND 5 billion</strong>
+
+                <span>
+                    Bổ sung ngay vốn vay ngắn hạn để giải quyết thiếu hụt tiền mặt.
+                </span>
+
+            </button>
+
+
+            <button
+                class="treatment-option"
+                data-treatment="stop_credit">
+
+                <strong>Stop all credit sales</strong>
+
+                <span>
+                    Yêu cầu khách hàng thanh toán ngay để giảm khoản phải thu.
+                </span>
+
+            </button>
+
+
+            <button
+                class="treatment-option"
+                data-treatment="improve_ar">
+
+                <strong>Improve receivable collection</strong>
+
+                <span>
+                    Phân nhóm khách hàng, siết thời hạn thanh toán và tăng cường thu hồi công nợ.
+                </span>
+
+            </button>
+
+
+            <button
+                class="treatment-option"
+                data-treatment="inventory_control">
+
+                <strong>Reduce inventory levels</strong>
+
+                <span>
+                    Kiểm soát tồn kho chặt hơn để giải phóng tiền mặt bị giữ trong hàng tồn kho.
+                </span>
+
+            </button>
+
+
+            <button
+                class="treatment-option"
+                data-treatment="balanced_plan">
+
+                <strong>Balanced Working-Capital Plan</strong>
+
+                <span>
+                    Kết hợp thu hồi công nợ, giảm tồn kho, đàm phán với nhà cung cấp và chỉ sử dụng hạn mức vay bổ sung ở mức cần thiết.
+                </span>
+
+            </button>
+
+
+            <button id="communicationButton" class="hidden">
+                Continue to Client Discussion
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SCREEN 6: CLIENT COMMUNICATION -->
+<section id="communicationScreen" class="hidden">
+
+    <div class="top-bar">
+
+        <div>
+            <p class="case-number">PATIENT #01</p>
+            <h2>Client Discussion</h2>
+        </div>
+
+        <div class="investigation-box">
+            Case Status:
+            <strong>Client Response</strong>
+        </div>
+
+    </div>
+
+
+    <div class="communication-card">
+
+        <div class="client-profile-small">
+
+            <h3>Nguyễn Minh Nam</h3>
+
+            <p>
+                Owner — GreenLeaf Furniture
+            </p>
+
+        </div>
+
+
+        <div class="client-objection">
+
+            <strong>Client:</strong>
+
+            <p>
+                “Nếu tôi siết thời hạn thanh toán,
+                những khách hàng lớn có thể chuyển sang đối thủ.”
+            </p>
+
+            <p>
+                “Tôi không muốn cải thiện dòng tiền bằng cách làm mất khách.”
+            </p>
+
+        </div>
+
+
+        <h3>How would you respond?</h3>
+
+
+        <button
+            class="communication-option"
+            data-communication="aggressive"
+            data-score="0">
+
+            “Các con số cho thấy anh phải làm như vậy.
+            Công ty không còn lựa chọn khác.”
+
+        </button>
+
+
+        <button
+            class="communication-option"
+            data-communication="avoid"
+            data-score="5">
+
+            “Nếu anh không muốn mất khách thì chúng ta có thể giữ nguyên chính sách hiện tại.”
+
+        </button>
+
+
+        <button
+            class="communication-option"
+            data-communication="balanced"
+            data-score="15">
+
+            “Chúng ta không nhất thiết áp dụng cùng một chính sách cho tất cả khách hàng.
+            Có thể phân nhóm theo lịch sử thanh toán, mức độ quan trọng và rủi ro,
+            sau đó điều chỉnh điều khoản phù hợp cho từng nhóm.”
+
+        </button>
+
+
+        <button id="outcomeButton" class="hidden">
+            See What Happens Next
+        </button>
+
+    </div>
+
+</section>
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
