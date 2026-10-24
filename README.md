@@ -153,10 +153,10 @@ MEDIFIN is the result of interdisciplinary collaboration across finance, scenari
 | Team member | Student ID | Individual Footprints |
 |---|---|---|
 | Nguyễn Phương Khuê | 2413380023 | **[NGUYEN_PHUONG_KHUE](INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE.md)** |
-| Trương Vĩnh Thịnh | 2412380046 | **[TRUONG_VINH_THINH](INDIVIDUAL FOOTPRINT - TRUONG VINH THINH.md)**|
+| Trương Vĩnh Thịnh | 2412380046 | **[TRUONG_VINH_THINH](INDIVIDUAL_FOOTPRINT_TRUONG_VINH_THINH.md)**|
 | Lâm Diệu Anh | 2413380007 | **[LAM_DIEU_ANH](INDIVIDUAL_FOOTPRINT_LAM_DIEU_ANH.md)** |
 | Bùi Lê Trà Giang | 2413380015 | **[BUI_LE_TRA_GIANG](INDIVIDUAL_FOOTPRINT_BUI_LE_TRA_GIANG.md)** |
-| Lê Bảo Ngọc | 2412380033 | **[LE_BAO_NGOC](INDIVIDUAL FOOTPRINT - LE BAO NGOC)** |
+| Lê Bảo Ngọc | 2412380033 | **[LE_BAO_NGOC](INDIVIDUAL_FOOTPRINT_LE_BAO_NGOC.md)** |
 
 ### Technical Evidence
 
