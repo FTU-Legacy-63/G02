@@ -84,14 +84,18 @@ Trực tiếp chỉnh sửa, format, tinh chỉnh và wording lại các phần 
 
 ## 5. Bằng chứng đóng góp
 
-### 1) File Assumptions
+- File **ASSUMPTIONS.md**
 
-<!-- ![Assumptions](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image1.png) -->
+- File **SOURCE_USE_MAP.md**
 
-### 2) File Source Use Map
+- File **PROJECT_LOGIC_CHAIN.md**
 
-<!-- ![Source Use Map](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image2.png) -->
+- File **PROJECT_PROPOSAL.md**
 
+- File **USER_FLOW.md**
+
+- Storyline và Conversation plan: các bản draft và chỉnh sửa đến final - (https://docs.google.com/document/d/1GC916pbMSFsjemtJLioyGSL5Z1J4ZlI3R3gvkPGvU_M/edit?tab=t.0)
+- Dialogue design chính thức cho MVP flow: **USER_FLOW_FINAL.md**
 ### 3) File Project Logic Chain
 
 <!-- ![Project Logic Chain](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image3.png) -->
