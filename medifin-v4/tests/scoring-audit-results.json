@@ -1,0 +1,665 @@
+{
+  "count": 35280,
+  "maxFinancial": 100,
+  "maxProcess": 100,
+  "best": {
+    "choices": {
+      "dossiers": [
+        "HS-A",
+        "HS-D",
+        "HS-G"
+      ],
+      "questions1": [
+        "CH1-C",
+        "CH1-D"
+      ],
+      "question2": "CH2-F",
+      "diagnosis": "D",
+      "diagnosisEvidenceIds": [],
+      "treatment": "F",
+      "timing": "C",
+      "priorities": [
+        "Suppliers",
+        "Creditors",
+        "Governance & Family"
+      ],
+      "communicationAnswers": {
+        "Q1": "B",
+        "Q2": "C",
+        "Q3": "A",
+        "Q7": "C"
+      },
+      "reassessmentMode": "TREATMENT",
+      "reassessmentDiagnosis": null,
+      "reassessmentTreatment": "C",
+      "reassessmentEvidenceIds": []
+    },
+    "reputation": 76,
+    "outcome": {
+      "financial": {
+        "tier": "STRONG_SURVIVAL",
+        "score": 99,
+        "rawScore": 79.3,
+        "metrics": {
+          "liquidity": 74,
+          "debtLoad": 39,
+          "continuity": 86,
+          "ebitda": 96,
+          "execution": 100,
+          "longTermHealth": 79,
+          "refinancing": 100,
+          "riskPenalty": 0.5
+        }
+      },
+      "governance": {
+        "tier": "FAMILY_ALIGNED",
+        "score": 85
+      },
+      "process": {
+        "overall": 100,
+        "raw": 100,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 100,
+          "suitability": 100,
+          "communication": 100,
+          "ethics": 100,
+          "adaptation": 100
+        },
+        "ethicsCap": 100
+      },
+      "clientExperience": 100,
+      "scoreBreakdown": {
+        "process": 50,
+        "financial": 29.7,
+        "clientExperience": 20
+      },
+      "overall": 100,
+      "ending": {
+        "title": "The successor",
+        "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+      },
+      "reputation": "HIGH",
+      "reputationLabel": "High"
+    }
+  },
+  "byMode": {
+    "KEEP": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "KEEP",
+        "reassessmentDiagnosis": null,
+        "reassessmentTreatment": null,
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 93,
+          "rawScore": 77.8,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 34,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 71,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 100,
+          "raw": 100,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 100,
+            "ethics": 100,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 100,
+        "scoreBreakdown": {
+          "process": 50,
+          "financial": 27.9,
+          "clientExperience": 20
+        },
+        "overall": 98,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    },
+    "DIAGNOSIS": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "DIAGNOSIS",
+        "reassessmentDiagnosis": "F",
+        "reassessmentTreatment": null,
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 93,
+          "rawScore": 77.8,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 34,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 71,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 100,
+          "raw": 100,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 100,
+            "ethics": 100,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 100,
+        "scoreBreakdown": {
+          "process": 50,
+          "financial": 27.9,
+          "clientExperience": 20
+        },
+        "overall": 98,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    },
+    "TREATMENT": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "TREATMENT",
+        "reassessmentDiagnosis": null,
+        "reassessmentTreatment": "C",
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 99,
+          "rawScore": 79.3,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 39,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 79,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 100,
+          "raw": 100,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 100,
+            "ethics": 100,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 100,
+        "scoreBreakdown": {
+          "process": 50,
+          "financial": 29.7,
+          "clientExperience": 20
+        },
+        "overall": 100,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    },
+    "BOTH": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "BOTH",
+        "reassessmentDiagnosis": "F",
+        "reassessmentTreatment": "C",
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 99,
+          "rawScore": 79.3,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 39,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 79,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 100,
+          "raw": 100,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 100,
+            "ethics": 100,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 100,
+        "scoreBreakdown": {
+          "process": 50,
+          "financial": 29.7,
+          "clientExperience": 20
+        },
+        "overall": 100,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    }
+  },
+  "auditScope": "35,280 treatment x timing x priority x reassessment paths plus all 81 communication combinations; profile/question selections fixed to the strongest investigated case.",
+  "previousScoringAudit": {
+    "scoringVersion": "scoring-v3",
+    "highestTestedOverall": 85,
+    "scope": "Previously tested bounded set; its result is a comparison point, not a global maximum."
+  },
+  "maxRawFinancial": {
+    "rawScore": 79.6,
+    "choices": {
+      "dossiers": [
+        "HS-A",
+        "HS-D",
+        "HS-G"
+      ],
+      "questions1": [
+        "CH1-C",
+        "CH1-D"
+      ],
+      "question2": "CH2-F",
+      "diagnosis": "D",
+      "diagnosisEvidenceIds": [],
+      "treatment": "F",
+      "timing": "C",
+      "priorities": [
+        "Suppliers",
+        "Creditors",
+        "Governance & Family"
+      ],
+      "communicationAnswers": {
+        "Q1": "B",
+        "Q2": "C",
+        "Q3": "A",
+        "Q7": "C"
+      },
+      "reassessmentMode": "TREATMENT",
+      "reassessmentDiagnosis": null,
+      "reassessmentTreatment": "E",
+      "reassessmentEvidenceIds": []
+    }
+  },
+  "probes": {
+    "eventEvidenceStatuses": {
+      "TK-EVENT-SALES": "DISCOVERED",
+      "TK-EVENT-VENDOR": "DISCOVERED",
+      "TK-EVENT-LIQUIDITY": "DISCOVERED",
+      "TK-EVENT-STORE": "DISCOVERED",
+      "TK-EVENT-DIGITAL": "DISCOVERED",
+      "TK-EVENT-DEBT": "DISCOVERED",
+      "TK-EVENT-BOARD": "DISCOVERED"
+    },
+    "derivedConsent": "agree",
+    "legacyConsent": null,
+    "zeroIsPreserved": true,
+    "clientState": {
+      "understanding": 100,
+      "agency": 100,
+      "trust": 100,
+      "incidents": [],
+      "consent": "agree",
+      "responseDerivedFromCommunication": true
+    },
+    "keepAdaptation": 100,
+    "keepWithEvidence": 100,
+    "suitabilityWithoutRiskPlan": 100,
+    "legacyRiskPlanIgnored": true,
+    "communicationCombos": 81,
+    "perfectCommunication": {
+      "answers": {
+        "Q1": "B",
+        "Q2": "C",
+        "Q3": "A",
+        "Q7": "C"
+      },
+      "communication": 100,
+      "ethics": 100,
+      "clientExperience": 100,
+      "consent": "agree"
+    },
+    "missingAnswersMessage": "Answer all four communication scenarios.",
+    "legacyConfirmedAnswersPreserved": true,
+    "average": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "TREATMENT",
+        "reassessmentDiagnosis": null,
+        "reassessmentTreatment": "C",
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 99,
+          "rawScore": 79.3,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 39,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 79,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 93,
+          "raw": 92.5,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 70,
+            "ethics": 70,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 70,
+        "scoreBreakdown": {
+          "process": 46.5,
+          "financial": 29.7,
+          "clientExperience": 14
+        },
+        "overall": 90,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    },
+    "poor": {
+      "choices": {
+        "dossiers": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "questions1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "question2": "CH2-F",
+        "diagnosis": "D",
+        "diagnosisEvidenceIds": [],
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communicationAnswers": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "reassessmentMode": "TREATMENT",
+        "reassessmentDiagnosis": null,
+        "reassessmentTreatment": "C",
+        "reassessmentEvidenceIds": []
+      },
+      "reputation": 76,
+      "outcome": {
+        "financial": {
+          "tier": "STRONG_SURVIVAL",
+          "score": 99,
+          "rawScore": 79.3,
+          "metrics": {
+            "liquidity": 74,
+            "debtLoad": 39,
+            "continuity": 86,
+            "ebitda": 96,
+            "execution": 100,
+            "longTermHealth": 79,
+            "refinancing": 100,
+            "riskPenalty": 0.5
+          }
+        },
+        "governance": {
+          "tier": "FAMILY_ALIGNED",
+          "score": 85
+        },
+        "process": {
+          "overall": 86,
+          "raw": 85.6,
+          "dimensions": {
+            "investigation": 100,
+            "reasoning": 100,
+            "suitability": 100,
+            "communication": 43,
+            "ethics": 43,
+            "adaptation": 100
+          },
+          "ethicsCap": 100
+        },
+        "clientExperience": 45,
+        "scoreBreakdown": {
+          "process": 43,
+          "financial": 29.7,
+          "clientExperience": 9
+        },
+        "overall": 82,
+        "ending": {
+          "title": "The successor",
+          "text": "The company preserves its foundation, and the family cautiously aligns behind David."
+        },
+        "reputation": "HIGH",
+        "reputationLabel": "High"
+      }
+    }
+  },
+  "evidenceTitles": [
+    "Same-store sales",
+    "Revenue by channel",
+    "Current leverage",
+    "2015 transaction history",
+    "Anderson ownership",
+    "Houndstooth clause",
+    "Family legal letter",
+    "FY2026 balance sheet"
+  ]
+}

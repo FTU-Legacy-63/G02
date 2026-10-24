@@ -290,3 +290,7 @@ The current priority is to make **one case complete, explainable, stable, and te
 **Current Priority:** Decision Logic Refinement, Testing & Stabilization
 
 > **Week 6 Goal: one connected, financially explainable, and testable Case #01 from player input to final Counselor Case Report.**
+
+## MEDIFIN v4
+
+The integrated Case 01 game is available in [medifin-v4](medifin-v4/README.md). Open [the game](medifin-v4/final.html) to play the current build.

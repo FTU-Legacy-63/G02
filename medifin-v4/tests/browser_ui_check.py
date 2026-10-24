@@ -1,0 +1,432 @@
+"""Browser smoke test for final.html with the installed Chrome and CDP."""
+import asyncio
+import base64
+import json
+import re
+import subprocess
+import tempfile
+import time
+import urllib.request
+from pathlib import Path
+
+import websockets
+
+ROOT = Path(__file__).resolve().parents[1]
+SHOTS = ROOT / 'screenshots'
+CHROME = Path(r'C:\Users\Mr.Nguyen Nhung\AppData\Local\Google\Chrome\Application\chrome.exe')
+
+
+async def main(ws):
+    sequence = 0
+    errors = []
+
+    async def send(method, params=None):
+        nonlocal sequence
+        sequence += 1
+        ident = sequence
+        await ws.send(json.dumps({'id': ident, 'method': method, 'params': params or {}}))
+        while True:
+            message = json.loads(await ws.recv())
+            if message.get('method') == 'Runtime.exceptionThrown':
+                errors.append(str(message['params']['exceptionDetails']))
+            if message.get('id') == ident:
+                if 'error' in message:
+                    raise AssertionError(message['error'])
+                return message.get('result', {})
+
+    async def evaluate(expression):
+        result = await send('Runtime.evaluate', {'expression': expression, 'returnByValue': True, 'awaitPromise': True})
+        if 'exceptionDetails' in result:
+            raise AssertionError(result['exceptionDetails'])
+        return result.get('result', {}).get('value')
+
+    async def click(selector):
+        assert await evaluate(f'!!document.querySelector({json.dumps(selector)})'), selector
+        await evaluate(f'document.querySelector({json.dumps(selector)}).click()')
+
+    async def chosen(kind, ident):
+        await click(f'[data-select-kind="{kind}"][data-select-id="{ident}"]')
+
+    async def shot(name, width=1440, height=900):
+        await send('Emulation.setDeviceMetricsOverride', {'width': width, 'height': height, 'deviceScaleFactor': 1, 'mobile': width < 600})
+        await asyncio.sleep(.2)
+        visible_text = await evaluate('document.body.innerText')
+        assert not re.search(r'[À-ÖØ-öø-ỹ]', visible_text), f'Non-English text on {name}: {visible_text}'
+        result = await send('Page.captureScreenshot', {'format': 'png', 'captureBeyondViewport': True})
+        SHOTS.mkdir(exist_ok=True)
+        (SHOTS / name).write_bytes(base64.b64decode(result['data']))
+
+    await send('Page.enable')
+    await send('Runtime.enable')
+    await send('Page.navigate', {'url': (ROOT / 'final.html').as_uri()})
+    for _ in range(120):
+        if await evaluate('!!document.querySelector(".case-menu-card")'):
+            break
+        await asyncio.sleep(.2)
+    else:
+        raise AssertionError(f"Game did not render; JS errors: {errors}")
+
+    assert await evaluate('document.querySelectorAll(".case-menu-card").length') == 2
+    await click('#rulesBtn')
+    assert await evaluate('document.activeElement.id') == 'rulesClose'
+    assert await evaluate('!document.querySelector("#rulesModal").classList.contains("hidden")')
+    await shot('ui-rules-desktop.png')
+    await click('#rulesClose')
+    assert await evaluate('document.activeElement.id') == 'rulesBtn'
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.currentScreen') == 0
+    assert await evaluate('state.uiScene') == 'check'
+    await shot('ui-check-it-out-desktop.png')
+    await shot('ui-check-it-out-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await click('[data-story-next="inbox"]')
+    assert await evaluate('state.uiScene') == 'inbox'
+    await shot('ui-client-message-desktop.png')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.uiScene') == 'inbox'
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.uiScene') is None
+    await click('#confirmBtn')
+    assert await evaluate('state.currentScreen') == 1
+    await shot('ui-clinic-desktop.png')
+    await shot('ui-stepper-early-desktop.png')
+    assert await evaluate('getComputedStyle(document.querySelector(".step")).fontSize') == '16px'
+    assert await evaluate('getComputedStyle(document.querySelector(".step")).fontFamily.includes("Arial")')
+    assert await evaluate('document.querySelector(".stepper-track").scrollWidth > document.querySelector(".stepper-track").clientWidth')
+    await click('[data-step-scroll="1"]')
+    await asyncio.sleep(.3)
+    assert await evaluate('document.querySelector(".stepper-track").scrollLeft > 0')
+    await evaluate('document.querySelector(".stepper-track").focus()')
+    await evaluate('document.querySelector(".stepper-track").dispatchEvent(new KeyboardEvent("keydown", {key: "ArrowLeft", bubbles: true}))')
+    await asyncio.sleep(.3)
+    assert await evaluate('document.querySelector(".stepper-track").scrollLeft < 320')
+    assert await evaluate('getComputedStyle(document.querySelector(".dialogue-card blockquote")).color') == 'rgb(24, 48, 74)'
+    await click('#rulesBtn')
+    assert await evaluate('state.currentScreen') == 1
+    await click('#rulesClose')
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-2'
+    await shot('ui-before-round-2-desktop.png')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    if await evaluate("document.querySelector('[data-menu-action=start]') !== null"):
+        await click('[data-menu-action="start"]')
+    else:
+        assert await evaluate('state.currentScreen === 11'), 'Reload did not restore the saved Round 11 state'
+    assert await evaluate('state.uiScene') == 'before-round-2'
+    await shot('ui-before-round-2-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    assert await evaluate('document.querySelector(".story-image-scene").scrollWidth > document.querySelector(".story-image-scene").clientWidth')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 2
+    assert await evaluate('document.querySelector("#confirmBtn").disabled')
+    await shot('ui-profile-desktop.png')
+    assert await evaluate('document.querySelector(".client-portrait").naturalWidth > 0')
+    assert await evaluate('document.querySelector(".client-portrait").getAttribute("src").includes("round1/david.webp")')
+    for ident in ('HS-D', 'HS-B', 'HS-G'):
+        await chosen('dossier', ident)
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('state.selectedDossiers.length === 0')
+    await click('#confirmBtn')
+    assert await evaluate('!document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('document.querySelector("#modalTitle").textContent === "Selected documents"')
+    assert await evaluate('document.querySelectorAll("[data-review-dossier]").length === 3')
+    assert await evaluate('document.querySelector(".dossier-review-modal").getBoundingClientRect().width >= 800')
+    assert await evaluate('getComputedStyle(document.querySelector(".dossier-review-modal .modal-text")).fontSize === "18px"')
+    await shot('ui-selected-documents-desktop.png')
+    await shot('ui-selected-documents-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    assert await evaluate('document.querySelector(".dossier-review-modal").getBoundingClientRect().width <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    assert await evaluate('state.uiScene') == 'doc-intro'
+    reputation_after_dossier = await evaluate('state.reputation')
+    await click('#reviewDossiersContinue')
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('state.reputation') == reputation_after_dossier
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.uiScene') == 'doc-intro'
+    assert await evaluate('state.reputation') == reputation_after_dossier
+    await shot('ui-doc-g-intro-desktop.png')
+    await click('[data-story-next="doc-envelope"]')
+    await shot('ui-doc-g-envelope-desktop.png')
+    await click('[data-story-next="doc-letter"]')
+    await shot('ui-doc-g-letter-desktop.png')
+    assert await evaluate('document.querySelector(".doc-letter-zoom img").naturalWidth > 0')
+    assert await evaluate('state.selectedDossiers.includes("HS-G")')
+    await click('[data-letter-zoom]')
+    assert await evaluate('document.querySelector("[data-letter-zoom]").classList.contains("zoomed")')
+    await evaluate('document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape", bubbles: true}))')
+    assert await evaluate('!document.querySelector("[data-letter-zoom]").classList.contains("zoomed")')
+    await shot('ui-doc-g-letter-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 3
+    assert await evaluate('document.querySelectorAll(".notebook-card .dossier-notebook-item").length === 3')
+    assert await evaluate('document.querySelector(".notebook-card > .card-label-row .notebook-count").textContent === "3 items"')
+    assert await evaluate('document.querySelectorAll("[data-question-review]").length === 0 && document.querySelectorAll("[data-financial-review]").length === 0')
+    assert await evaluate('!document.querySelector(".notebook-card [data-evidence-open]")')
+    assert await evaluate('!document.querySelector(".notebook-card [data-dossier-open=HS-C]")')
+    await shot('ui-notebook-desktop.png')
+    await shot('ui-notebook-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await click('.notebook-card [data-dossier-open="HS-D"]')
+    assert await evaluate('document.querySelector("#modalTitle").textContent.includes("Capital Structure")')
+    await click('#modalClose')
+    assert await evaluate('document.querySelector("#confirmBtn").disabled')
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    for ident in ('CH1-C', 'CH1-D'):
+        await chosen('question1', ident)
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    await click('#confirmBtn')
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('state.answeredQuestions.length === 2')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('state.uiScene') == 'before-round-4'
+    await shot('ui-before-round-4-desktop.png')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.uiScene') == 'before-round-4'
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 4
+    assert await evaluate('document.querySelectorAll("[data-question-review]").length === 2')
+    notebook_state_before_review = await evaluate('JSON.stringify({financialState:state.financialState,reputation:state.reputation,evidenceLedger:state.evidenceLedger,answeredQuestions:state.answeredQuestions,decisionHistory:state.decisionHistory})')
+    await click('[data-question-review="CH1-C"]')
+    assert await evaluate('document.querySelector("#modalTitle").textContent.includes("CH1-C") && document.querySelector("#modalTitle").textContent.includes("Round 3")')
+    assert await evaluate('document.querySelector("#modalBody").innerText.includes("What happens to liquidity if holiday sales miss by 10%?") && document.querySelector("#modalBody").innerText.includes("Operating cash remains sufficient")')
+    await evaluate('document.dispatchEvent(new KeyboardEvent("keydown", {key:"Escape",bubbles:true}))')
+    assert await evaluate('document.querySelector("#evidenceModal").classList.contains("hidden")')
+    assert await evaluate('JSON.stringify({financialState:state.financialState,reputation:state.reputation,evidenceLedger:state.evidenceLedger,answeredQuestions:state.answeredQuestions,decisionHistory:state.decisionHistory})') == notebook_state_before_review
+    assert await evaluate('document.querySelectorAll("[data-financial-review]").length === 0')
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-5-governance'
+    assert await evaluate('state.confirmedScreens.includes(4)')
+    await shot('ui-before-round-5-governance-desktop.png')
+    await click('[data-story-next="before-round-5-common"]')
+    assert await evaluate('state.uiScene') == 'before-round-5-common'
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 5
+    assert await evaluate('document.querySelectorAll("[data-financial-review]").length === 3')
+    for ident, title, marker in (
+        ('income', 'Income Statement', '11,540'),
+        ('balance', 'Balance Sheet', 'Balance Sheet figures'),
+        ('metrics', 'Operating Metrics', 'Consolidated SSS'),
+    ):
+        await click(f'[data-financial-review="{ident}"]')
+        assert await evaluate('document.querySelector("#modalTitle").textContent') == title
+        assert await evaluate(f'document.querySelector("#modalBody").innerText.includes({json.dumps(marker)})')
+        await click('#modalClose')
+    await chosen('question2', 'CH2-F')
+    await click('#confirmBtn')
+    assert await evaluate('state.currentScreen') == 6
+    assert await evaluate('document.querySelectorAll("[data-question-review]").length === 3')
+    await click('[data-question-review="CH2-F"]')
+    assert await evaluate('document.querySelector("#modalTitle").textContent.includes("CH2-F") && document.querySelector("#modalTitle").textContent.includes("Round 5")')
+    assert await evaluate('document.querySelector("#modalBody").innerText.includes("What is your biggest concern over the next 12 months?") && document.querySelector("#modalBody").innerText.includes("Liquidity and refinancing")')
+    await click('#modalClose')
+    assert await evaluate('getComputedStyle(document.querySelector(".decision-head"), "::after").content === "none"')
+    assert await evaluate('!document.querySelector(".choice-question")')
+    assert await evaluate('getComputedStyle(document.querySelector(".option-card h3")).fontFamily.includes("Times New Roman")')
+    assert await evaluate('getComputedStyle(document.querySelector(".option-card h3")).fontSize') == '18px'
+    assert await evaluate('getComputedStyle(document.querySelector(".option-card p")).fontSize') == '16px'
+    assert await evaluate('getComputedStyle(document.querySelector(".answer-block p")).fontSize') == '16px'
+    assert await evaluate('getComputedStyle(document.querySelector(".answer-block p")).fontFamily.includes("Arial")')
+    assert await evaluate('document.querySelector(".decision-card").getBoundingClientRect().width > 1000')
+    assert await evaluate('getComputedStyle(document.querySelector(".game-hero"), "::after").content === "none"')
+    assert await evaluate('document.querySelectorAll(".option-id").length') == 0
+    await shot('ui-diagnosis-desktop.png')
+    await shot('ui-replay-clean-desktop.png')
+    before_rules = await evaluate('JSON.stringify(state.draftSelection)')
+    await click('#rulesBtn')
+    assert await evaluate('JSON.stringify(state.draftSelection)') == before_rules
+    await evaluate('document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape", bubbles: true}))')
+    assert await evaluate('document.querySelector("#rulesModal").classList.contains("hidden")')
+    assert await evaluate('document.activeElement.id') == 'rulesBtn'
+    await shot('ui-diagnosis-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await click('#rulesBtn')
+    await shot('ui-rules-mobile.png', 390, 844)
+    await click('#rulesClose')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await chosen('diagnosis', 'D')
+    assert await evaluate('!document.querySelector(".evidence-picker") && !document.querySelector("[data-select-kind=primary-constraint]")')
+    await click('#confirmBtn')
+    await chosen('treatment', 'C')
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-8'
+    await shot('ui-before-round-8-desktop.png')
+    await click('[data-story-next="game"]')
+    await chosen('timing', 'A')
+    await click('#confirmBtn')
+    assert await evaluate('state.currentScreen === 9 && document.querySelectorAll(".communication-scenario").length === 4')
+    assert await evaluate('[...document.querySelectorAll(".communication-scenario > h3")].map(node => node.textContent.split(" ")[0]).join(",") === "Q1,Q2,Q3,Q4"')
+    assert await evaluate('document.querySelectorAll("[data-select-kind=communication-answer].selected").length === 0')
+    await shot('ui-round9-communication-desktop.png')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 390, 'height': 844, 'deviceScaleFactor': 1, 'mobile': True})
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await shot('ui-round9-communication-mobile.png', 390, 844)
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await chosen('communication-answer', 'Q1:B')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.currentScreen === 9 && state.draftSelection.communicationAnswers.Q1 === "B" && state.structured.initialBriefing === null')
+    assert await evaluate("document.querySelectorAll('[data-select-kind=communication-answer].selected').length === 1")
+    for kind, ident in (
+        ('priority', 'Creditors'), ('priority', 'Suppliers'), ('priority', 'Governance & Family'),
+    ):
+        await chosen(kind, ident)
+    assert await evaluate('validateScreen(state) === "Answer all four communication scenarios."')
+    await click('#confirmBtn')
+    assert await evaluate('state.currentScreen === 9 && state.structured.initialBriefing === null')
+    for kind, ident in (
+        ('communication-answer', 'Q1:B'), ('communication-answer', 'Q2:C'),
+        ('communication-answer', 'Q3:A'), ('communication-answer', 'Q7:C'),
+    ):
+        await chosen(kind, ident)
+    assert await evaluate('document.querySelectorAll(".communication-scenario").length === 4 && document.querySelectorAll("[data-select-kind=communication-answer]").length === 12')
+    assert await evaluate('!document.body.innerText.includes("RISK PLAN") && !document.body.innerText.includes("Choose the main risk to monitor")')
+    await click('#confirmBtn')
+    assert await evaluate('state.clientState.consent === \"agree\"')
+    assert await evaluate('state.structured.initialBriefing.answers.Q7 === "C"')
+    while await evaluate('state.currentScreen === 10'):
+        await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-11'
+    await shot('ui-before-round-11-desktop.png')
+    reputation_before_migration = await evaluate('state.reputation')
+    await evaluate("(function(){state.contentVersion='case01-toy-kingdom-v3';state.scoringVersion='scoring-v3';state.answeredQuestions[0].answer='OLD ANSWER';state.eventSequence[0].text='OLD UPDATE';state.eventLedger[0].text='OLD UPDATE';state.eventEvidence['TK-EVENT-SALES'].text='OLD UPDATE';Object.keys(state.eventEvidence).forEach(id=>state.evidenceLedger[id]={status:'LOCKED',provenance:[]});saveState()})()")
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.reputation') == reputation_before_migration
+    assert await evaluate('state.answeredQuestions[0].answer !== "OLD ANSWER"')
+    assert await evaluate('state.eventSequence[0].text !== "OLD UPDATE"')
+    assert await evaluate('state.eventLedger[0].text !== "OLD UPDATE"')
+    assert await evaluate('state.eventEvidence["TK-EVENT-SALES"].text !== "OLD UPDATE"')
+    assert await evaluate('state.scoringVersion === "scoring-v6"')
+    assert await evaluate('Object.keys(state.eventEvidence).every(id => ["DISCOVERED", "VERIFIED"].includes(evidenceStatus(state,id)))')
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 11
+    assert await evaluate('!!document.querySelector(".reassessment-doctor")')
+    assert await evaluate('!document.querySelector("[data-select-kind=brief-message]")')
+    for mode, question in (
+        ('KEEP', 'Why are you keeping both the diagnosis and treatment?'),
+        ('DIAGNOSIS', 'Why are you changing the diagnosis?'),
+        ('TREATMENT', 'Why are you changing the treatment?'),
+        ('BOTH', 'Why are you changing both the diagnosis and treatment?'),
+    ):
+        await chosen('reassess-mode', mode)
+        assert await evaluate(f'document.querySelector(".reassessment-panel .choice-question").textContent === {json.dumps(question)}')
+        assert await evaluate('state.structured.reassessmentReason === null')
+    await chosen('reassess-mode', 'KEEP')
+    assert await evaluate('!document.querySelector("[data-select-kind=reassess-diagnosis]") && !document.querySelector("[data-select-kind=reassess-treatment]")')
+    assert await evaluate('!document.querySelector(".reassessment-evidence-picker")')
+    await shot('ui-followup-desktop.png')
+    await shot('ui-followup-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    await asyncio.sleep(.1)
+    assert await evaluate('document.querySelector(".stepper-track").scrollLeft > 0')
+    assert await evaluate('document.querySelector(".step.current").getBoundingClientRect().right <= document.querySelector(".stepper-track").getBoundingClientRect().right')
+    await shot('ui-stepper-late-desktop.png')
+    for kind, ident in (
+        ('reassess-mode', 'KEEP'), ('reassess-reason', 'confirmed'), ('reassess-metric', 'debt'),
+    ):
+        await chosen(kind, ident)
+    assert await evaluate('validateScreen(state) === ""')
+    await click('#confirmBtn')
+    assert await evaluate('state.currentScreen') == 12
+    assert await evaluate('state.finalOutcome.process.dimensions.adaptation > 0')
+    assert await evaluate('document.querySelectorAll(".performance-feedback tbody tr").length === 5')
+    assert await evaluate('Number(document.querySelector(".conclusion-score strong").textContent) === state.finalOutcome.overall')
+    assert await evaluate('Number(document.querySelector(".conclusion-outcomes strong").textContent.split("/")[0]) === state.finalOutcome.financial.score')
+    assert await evaluate('document.querySelector(".conclusion-profile").textContent.includes("Capital Structure")')
+    assert await evaluate('document.querySelector(".conclusion-hero img").getAttribute("src").includes("doctor-good") === (state.finalOutcome.overall >= 85) || state.finalOutcome.overall < 85')
+    await shot('ui-result-desktop.png')
+    assert await evaluate('[49,50,79,80].map(feedbackBand).join(",") === "Low,Mid,Mid,High"')
+    await shot('ui-performance-feedback-desktop.png')
+    for score in (84, 85, 86):
+        expected = await evaluate(f'summaryDoctorAsset({score}, state.finalOutcome.financial.tier)')
+        assert expected.endswith('doctor-good.webp') if score >= 85 else expected.endswith(('doctor-bad.webp', 'doctor-medium.webp', 'doctor-good.webp'))
+        await evaluate(f'(function(){{const copy=JSON.parse(JSON.stringify(state));copy.finalOutcome.overall={score};document.querySelector(\".conclusion\").outerHTML=renderConclusion(copy)}})()')
+        await shot(f'ui-conclusion-{score}-desktop.png')
+    await evaluate('(function(){document.querySelector(".conclusion").outerHTML=renderConclusion(state)})()')
+    await shot('ui-result-mobile.png', 390, 844)
+    await shot('ui-performance-feedback-mobile.png', 390, 844)
+    assert await evaluate('document.documentElement.scrollWidth <= 390')
+    await send('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 900, 'deviceScaleFactor': 1, 'mobile': False})
+    assert await evaluate('document.documentElement.scrollWidth <= 1440')
+    previous_score = await evaluate('state.finalOutcome.overall')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.finalOutcome.overall') == previous_score
+    await click('#reopenCaseBtn')
+    await click('[data-story-next="inbox"]')
+    await click('[data-story-next="game"]')
+    await click('#confirmBtn')
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-2'
+    await click('[data-story-next="game"]')
+    for ident in ('HS-A', 'HS-B', 'HS-C'):
+        await chosen('dossier', ident)
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') is None
+    assert await evaluate('state.currentScreen') == 3
+    for ident in ('CH1-C', 'CH1-D'):
+        await chosen('question1', ident)
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-4'
+    await click('[data-story-next="game"]')
+    await click('#confirmBtn')
+    assert await evaluate('state.uiScene') == 'before-round-5-common'
+    await shot('ui-before-round-5-standard-desktop.png')
+    await send('Page.reload')
+    await asyncio.sleep(.5)
+    await click('[data-menu-action="start"]')
+    assert await evaluate('state.uiScene') == 'before-round-5-common'
+    await click('[data-story-next="game"]')
+    assert await evaluate('state.currentScreen') == 5
+    assert not errors, errors
+    print('Browser UI journey passed; scores, profile, contrast, typography, rules and mobile overflow checked')
+
+
+if __name__ == '__main__':
+    with tempfile.TemporaryDirectory(prefix='medifin-chrome-') as profile:
+        proc = subprocess.Popen([str(CHROME), '--headless', '--disable-gpu', '--disable-software-rasterizer',
+                                 '--no-sandbox', '--no-first-run', '--remote-allow-origins=*',
+                                 '--remote-debugging-port=9223', f'--user-data-dir={profile}', 'about:blank'],
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        try:
+            tabs = None
+            for _ in range(60):
+                try:
+                    tabs = json.load(urllib.request.urlopen('http://127.0.0.1:9223/json', timeout=1))
+                    if tabs:
+                        break
+                except Exception:
+                    time.sleep(.2)
+            if not tabs:
+                raise RuntimeError('Chrome debugging endpoint did not start')
+            async def run():
+                tab = next(t for t in tabs if t.get('type') == 'page' and t.get('url', '').startswith('about:'))
+                async with websockets.connect(tab['webSocketDebuggerUrl'], max_size=30_000_000) as ws:
+                    await main(ws)
+            asyncio.run(run())
+        finally:
+            proc.terminate()
+            try:
+                proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()

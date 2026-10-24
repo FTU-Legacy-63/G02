@@ -1,0 +1,608 @@
+{
+  "runs": [
+    {
+      "name": "Strong communication (B/C/A/C)",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "q1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "q2": "CH2-F",
+        "diagnosis": "D",
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communication": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "mode": "TREATMENT",
+        "nextTreatment": "C",
+        "reason": "uncertain",
+        "metric": "debt",
+        "approvalAck": null
+      },
+      "total": 100,
+      "process": {
+        "overall": 100,
+        "raw": 100,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 100,
+          "suitability": 100,
+          "communication": 100,
+          "ethics": 100,
+          "adaptation": 100
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "STRONG_SURVIVAL",
+        "score": 99,
+        "rawScore": 79.3,
+        "metrics": {
+          "liquidity": 74,
+          "debtLoad": 39,
+          "continuity": 86,
+          "ebitda": 96,
+          "execution": 100,
+          "longTermHealth": 79,
+          "refinancing": 100,
+          "riskPenalty": 0.5
+        }
+      },
+      "clientExperience": 100,
+      "ethicsCap": 100,
+      "davidResponse": "agree",
+      "reassessment": {
+        "mode": "TREATMENT",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-D-LEVERAGE",
+          "TK-D-LBO",
+          "TK-G-OWNERSHIP",
+          "TK-G-CONTRACT",
+          "TK-G-LETTER",
+          "TK-FS-BALANCE",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": true,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "uncertain",
+        "monitorMetric": "debt",
+        "threshold": null,
+        "reviewAt": null,
+        "approvalReputationSnapshot": 76,
+        "treatmentApproval": {
+          "proposedTreatment": "C",
+          "approvedTreatment": "C",
+          "implementedTreatment": "C",
+          "approvalReputationSnapshot": 76
+        }
+      },
+      "ending": "The successor"
+    },
+    {
+      "name": "Medium communication",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "q1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "q2": "CH2-F",
+        "diagnosis": "D",
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communication": {
+          "Q1": "C",
+          "Q2": "A",
+          "Q3": "C",
+          "Q7": "B"
+        },
+        "mode": "TREATMENT",
+        "nextTreatment": "C",
+        "reason": "uncertain",
+        "metric": "debt",
+        "approvalAck": null
+      },
+      "total": 90,
+      "process": {
+        "overall": 93,
+        "raw": 92.5,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 100,
+          "suitability": 100,
+          "communication": 70,
+          "ethics": 70,
+          "adaptation": 100
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "STRONG_SURVIVAL",
+        "score": 99,
+        "rawScore": 79.3,
+        "metrics": {
+          "liquidity": 74,
+          "debtLoad": 39,
+          "continuity": 86,
+          "ebitda": 96,
+          "execution": 100,
+          "longTermHealth": 79,
+          "refinancing": 100,
+          "riskPenalty": 0.5
+        }
+      },
+      "clientExperience": 70,
+      "ethicsCap": 100,
+      "davidResponse": "conditional",
+      "reassessment": {
+        "mode": "TREATMENT",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-D-LEVERAGE",
+          "TK-D-LBO",
+          "TK-G-OWNERSHIP",
+          "TK-G-CONTRACT",
+          "TK-G-LETTER",
+          "TK-FS-BALANCE",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": true,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "uncertain",
+        "monitorMetric": "debt",
+        "threshold": null,
+        "reviewAt": null,
+        "approvalReputationSnapshot": 76,
+        "treatmentApproval": {
+          "proposedTreatment": "C",
+          "approvedTreatment": "C",
+          "implementedTreatment": "C",
+          "approvalReputationSnapshot": 76
+        }
+      },
+      "ending": "The successor"
+    },
+    {
+      "name": "Weak communication",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "q1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "q2": "CH2-F",
+        "diagnosis": "D",
+        "treatment": "F",
+        "timing": "C",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communication": {
+          "Q1": "A",
+          "Q2": "B",
+          "Q3": "B",
+          "Q7": "A"
+        },
+        "mode": "TREATMENT",
+        "nextTreatment": "C",
+        "reason": "uncertain",
+        "metric": "debt",
+        "approvalAck": null
+      },
+      "total": 82,
+      "process": {
+        "overall": 86,
+        "raw": 85.6,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 100,
+          "suitability": 100,
+          "communication": 43,
+          "ethics": 43,
+          "adaptation": 100
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "STRONG_SURVIVAL",
+        "score": 99,
+        "rawScore": 79.3,
+        "metrics": {
+          "liquidity": 74,
+          "debtLoad": 39,
+          "continuity": 86,
+          "ebitda": 96,
+          "execution": 100,
+          "longTermHealth": 79,
+          "refinancing": 100,
+          "riskPenalty": 0.5
+        }
+      },
+      "clientExperience": 45,
+      "ethicsCap": 100,
+      "davidResponse": "decline",
+      "reassessment": {
+        "mode": "TREATMENT",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-D-LEVERAGE",
+          "TK-D-LBO",
+          "TK-G-OWNERSHIP",
+          "TK-G-CONTRACT",
+          "TK-G-LETTER",
+          "TK-FS-BALANCE",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": true,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "uncertain",
+        "monitorMetric": "debt",
+        "threshold": null,
+        "reviewAt": null,
+        "approvalReputationSnapshot": 76,
+        "treatmentApproval": {
+          "proposedTreatment": "C",
+          "approvedTreatment": "C",
+          "implementedTreatment": "C",
+          "approvalReputationSnapshot": 76
+        }
+      },
+      "ending": "The successor"
+    },
+    {
+      "name": "Weak diagnosis, treatment and preparation",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "q1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "q2": "CH2-F",
+        "diagnosis": "A",
+        "treatment": "D",
+        "timing": "D",
+        "priorities": [
+          "Employees",
+          "Customers",
+          "Landlords"
+        ],
+        "communication": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "mode": "KEEP",
+        "nextTreatment": "C",
+        "reason": "uncertain",
+        "metric": "cash",
+        "approvalAck": null
+      },
+      "total": 62,
+      "process": {
+        "overall": 83,
+        "raw": 83.5,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 67,
+          "suitability": 68,
+          "communication": 100,
+          "ethics": 100,
+          "adaptation": 80
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "FRAGILE_SURVIVAL",
+        "score": 0,
+        "rawScore": 51.2,
+        "metrics": {
+          "liquidity": 52,
+          "debtLoad": 13,
+          "continuity": 42,
+          "ebitda": 79,
+          "execution": 100,
+          "longTermHealth": 44,
+          "refinancing": 50,
+          "riskPenalty": 2
+        }
+      },
+      "clientExperience": 100,
+      "ethicsCap": 100,
+      "davidResponse": "agree",
+      "reassessment": {
+        "mode": "KEEP",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-D-LEVERAGE",
+          "TK-D-LBO",
+          "TK-G-OWNERSHIP",
+          "TK-G-CONTRACT",
+          "TK-G-LETTER",
+          "TK-FS-BALANCE",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": false,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "uncertain",
+        "monitorMetric": "cash",
+        "threshold": null,
+        "reviewAt": null
+      },
+      "ending": "A hollow recovery"
+    },
+    {
+      "name": "Alternate investigation with KEEP",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-B",
+          "HS-E"
+        ],
+        "q1": [
+          "CH1-A",
+          "CH1-B"
+        ],
+        "q2": "CH2-A",
+        "diagnosis": "D",
+        "treatment": "E",
+        "timing": "B",
+        "priorities": [
+          "Suppliers",
+          "Creditors",
+          "Governance & Family"
+        ],
+        "communication": {
+          "Q1": "B",
+          "Q2": "C",
+          "Q3": "A",
+          "Q7": "C"
+        },
+        "mode": "KEEP",
+        "nextTreatment": "C",
+        "reason": "confirmed",
+        "metric": "debt",
+        "approvalAck": null
+      },
+      "total": 81,
+      "process": {
+        "overall": 93,
+        "raw": 93.2,
+        "dimensions": {
+          "investigation": 73,
+          "reasoning": 100,
+          "suitability": 94,
+          "communication": 100,
+          "ethics": 100,
+          "adaptation": 100
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "STRONG_SURVIVAL",
+        "score": 47,
+        "rawScore": 66,
+        "metrics": {
+          "liquidity": 44,
+          "debtLoad": 45,
+          "continuity": 74,
+          "ebitda": 93,
+          "execution": 100,
+          "longTermHealth": 66,
+          "refinancing": 50,
+          "riskPenalty": 0.5
+        }
+      },
+      "clientExperience": 100,
+      "ethicsCap": 100,
+      "davidResponse": "agree",
+      "reassessment": {
+        "mode": "KEEP",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-B-CAPEX",
+          "TK-E-MIX",
+          "TK-E-LICENSING",
+          "TK-FS-BALANCE",
+          "TK-FS-METRICS",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": false,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "confirmed",
+        "monitorMetric": "debt",
+        "threshold": null,
+        "reviewAt": null
+      },
+      "ending": "The successor"
+    },
+    {
+      "name": "Weak decisions across communication and treatment",
+      "choices": {
+        "docs": [
+          "HS-A",
+          "HS-D",
+          "HS-G"
+        ],
+        "q1": [
+          "CH1-C",
+          "CH1-D"
+        ],
+        "q2": "CH2-F",
+        "diagnosis": "A",
+        "treatment": "D",
+        "timing": "D",
+        "priorities": [
+          "Employees",
+          "Customers",
+          "Landlords"
+        ],
+        "communication": {
+          "Q1": "A",
+          "Q2": "B",
+          "Q3": "B",
+          "Q7": "A"
+        },
+        "mode": "KEEP",
+        "nextTreatment": "C",
+        "reason": "uncertain",
+        "metric": "cash",
+        "approvalAck": null
+      },
+      "total": 44,
+      "process": {
+        "overall": 69,
+        "raw": 69.1,
+        "dimensions": {
+          "investigation": 100,
+          "reasoning": 67,
+          "suitability": 68,
+          "communication": 43,
+          "ethics": 43,
+          "adaptation": 80
+        },
+        "ethicsCap": 100
+      },
+      "financial": {
+        "tier": "FRAGILE_SURVIVAL",
+        "score": 0,
+        "rawScore": 51.2,
+        "metrics": {
+          "liquidity": 52,
+          "debtLoad": 13,
+          "continuity": 42,
+          "ebitda": 79,
+          "execution": 100,
+          "longTermHealth": 44,
+          "refinancing": 50,
+          "riskPenalty": 2
+        }
+      },
+      "clientExperience": 45,
+      "ethicsCap": 100,
+      "davidResponse": "decline",
+      "reassessment": {
+        "mode": "KEEP",
+        "evidenceIds": [
+          "TK-A-SSS",
+          "TK-A-CHANNEL",
+          "TK-D-LEVERAGE",
+          "TK-D-LBO",
+          "TK-G-OWNERSHIP",
+          "TK-G-CONTRACT",
+          "TK-G-LETTER",
+          "TK-FS-BALANCE",
+          "TK-EVENT-SALES",
+          "TK-EVENT-VENDOR",
+          "TK-EVENT-LIQUIDITY",
+          "TK-EVENT-STORE",
+          "TK-EVENT-DIGITAL",
+          "TK-EVENT-DEBT",
+          "TK-EVENT-BOARD"
+        ],
+        "applied": true,
+        "changedDiagnosis": false,
+        "changedTreatment": false,
+        "costApplied": 0,
+        "observationIds": [],
+        "assumptionStatus": null,
+        "reason": "uncertain",
+        "monitorMetric": "cash",
+        "threshold": null,
+        "reviewAt": null
+      },
+      "ending": "A hollow recovery"
+    }
+  ],
+  "allCompleted": true,
+  "scoreRangeValid": true
+}

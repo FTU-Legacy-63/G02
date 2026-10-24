@@ -1,0 +1,55 @@
+﻿(() => {
+  const click = selector => {const e=document.querySelector(selector); if(!e || e.disabled) throw new Error(selector); e.click();};
+  const choose = (kind,id) => click(`[data-select-kind="${kind}"][data-select-id="${id}"]`);
+  const confirm = () => {click('#confirmBtn'); closeModal(); let limit=20; while(state.uiScene && limit--) click('[data-story-next]'); if(state.uiScene) throw new Error('Story loop');};
+  startCase(true);
+  while(state.uiScene) click('[data-story-next]');
+  confirm(); confirm();
+  ['HS-A','HS-D','HS-G'].forEach(id=>choose('dossier',id)); confirm();
+  if(document.querySelectorAll('.notebook-card .dossier-notebook-item').length!==3 || !document.querySelector('.notebook-count').textContent.includes('3 documents opened')) throw new Error('Notebook document count');
+  ['CH1-C','CH1-D'].forEach(id=>choose('question1',id)); confirm(); confirm();
+  choose('question2','CH2-F'); confirm();
+  choose('diagnosis','D');
+  if(document.querySelector('.evidence-picker') || document.querySelector('[data-select-kind="primary-constraint"]')) throw new Error('Removed Round 6 controls returned');
+  confirm();
+  choose('treatment','F'); confirm(); choose('timing','C'); confirm();
+  ['Suppliers','Creditors','Governance & Family'].forEach(id=>choose('priority',id));
+  for (const [q, answer] of [['Q1','B'],['Q2','C'],['Q3','A'],['Q7','C']]) choose('communication-answer',`${q}:${answer}`);
+  if(document.querySelectorAll('.communication-scenario').length!==4 || document.querySelectorAll('[data-select-kind="communication-answer"]').length!==12) throw new Error('Communication scenarios UI');
+  if(document.querySelector('.structured-panel .card-label')?.textContent.includes('RISK PLAN') || document.body.innerText.includes('Choose the main risk to monitor')) throw new Error('Risk Plan UI remains');
+  confirm();
+  while(state.currentScreen===10) confirm();
+  const round11Start=deepCopy(state);
+  for(const mode of ['KEEP','DIAGNOSIS','TREATMENT','BOTH']) {
+    state=deepCopy(round11Start); render();
+    choose('reassess-mode',mode);
+    if(['DIAGNOSIS','BOTH'].includes(mode)) choose('reassess-diagnosis','F');
+    if(['TREATMENT','BOTH'].includes(mode)) choose('reassess-treatment','C');
+    choose('reassess-reason','uncertain'); choose('reassess-metric','debt');
+    if(validateScreen(state)) throw new Error(`${mode}: ${validateScreen(state)}`);
+    confirm();
+    if(state.currentScreen!==12 || !state.finalOutcome) throw new Error(`${mode} did not complete`);
+  }
+  state=round11Start; saveState(); render();
+  choose('reassess-mode','TREATMENT'); choose('reassess-treatment','C');
+  if(document.querySelector('.evidence-picker')) throw new Error('Removed Round 11 picker returned');
+  choose('reassess-reason','uncertain'); choose('reassess-metric','debt'); confirm();
+  if(state.finalOutcome.overall!==100) throw new Error(JSON.stringify(state.finalOutcome));
+  if([49,50,79,80].map(feedbackBand).join(',')!=='Low,Mid,Mid,High') throw new Error('Feedback bands');
+  if(document.querySelectorAll('.performance-feedback tbody tr').length!==5) throw new Error('Missing performance rows');
+  const financialBefore=JSON.stringify(state.financialState);
+  const oldComplete=JSON.parse(JSON.stringify(state)); oldComplete.scoringVersion='scoring-v3';
+  localStorage.setItem(storageKey(),JSON.stringify(oldComplete));
+  const migratedComplete=loadState();
+  if(migratedComplete.scoringVersion!==SCORING_VERSION||JSON.stringify(migratedComplete.financialState)!==financialBefore||migratedComplete.finalOutcome.overall!==100) throw new Error('Completed legacy save migration failed');
+  oldComplete.scoringVersion='scoring-v4';
+  localStorage.setItem(storageKey(),JSON.stringify(oldComplete));
+  const migratedV4=loadState();
+  if(migratedV4.scoringVersion!==SCORING_VERSION||JSON.stringify(migratedV4.financialState)!==financialBefore||migratedV4.finalOutcome.overall!==100) throw new Error('Completed v4 save migration failed');
+  const oldInProgress=JSON.parse(JSON.stringify(state)); oldInProgress.status='IN_PROGRESS'; oldInProgress.currentScreen=11; oldInProgress.scoringVersion='scoring-v3';
+  Object.keys(oldInProgress.eventEvidence).forEach(id=>oldInProgress.evidenceLedger[id]={status:'LOCKED',provenance:[]});
+  localStorage.setItem(storageKey(),JSON.stringify(oldInProgress));
+  const migratedEvents=loadState();
+  if(Object.values(migratedEvents.eventEvidence).some(e=>!['DISCOVERED','VERIFIED'].includes(evidenceStatus(migratedEvents,e.id)))) throw new Error('Round 10 evidence save migration failed');
+  return {score:state.finalOutcome.overall,status:state.status,round:state.currentScreen,completedSaveMigration:migratedComplete.finalOutcome.overall,inProgressEventsMigrated:Object.keys(migratedEvents.eventEvidence).length};
+})()
