@@ -96,22 +96,6 @@ Trực tiếp chỉnh sửa, format, tinh chỉnh và wording lại các phần 
 
 - Storyline và Conversation plan: các bản draft và chỉnh sửa đến final - (https://docs.google.com/document/d/1GC916pbMSFsjemtJLioyGSL5Z1J4ZlI3R3gvkPGvU_M/edit?tab=t.0)
 - Dialogue design chính thức cho MVP flow: **USER_FLOW_FINAL.md**
-### 3) File Project Logic Chain
-
-<!-- ![Project Logic Chain](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image3.png) -->
-
-### 4) File Project Proposal
-
-<!-- ![Project Proposal](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image4.png) -->
-
-### 5) File User Flow (biên tập, tinh chỉnh)
-
-<!-- ![User Flow](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image5.png) -->
-
-### 6) Storyline and conversation (draft đến bản hoàn thiện cốt truyện chính tuyến) 
-
-<!-- ![Storyline and Conversation](https://docs.google.com/document/d/1GC916pbMSFsjemtJLioyGSL5Z1J4ZlI3R3gvkPGvU_M/edit?tab=t.0) -->
-
 
 ---
 
