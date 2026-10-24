@@ -1,11 +1,10 @@
-# INDIVIDUAL REPORT
+# INDIVIDUAL FOOTPRINT
 
 | | |
 |---|---|
 | **Họ và tên** | Nguyễn Phương Khuê |
 | **Mã sinh viên** | 2413380023 |
 | **Dự án** | MEDIFIN — Financial Clinic · Case #01 Toy Kingdom Inc. |
-| **Vai trò** | Coordinator & Scenario Designer |
 
 ---
 
@@ -22,18 +21,18 @@
 - Góp phần chốt game scope và reasoning flow.
 - Biên tập, tinh chỉnh MVP flow và User Flow.
 - Tích hợp scenario, story, dialogue vào MVP.
-- Hoàn thiện các tài liệu nền tảng: Project Proposal, Project Logic Chain, Assumptions, Source Use Map.
+- Hoàn thiện các tài liệu nền tảng: Project Proposal, Project Logic Chain, Assumptions, Source Use Map, Story draft,...
 - Giải thích vì sao một số nội dung được đưa vào hoặc cắt bỏ, và các nhánh câu chuyện dẫn tới quyết định ở các màn sau như thế nào.
 
 ---
 
 ## 2. Dấu ấn cá nhân trong sản phẩm
 
-Dấu ấn cá nhân của em thể hiện rõ nhất ở phần "xương sống" của sản phẩm: ý tưởng game, câu chuyện của Toy Kingdom và cách câu chuyện đó được chuyển thành một luồng quyết định có logic. Em chịu trách nhiệm thiết kế scenario, viết storyline và dialogue (David, Michael, Richard và các nhân vật liên quan) sao cho người chơi, trong vai Junior Financial Counselor, có đủ bối cảnh để điều tra, chẩn đoán, chọn phác đồ và quan sát hệ quả mà không được cho sẵn nguyên nhân gốc.
+Dấu ấn cá nhân của em thể hiện rõ nhất ở phần "xương sống" của sản phẩm: ý tưởng game, câu chuyện của Toy Kingdom và cách câu chuyện đó được chuyển thành một luồng quyết định có logic. Em chịu trách nhiệm thiết kế scenario, viết storyline và dialogue (David, Michael, Richard và các nhân vật liên quan) sao cho người chơi, trong vai Financial Counselor, có đủ bối cảnh để điều tra, chẩn đoán, chọn phác đồ và quan sát hệ quả mà không được cho sẵn nguyên nhân gốc.
 
-Em cũng tham gia chốt game scope và reasoning flow (**Investigate → Diagnose → Treat → Observe Consequences → Reassess**), làm cơ sở cho cấu trúc cuối cùng của game gồm 13 màn hình, chia thành 6 phase. Bên cạnh nội dung câu chuyện, em phụ trách các tài liệu giúp tách bạch thông tin lịch sử và thông tin hư cấu (Assumptions và Source Use Map), để mọi chi tiết của Toy Kingdom đều truy được về nguồn lịch sử (S), giả định của nhóm (A) hoặc trạng thái do người chơi tạo ra (G).
+Em cũng tham gia chốt game scope và reasoning flow (**Investigate → Diagnose → Treat → Observe Consequences → Reassess**), làm cơ sở cho cấu trúc cuối cùng của game gồm 13 màn hình, chia thành 6 phase. Bên cạnh nội dung câu chuyện, em phụ trách các tài liệu giúp tách bạch thông tin (Assumptions và Source Use Map), để mọi chi tiết của Toy Kingdom đều truy được về nguồn lịch sử (S), giả định của nhóm (A) hoặc trạng thái do người chơi tạo ra (G).
 
-Ngoài ra, em chủ động biên tập và tinh chỉnh User Flow ở phần nội dung (câu chữ, tên gọi, thông báo, các dòng hệ quả) để câu chuyện, hội thoại và logic chấm điểm khớp với nhau mà không làm thay đổi cấu trúc màn hình hay số lượng lựa chọn đã chốt với đội Code/UI-UX.
+Ngoài ra, em chủ động biên tập và tinh chỉnh User Flow ở phần nội dung (câu chữ, tên gọi, thông báo, các dòng hệ quả) để câu chuyện, hội thoại và logic chấm điểm khớp với nhau mà không làm thay đổi cấu trúc màn hình hay số lượng lựa chọn đã chốt với đội Code/Data/UI-UX.
 
 ---
 
@@ -41,7 +40,7 @@ Ngoài ra, em chủ động biên tập và tinh chỉnh User Flow ở phần n�
 
 ### 3.1. Ý tưởng, scenario và storyline
 
-- Đề xuất ý tưởng game và base concept: một mô phỏng tư vấn tài chính theo kịch bản, trong đó người chơi là "bác sĩ tài chính" của một công ty bán lẻ đồ chơi chịu nhiều áp lực cùng lúc (cạnh tranh, thanh khoản, tái đầu tư, gánh nặng nợ), lấy cảm hứng từ case Toys "R" Us.
+- Đề xuất ý tưởng game và base concept: một gamification mô phỏng tư vấn tài chính theo kịch bản, trong đó người chơi là "bác sĩ tài chính" của một công ty bán lẻ đồ chơi chịu nhiều áp lực cùng lúc (cạnh tranh, thanh khoản, tái đầu tư, gánh nặng nợ), lấy cảm hứng từ case Toys "R" Us.
 - Thiết kế scenario và viết storyline, dialogue cho Toy Kingdom Inc.: bối cảnh gia đình Anderson; mâu thuẫn lợi ích giữa **David** (ưu tiên tái đầu tư và phục hồi tài chính), **Michael** (cân nhắc thay đổi quyền kiểm soát) và **Richard** (tìm hướng bán tài sản quốc tế); thỏa thuận có điều kiện với Houndstooth Capital là yếu tố quản trị ẩn.
 - Thiết kế case flow, execution conditions và governance storyline: quyết định thông tin nào người chơi nhận được ở từng màn, điều kiện nào khiến một phác đồ hợp lý vẫn cho kết quả yếu (timing, mức độ chuẩn bị các bên liên quan) và hệ quả nào xuất hiện ở Màn 10.
 
@@ -56,13 +55,13 @@ Ngoài ra, em chủ động biên tập và tinh chỉnh User Flow ở phần n�
 | Tài liệu | Nội dung em thực hiện |
 |---|---|
 | `ASSUMPTIONS.md` | Ghi nhận các giả định A01–A10: Toy Kingdom và gia đình Anderson, Houndstooth Capital Trigger, xung đột gia đình và kịch bản bán tài sản, điều chỉnh mốc thời gian tài chính, kịch bản đầu tư và quản lý, kịch bản thanh khoản mùa lễ, quy ước về kết quả phác đồ và chỉ số kết cục, giới hạn tiếp cận thông tin. Mỗi mục có lý do cần thiết, giới hạn và cách công bố. |
-| `SOURCE_USE_MAP.md` | Lập bản đồ nguồn: S01–S03 (Form 10-K FY2016, earnings release FY2016, hồ sơ SEC vụ mua lại 2005), A01–A06, G01–G03; nêu rõ thông tin nào được dùng ở đâu và giới hạn của từng nguồn. |
+| `SOURCE_USE_MAP.md` | truy nguồn cho storyline: mỗi nhân vật, bối cảnh, sự kiện được phân loại là lịch sử, có điều chỉnh, hư cấu hay do người chơi tạo ra. Mục đích là để phần hư cấu (gia đình Anderson, Houndstooth Capital, mâu thuẫn David – Michael – Richard) không bị nhầm với sự thật lịch sử. |
 | `PROJECT_LOGIC_CHAIN.md` | Mô tả chuỗi logic *Input / State → Investigation → Diagnosis → Treatment → Execution → Consequence → Reassessment → Final Output*, cấu trúc 13 màn hình – 6 phase, các nguyên tắc ra quyết định và ranh giới claim (Counselor Performance ≠ Case Outcome). |
 | `PROJECT_PROPOSAL.md` | Xác định vấn đề, người dùng mục tiêu, nhiệm vụ của người dùng, kết quả mong muốn, product pattern, tính khả thi và các câu hỏi mở. |
 
 ### 3.4. Biên tập và tinh chỉnh User Flow
 
-Áp dụng các chỉnh sửa **câu chữ** vào những chỗ còn gượng, giữ nguyên 13 màn hình, số lượng lựa chọn, mã định danh (HS-x, CH-x, CD-x, PD-x, TG-x) và luật chấm điểm. Một số ví dụ:
+Trực tiếp chỉnh sửa, format, tinh chỉnh và wording lại các phần trong user flow, giữ nguyên 13 màn hình, số lượng lựa chọn, mã định danh (HS-x, CH-x, CD-x, PD-x, TG-x) và luật chấm điểm. Một số ví dụ:
 
 - **Màn 3 · CH1-G:** làm mờ chi tiết ngưỡng EBITDA ở câu hỏi bổ sung để việc mở hồ sơ HS-G vẫn có giá trị.
 - **Màn 8:** đổi tên thành "Thời điểm & Trình tự hành động" cho đúng bản chất của lựa chọn TG-C.
@@ -80,35 +79,35 @@ Ngoài ra, em chủ động biên tập và tinh chỉnh User Flow ở phần n�
 | Project Logic Chain | `PROJECT_LOGIC_CHAIN.md` |
 | Project Proposal | `PROJECT_PROPOSAL.md` |
 | User Flow (biên tập, tinh chỉnh) | `USER_FLOW_FINAL.md` |
-
+| Storyline and Conversation | `(https://docs.google.com/document/d/1GC916pbMSFsjemtJLioyGSL5Z1J4ZlI3R3gvkPGvU_M/edit?tab=t.0)` |
 ---
 
 ## 5. Bằng chứng đóng góp
 
-### 1) Assumptions
+### 1) File Assumptions
 
 <!-- ![Assumptions](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image1.png) -->
 
-### 2) Source Use Map
+### 2) File Source Use Map
 
 <!-- ![Source Use Map](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image2.png) -->
 
-### 3) Project Logic Chain
+### 3) File Project Logic Chain
 
 <!-- ![Project Logic Chain](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image3.png) -->
 
-### 4) Project Proposal
+### 4) File Project Proposal
 
 <!-- ![Project Proposal](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image4.png) -->
 
-### 5) User Flow (biên tập, tinh chỉnh)
+### 5) File User Flow (biên tập, tinh chỉnh)
 
 <!-- ![User Flow](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image5.png) -->
 
-### 6) Phân công vai trò trong báo cáo giữa kỳ
+### 6) Storyline and conversation (draft đến bản hoàn thiện cốt truyện chính tuyến) 
 
-<!-- ![Phân công 1](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image6.png) -->
-<!-- ![Phân công 2](media/INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE/image7.png) -->
+<!-- ![Storyline and Conversation](https://docs.google.com/document/d/1GC916pbMSFsjemtJLioyGSL5Z1J4ZlI3R3gvkPGvU_M/edit?tab=t.0) -->
+
 
 ---
 
