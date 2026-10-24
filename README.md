@@ -7,7 +7,7 @@ MEDIFIN puts players in the role of a **Junior Financial Counselor** who investi
 **Investigate → Diagnose → Treat → Execute → Observe → Reassess → Learn**
 
 ---
-
+## 0. Final product: [MEDIFIN](https://kirisakitrangngocbk-a11y.github.io/Medifin-v4/final.html?fbclid=IwZXh0bgNhZW0CMTEAcGRvZgNzcnRjBmFwcF9pZA80Mzc2MjYzMTY5NzM3ODgAAR624W_uFRS75n4vC9td2otwkif4g3r5Xxda0rtJezbUSjwppHkSRcCr33SlmA_aem_Bl2taIrTkSI_Ml6xL-TMTw) 
 ## 1. Project Overview
 
 ### Case #01 — Toy Kingdom Inc.
@@ -150,7 +150,13 @@ MEDIFIN is the result of interdisciplinary collaboration across finance, scenari
 
 ### Individual Footprints
 
-Individual contribution reports for Nguyễn Phương Khuê, Trương Vĩnh Thịnh, Lâm Diệu Anh, Bùi Lê Trà Giang, and Lê Bảo Ngọc are available in the repository root directory.
+| Team member | Student ID | Individual Footprints |
+|---|---|---|
+| Nguyễn Phương Khuê | 2413380023 | **[NGUYEN_PHUONG_KHUE](INDIVIDUAL_FOOTPRINT_NGUYEN_PHUONG_KHUE.md)** |
+| Trương Vĩnh Thịnh | 2412380046 | **[TRUONG_VINH_THINH](INDIVIDUAL FOOTPRINT - TRUONG VINH THINH.md)**|
+| Lâm Diệu Anh | 2413380007 | **[LAM_DIEU_ANH](INDIVIDUAL_FOOTPRINT_LAM_DIEU_ANH.md)** |
+| Bùi Lê Trà Giang | 2413380015 | **[BUI_LE_TRA_GIANG](INDIVIDUAL_FOOTPRINT_BUI_LE_TRA_GIANG.md)** |
+| Lê Bảo Ngọc | 2412380033 | **[LE_BAO_NGOC](INDIVIDUAL FOOTPRINT - LE BAO NGOC)** |
 
 ### Technical Evidence
 
